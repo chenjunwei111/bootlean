@@ -1,0 +1,2696 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+<!--    <link rel="stylesheet" th:href="@{/static/css/common/style.css}">-->
+
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        xmp {
+            background: rgba(51, 51, 51, 0.7);
+        }
+        .glow-box2 .glow-title2 h4, .glow-box2 .glow-title-center h4{
+            padding-top: 11px;
+        }
+        .h4, .h5, .h6, h4, h5, h6 {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            line-height: 1.5em;
+        }
+        .box-one small{
+            color: #FFFFFF;
+        }
+        .navbar-nav li a{
+            color:#85EFFF;
+        }
+        .back-top{
+            position: fixed;
+            bottom: 35px;
+            right: 42px;
+            z-index: 999;
+            background: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            padding: 8px 15px;
+        }
+    </style>
+
+</head>
+<body>
+
+
+
+<!--目录-->
+<div class="box clearfix">
+    <h1>目录</h1>
+    <ul class="nav navbar-nav">
+        <li><a href="#decorate">DIV背景样式</a></li>
+        <li><a href="#table-style">表格</a></li>
+        <li><a href="#form-sheet">表单</a></li>
+        <li><a href="#button-style">按钮</a></li>
+        <li><a href="#inquiry">查询操作栏</a></li>
+        <li><a href="#tab-page">标签页</a></li>
+        <li><a href="#feature">突显数字</a></li>
+        <li><a href="#progress-bar">进度条</a></li>
+        <li><a href="#chart">常用图表配色</a></li>
+        <li><a href="#div-flex">自适应排列表单和内容</a></li>
+    </ul>
+</div>
+<!--回顶-->
+<a href="#" style="color: #FFFFFF;"><div class="back-top">返回<br/>顶部</div></a>
+
+<!--DIV背景样式-->
+<div class="box" id="decorate">
+    <h1>DIV背景样式</h1>
+    <p>如果div背景样式里面的内容有涉及到浮动float，那么div背景样式都需要加上.clearfix，用于清除浮动，防止div背景无法适应内容的高度。</p>
+    <div class="box-one clearfix">
+        <h3>1.样式一<small>(.glow-box1)</small></h3>
+        <div class="col-md-6">
+            <xmp>
+                <div class="glow-box1 clearfix">
+                    <img class="icon-glow-left-top" src="../static/images/img/icon-glow-left-top.png">
+                    <img class="icon-glow-right-top" src="../static/images/img/icon-glow-right-top.png">
+                    <img class="icon-glow-left-bottom" src="../static/images/img/icon-glow-left-bottom.png">
+                    <img class="icon-glow-right-bottom" src="../static/images/img/icon-glow-right-bottom.png">
+                    <div class="glow-title">
+                        <h4>新增工单</h4>
+                    </div>
+                    <div class="glow-content">
+                        <!--这里放内容-->
+                        <p class="text-center">123123</p>
+                    </div>
+                </div>
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <div class="glow-box1 clearfix">
+                <img class="icon-glow-left-top" src="../static/images/img/icon-glow-left-top.png">
+                <img class="icon-glow-right-top" src="../static/images/img/icon-glow-right-top.png">
+                <img class="icon-glow-left-bottom" src="../static/images/img/icon-glow-left-bottom.png">
+                <img class="icon-glow-right-bottom" src="../static/images/img/icon-glow-right-bottom.png">
+                <div class="glow-title">
+                    <h4>新增工单</h4>
+                </div>
+                <div class="glow-content">
+                    <!--这里放内容-->
+                    <p class="text-center">123123</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-one clearfix">
+        <div class="clearfix">
+            <h3>2.样式二<small>(.glow-box2)</small></h3>
+            <div class="col-md-6">
+                <xmp>
+                    <div class="glow-box2 clearfix">
+                        <img class="dv-icon-right" src="../static/images/img/dv-icon-right.png">
+                        <div class="glow-title">
+                            <span class="blue"></span>
+                            <h4>新增工单</h4>
+                        </div>
+                        <div class="glow-content">
+                            <!--这里放内容-->
+                            <p class="text-center">123123</p>
+                        </div>
+                    </div>
+                </xmp>
+            </div>
+            <div class="col-md-6">
+                <div class="glow-box2 clearfix">
+                    <img class="dv-icon-right" src="../static/images/img/dv-icon-right.png">
+                    <div class="glow-title">
+                        <span class="blue"></span>
+                        <h4>新增工单</h4>
+                    </div>
+                    <div class="glow-content">
+                        <!--这里放内容-->
+                        <p class="text-center">123123</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix">
+            <h4>2.1.样式二-标题居中<small>（把标题的类名改为.glow-title-center)</small></h4>
+            <div class="col-md-6">
+                <xmp>
+                    <div class="glow-box2 clearfix">
+                        <img class="dv-icon-left" src="../static/images/img/dv-icon-left.png">
+                        <img class="dv-icon-right" src="../static/images/img/dv-icon-right.png">
+                        <div class="glow-title-center">
+                            <h4>新增工单</h4>
+                        </div>
+                        <div class="glow-content">
+                            <!--这里放内容-->
+                            <p class="text-center">123123</p>
+                        </div>
+                    </div>
+                </xmp>
+            </div>
+            <div class="col-md-6">
+                <div class="glow-box2 clearfix">
+                    <img class="dv-icon-left" src="../static/images/img/dv-icon-left.png">
+                    <img class="dv-icon-right" src="../static/images/img/dv-icon-right.png">
+                    <div class="glow-title-center">
+                        <h4>新增工单</h4>
+                    </div>
+                    <div class="glow-content">
+                        <!--这里放内容-->
+                        <p class="text-center">123123</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-one clearfix">
+        <h3>3.样式三<small>(.glow-box3)</small></h3>
+        <div class="col-md-6">
+            <xmp>
+                <div class="glow-box3 clearfix">
+                    <div class="glow-title">
+                        <span class="blue"></span>
+                        <h4>新增工单</h4>
+                    </div>
+                    <div class="glow-content">
+                        <!--这里放内容-->
+                        <p class="text-center">123123</p>
+                    </div>
+                </div>
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <div class="glow-box3 clearfix">
+                <div class="glow-title">
+                    <span class="blue"></span>
+                    <h4>新增工单</h4>
+                </div>
+                <div class="glow-content">
+                    <!--这里放内容-->
+                    <p class="text-center">123123</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--表格-->
+<div class="box" id="table-style">
+    <h1>表格</h1>
+    <div class="box-one clearfix">
+        <h3>1.纯表格时候，直接使用layui表格。</h3>
+        <div class="col-md-6">
+            <xmp>
+                <div id="DateTable1" lay-filter="DateTable1" lay-data="{id: 'DateTable1'}"></div>
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <div class="layui-form layui-border-box layui-table-view" lay-filter="LAY-table-1"
+                 style=" height:265px;">
+                <div class="layui-table-header">
+                    <table cellspacing="0" cellpadding="0" border="0" class="layui-table">
+                        <thead>
+                        <tr>
+                            <th data-field="STATE">
+                                <div class="layui-table-cell laytable-cell-1-STATE"><span>小区ID</span></div>
+                            </th>
+                            <th data-field="ORDERNUM">
+                                <div class="layui-table-cell laytable-cell-1-ORDERNUM">
+                                    <span>时长占比</span></div>
+                            </th>
+                            <th data-field="SENDPEOPLE">
+                                <div class="layui-table-cell laytable-cell-1-SENDPEOPLE"><span>距离</span>
+                                </div>
+                            </th>
+                            <th data-field="CITY">
+                                <div class="layui-table-cell laytable-cell-1-CITY"><span>小区权重</span></div>
+                            </th>
+                            <th data-field="PROPERTY">
+                                <div class="layui-table-cell laytable-cell-1-PROPERTY"><span>主要问题</span>
+                                </div>
+                            </th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="layui-table-body layui-table-main" style="height: 195px;">
+                    <table cellspacing="0" cellpadding="0" border="0" class="layui-table">
+                        <tbody>
+                        <tr data-index="0" class="">
+                            <td data-field="STATE">
+                                <div class="layui-table-cell laytable-cell-1-STATE">867527-21</div>
+                            </td>
+                            <td data-field="ORDERNUM" data-off="true" lay-event="clickName">
+                                <div class="layui-table-cell laytable-cell-1-ORDERNUM"> 23
+                                </div>
+                            </td>
+                            <td data-field="SENDPEOPLE">
+                                <div class="layui-table-cell laytable-cell-1-SENDPEOPLE">15M</div>
+                            </td>
+                            <td data-field="CITY">
+                                <div class="layui-table-cell laytable-cell-1-CITY">高</div>
+                            </td>
+                            <td data-field="PROPERTY">
+                                <div class="layui-table-cell laytable-cell-1-PROPERTY">覆盖问题</div>
+                            </td>
+                        </tr>
+                        <tr data-index="0" class="">
+                            <td data-field="STATE">
+                                <div class="layui-table-cell laytable-cell-1-STATE">867527-21</div>
+                            </td>
+                            <td data-field="ORDERNUM" data-off="true" lay-event="clickName">
+                                <div class="layui-table-cell laytable-cell-1-ORDERNUM"> 23
+                                </div>
+                            </td>
+                            <td data-field="SENDPEOPLE">
+                                <div class="layui-table-cell laytable-cell-1-SENDPEOPLE">15M</div>
+                            </td>
+                            <td data-field="CITY">
+                                <div class="layui-table-cell laytable-cell-1-CITY">高</div>
+                            </td>
+                            <td data-field="PROPERTY">
+                                <div class="layui-table-cell laytable-cell-1-PROPERTY">覆盖问题</div>
+                            </td>
+                        </tr>
+                        <tr data-index="0" class="">
+                            <td data-field="STATE">
+                                <div class="layui-table-cell laytable-cell-1-STATE">867527-21</div>
+                            </td>
+                            <td data-field="ORDERNUM" data-off="true" lay-event="clickName">
+                                <div class="layui-table-cell laytable-cell-1-ORDERNUM"> 23
+                                </div>
+                            </td>
+                            <td data-field="SENDPEOPLE">
+                                <div class="layui-table-cell laytable-cell-1-SENDPEOPLE">15M</div>
+                            </td>
+                            <td data-field="CITY">
+                                <div class="layui-table-cell laytable-cell-1-CITY">高</div>
+                            </td>
+                            <td data-field="PROPERTY">
+                                <div class="layui-table-cell laytable-cell-1-PROPERTY">覆盖问题</div>
+                            </td>
+                        </tr>
+                        <tr data-index="0" class="">
+                            <td data-field="STATE">
+                                <div class="layui-table-cell laytable-cell-1-STATE">867527-21</div>
+                            </td>
+                            <td data-field="ORDERNUM" data-off="true" lay-event="clickName">
+                                <div class="layui-table-cell laytable-cell-1-ORDERNUM"> 23
+                                </div>
+                            </td>
+                            <td data-field="SENDPEOPLE">
+                                <div class="layui-table-cell laytable-cell-1-SENDPEOPLE">15M</div>
+                            </td>
+                            <td data-field="CITY">
+                                <div class="layui-table-cell laytable-cell-1-CITY">高</div>
+                            </td>
+                            <td data-field="PROPERTY">
+                                <div class="layui-table-cell laytable-cell-1-PROPERTY">覆盖问题</div>
+                            </td>
+                        </tr>
+                        <tr data-index="0" class="">
+                            <td data-field="STATE">
+                                <div class="layui-table-cell laytable-cell-1-STATE">867527-21</div>
+                            </td>
+                            <td data-field="ORDERNUM" data-off="true" lay-event="clickName">
+                                <div class="layui-table-cell laytable-cell-1-ORDERNUM"> 23
+                                </div>
+                            </td>
+                            <td data-field="SENDPEOPLE">
+                                <div class="layui-table-cell laytable-cell-1-SENDPEOPLE">15M</div>
+                            </td>
+                            <td data-field="CITY">
+                                <div class="layui-table-cell laytable-cell-1-CITY">高</div>
+                            </td>
+                            <td data-field="PROPERTY">
+                                <div class="layui-table-cell laytable-cell-1-PROPERTY">覆盖问题</div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="layui-table-tool">
+                    <div class="layui-inline layui-table-page" id="layui-table-page1">
+                        <div class="layui-box layui-laypage layui-laypage-rgb(95, 184, 120)" id="layui-laypage-1">
+                            <a href="javascript:;" class="layui-laypage-prev layui-disabled" data-page="0"><i
+                                    class="layui-icon"></i></a>
+                            <span class="layui-laypage-curr"><em class="layui-laypage-em"></em><em>1</em></span>
+                            <a href="javascript:;" class="layui-laypage-next layui-disabled" data-page="2"><i
+                                    class="layui-icon"></i></a>
+                            <span class="layui-laypage-skip">到第<input type="text" min="1" value="1"
+                                                                      class="layui-input">页
+                                            <button type="button" class="layui-laypage-btn">确定</button></span>
+                            <span class="layui-laypage-count">共 9 条</span>
+                            <span class="layui-laypage-limits">
+                                            <select lay-ignore="">
+                        <option value="10" selected="">10 条/页</option>
+                        <option value="50">50 条/页</option>
+                        <option value="1000">1000 条/页</option>
+                    </select>
+                                        </span>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    .laytable-cell-1-STATE {
+                        width: 70px
+                    }
+
+                    .laytable-cell-1-ORDERNUM {
+                        width: 60px
+                    }
+
+                    .laytable-cell-1-SENDPEOPLE {
+                        width: 60px
+                    }
+
+                    .laytable-cell-1-CITY {
+                        width: 60px
+                    }
+
+                    .laytable-cell-1-PROPERTY {
+                        width: 60px
+                    }
+                </style>
+            </div>
+        </div>
+    </div>
+    <div class="box-one clearfix">
+        <h3>2.带有标题的表格</h3>
+        <div class="col-md-6">
+            <xmp>
+                <div class="table-box">
+                    <div class="table-title">
+                        <h4>新增工单列表</h4>
+                    </div>
+                    <div class="table-content">
+                        <!--这里加表格-->
+                        <div id="DateTable1" lay-filter="DateTable1" lay-data="{id: 'DateTable1'}"></div>
+                    </div>
+                </div>
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <div class="table-box">
+                <div class="table-title">
+                    <h4>新增工单列表</h4>
+                </div>
+                <div class="table-content">
+                    <div class="layui-form layui-border-box layui-table-view" lay-filter="LAY-table-1"
+                         style=" height:265px;">
+                        <div class="layui-table-header">
+                            <table cellspacing="0" cellpadding="0" border="0" class="layui-table">
+                                <thead>
+                                <tr>
+                                    <th data-field="STATE">
+                                        <div class="layui-table-cell laytable-cell-1-STATE"><span>小区ID</span></div>
+                                    </th>
+                                    <th data-field="ORDERNUM">
+                                        <div class="layui-table-cell laytable-cell-1-ORDERNUM">
+                                            <span>时长占比</span></div>
+                                    </th>
+                                    <th data-field="SENDPEOPLE">
+                                        <div class="layui-table-cell laytable-cell-1-SENDPEOPLE"><span>距离</span>
+                                        </div>
+                                    </th>
+                                    <th data-field="CITY">
+                                        <div class="layui-table-cell laytable-cell-1-CITY"><span>小区权重</span></div>
+                                    </th>
+                                    <th data-field="PROPERTY">
+                                        <div class="layui-table-cell laytable-cell-1-PROPERTY"><span>主要问题</span>
+                                        </div>
+                                    </th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="layui-table-body layui-table-main" style="height: 195px;">
+                            <table cellspacing="0" cellpadding="0" border="0" class="layui-table">
+                                <tbody>
+                                <tr data-index="0" class="">
+                                    <td data-field="STATE">
+                                        <div class="layui-table-cell laytable-cell-1-STATE">867527-21</div>
+                                    </td>
+                                    <td data-field="ORDERNUM" data-off="true" lay-event="clickName">
+                                        <div class="layui-table-cell laytable-cell-1-ORDERNUM"> 23
+                                        </div>
+                                    </td>
+                                    <td data-field="SENDPEOPLE">
+                                        <div class="layui-table-cell laytable-cell-1-SENDPEOPLE">15M</div>
+                                    </td>
+                                    <td data-field="CITY">
+                                        <div class="layui-table-cell laytable-cell-1-CITY">高</div>
+                                    </td>
+                                    <td data-field="PROPERTY">
+                                        <div class="layui-table-cell laytable-cell-1-PROPERTY">覆盖问题</div>
+                                    </td>
+                                </tr>
+                                <tr data-index="0" class="">
+                                    <td data-field="STATE">
+                                        <div class="layui-table-cell laytable-cell-1-STATE">867527-21</div>
+                                    </td>
+                                    <td data-field="ORDERNUM" data-off="true" lay-event="clickName">
+                                        <div class="layui-table-cell laytable-cell-1-ORDERNUM"> 23
+                                        </div>
+                                    </td>
+                                    <td data-field="SENDPEOPLE">
+                                        <div class="layui-table-cell laytable-cell-1-SENDPEOPLE">15M</div>
+                                    </td>
+                                    <td data-field="CITY">
+                                        <div class="layui-table-cell laytable-cell-1-CITY">高</div>
+                                    </td>
+                                    <td data-field="PROPERTY">
+                                        <div class="layui-table-cell laytable-cell-1-PROPERTY">覆盖问题</div>
+                                    </td>
+                                </tr>
+                                <tr data-index="0" class="">
+                                    <td data-field="STATE">
+                                        <div class="layui-table-cell laytable-cell-1-STATE">867527-21</div>
+                                    </td>
+                                    <td data-field="ORDERNUM" data-off="true" lay-event="clickName">
+                                        <div class="layui-table-cell laytable-cell-1-ORDERNUM"> 23
+                                        </div>
+                                    </td>
+                                    <td data-field="SENDPEOPLE">
+                                        <div class="layui-table-cell laytable-cell-1-SENDPEOPLE">15M</div>
+                                    </td>
+                                    <td data-field="CITY">
+                                        <div class="layui-table-cell laytable-cell-1-CITY">高</div>
+                                    </td>
+                                    <td data-field="PROPERTY">
+                                        <div class="layui-table-cell laytable-cell-1-PROPERTY">覆盖问题</div>
+                                    </td>
+                                </tr>
+                                <tr data-index="0" class="">
+                                    <td data-field="STATE">
+                                        <div class="layui-table-cell laytable-cell-1-STATE">867527-21</div>
+                                    </td>
+                                    <td data-field="ORDERNUM" data-off="true" lay-event="clickName">
+                                        <div class="layui-table-cell laytable-cell-1-ORDERNUM"> 23
+                                        </div>
+                                    </td>
+                                    <td data-field="SENDPEOPLE">
+                                        <div class="layui-table-cell laytable-cell-1-SENDPEOPLE">15M</div>
+                                    </td>
+                                    <td data-field="CITY">
+                                        <div class="layui-table-cell laytable-cell-1-CITY">高</div>
+                                    </td>
+                                    <td data-field="PROPERTY">
+                                        <div class="layui-table-cell laytable-cell-1-PROPERTY">覆盖问题</div>
+                                    </td>
+                                </tr>
+                                <tr data-index="0" class="">
+                                    <td data-field="STATE">
+                                        <div class="layui-table-cell laytable-cell-1-STATE">867527-21</div>
+                                    </td>
+                                    <td data-field="ORDERNUM" data-off="true" lay-event="clickName">
+                                        <div class="layui-table-cell laytable-cell-1-ORDERNUM"> 23
+                                        </div>
+                                    </td>
+                                    <td data-field="SENDPEOPLE">
+                                        <div class="layui-table-cell laytable-cell-1-SENDPEOPLE">15M</div>
+                                    </td>
+                                    <td data-field="CITY">
+                                        <div class="layui-table-cell laytable-cell-1-CITY">高</div>
+                                    </td>
+                                    <td data-field="PROPERTY">
+                                        <div class="layui-table-cell laytable-cell-1-PROPERTY">覆盖问题</div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="layui-table-tool">
+                            <div class="layui-inline layui-table-page" id="layui-table-page1">
+                                <div class="layui-box layui-laypage layui-laypage-rgb(95, 184, 120)"
+                                     id="layui-laypage-1">
+                                    <a href="javascript:;" class="layui-laypage-prev layui-disabled" data-page="0"><i
+                                            class="layui-icon"></i></a>
+                                    <span class="layui-laypage-curr"><em class="layui-laypage-em"></em><em>1</em></span>
+                                    <a href="javascript:;" class="layui-laypage-next layui-disabled" data-page="2"><i
+                                            class="layui-icon"></i></a>
+                                    <span class="layui-laypage-skip">到第<input type="text" min="1" value="1"
+                                                                              class="layui-input">页
+                                            <button type="button" class="layui-laypage-btn">确定</button></span>
+                                    <span class="layui-laypage-count">共 9 条</span>
+                                    <span class="layui-laypage-limits">
+                                            <select lay-ignore="">
+                        <option value="10" selected="">10 条/页</option>
+                        <option value="50">50 条/页</option>
+                        <option value="1000">1000 条/页</option>
+                    </select>
+                                        </span>
+                                </div>
+                            </div>
+                        </div>
+                        <style>
+                            .laytable-cell-1-STATE {
+                                width: 70px
+                            }
+
+                            .laytable-cell-1-ORDERNUM {
+                                width: 60px
+                            }
+
+                            .laytable-cell-1-SENDPEOPLE {
+                                width: 60px
+                            }
+
+                            .laytable-cell-1-CITY {
+                                width: 60px
+                            }
+
+                            .laytable-cell-1-PROPERTY {
+                                width: 60px
+                            }
+                        </style>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-one clearfix">
+        <h3>3.带有按钮的表格</h3>
+        <div class="col-md-6">
+            <xmp>
+                <div class="table-box">
+                    <div class="table-title">
+                        <h4>新增工单列表</h4>
+                    </div>
+                    <div class="table-btn">
+                        <button class="btn btn-borderless">预分析</button><!--无边框按钮-->
+                        <button class="btn btn-bordered">预分析</button><!--有边框按钮-->
+                    </div>
+                    <div class="table-content">
+                        <!--这里加表格-->
+                        <div id="DateTable1" lay-filter="DateTable1" lay-data="{id: 'DateTable1'}"></div>
+                    </div>
+                </div>
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <div class="table-box">
+                <div class="table-title">
+                    <h4>新增工单列表</h4>
+                </div>
+                <div class="table-btn">
+                    <button class="btn btn-borderless">预分析</button>
+                    <button class="btn btn-bordered">预分析</button>
+                </div>
+                <div class="table-content">
+                    <div class="layui-form layui-border-box layui-table-view" lay-filter="LAY-table-1"
+                         style=" height:265px;">
+                        <div class="layui-table-header">
+                            <table cellspacing="0" cellpadding="0" border="0" class="layui-table">
+                                <thead>
+                                <tr>
+                                    <th data-field="STATE">
+                                        <div class="layui-table-cell laytable-cell-1-STATE"><span>小区ID</span></div>
+                                    </th>
+                                    <th data-field="ORDERNUM">
+                                        <div class="layui-table-cell laytable-cell-1-ORDERNUM">
+                                            <span>时长占比</span></div>
+                                    </th>
+                                    <th data-field="SENDPEOPLE">
+                                        <div class="layui-table-cell laytable-cell-1-SENDPEOPLE"><span>距离</span>
+                                        </div>
+                                    </th>
+                                    <th data-field="CITY">
+                                        <div class="layui-table-cell laytable-cell-1-CITY"><span>小区权重</span></div>
+                                    </th>
+                                    <th data-field="PROPERTY">
+                                        <div class="layui-table-cell laytable-cell-1-PROPERTY"><span>主要问题</span>
+                                        </div>
+                                    </th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="layui-table-body layui-table-main" style="height: 195px;">
+                            <table cellspacing="0" cellpadding="0" border="0" class="layui-table">
+                                <tbody>
+                                <tr data-index="0" class="">
+                                    <td data-field="STATE">
+                                        <div class="layui-table-cell laytable-cell-1-STATE">867527-21</div>
+                                    </td>
+                                    <td data-field="ORDERNUM" data-off="true" lay-event="clickName">
+                                        <div class="layui-table-cell laytable-cell-1-ORDERNUM"> 23
+                                        </div>
+                                    </td>
+                                    <td data-field="SENDPEOPLE">
+                                        <div class="layui-table-cell laytable-cell-1-SENDPEOPLE">15M</div>
+                                    </td>
+                                    <td data-field="CITY">
+                                        <div class="layui-table-cell laytable-cell-1-CITY">高</div>
+                                    </td>
+                                    <td data-field="PROPERTY">
+                                        <div class="layui-table-cell laytable-cell-1-PROPERTY">覆盖问题</div>
+                                    </td>
+                                </tr>
+                                <tr data-index="0" class="">
+                                    <td data-field="STATE">
+                                        <div class="layui-table-cell laytable-cell-1-STATE">867527-21</div>
+                                    </td>
+                                    <td data-field="ORDERNUM" data-off="true" lay-event="clickName">
+                                        <div class="layui-table-cell laytable-cell-1-ORDERNUM"> 23
+                                        </div>
+                                    </td>
+                                    <td data-field="SENDPEOPLE">
+                                        <div class="layui-table-cell laytable-cell-1-SENDPEOPLE">15M</div>
+                                    </td>
+                                    <td data-field="CITY">
+                                        <div class="layui-table-cell laytable-cell-1-CITY">高</div>
+                                    </td>
+                                    <td data-field="PROPERTY">
+                                        <div class="layui-table-cell laytable-cell-1-PROPERTY">覆盖问题</div>
+                                    </td>
+                                </tr>
+                                <tr data-index="0" class="">
+                                    <td data-field="STATE">
+                                        <div class="layui-table-cell laytable-cell-1-STATE">867527-21</div>
+                                    </td>
+                                    <td data-field="ORDERNUM" data-off="true" lay-event="clickName">
+                                        <div class="layui-table-cell laytable-cell-1-ORDERNUM"> 23
+                                        </div>
+                                    </td>
+                                    <td data-field="SENDPEOPLE">
+                                        <div class="layui-table-cell laytable-cell-1-SENDPEOPLE">15M</div>
+                                    </td>
+                                    <td data-field="CITY">
+                                        <div class="layui-table-cell laytable-cell-1-CITY">高</div>
+                                    </td>
+                                    <td data-field="PROPERTY">
+                                        <div class="layui-table-cell laytable-cell-1-PROPERTY">覆盖问题</div>
+                                    </td>
+                                </tr>
+                                <tr data-index="0" class="">
+                                    <td data-field="STATE">
+                                        <div class="layui-table-cell laytable-cell-1-STATE">867527-21</div>
+                                    </td>
+                                    <td data-field="ORDERNUM" data-off="true" lay-event="clickName">
+                                        <div class="layui-table-cell laytable-cell-1-ORDERNUM"> 23
+                                        </div>
+                                    </td>
+                                    <td data-field="SENDPEOPLE">
+                                        <div class="layui-table-cell laytable-cell-1-SENDPEOPLE">15M</div>
+                                    </td>
+                                    <td data-field="CITY">
+                                        <div class="layui-table-cell laytable-cell-1-CITY">高</div>
+                                    </td>
+                                    <td data-field="PROPERTY">
+                                        <div class="layui-table-cell laytable-cell-1-PROPERTY">覆盖问题</div>
+                                    </td>
+                                </tr>
+                                <tr data-index="0" class="">
+                                    <td data-field="STATE">
+                                        <div class="layui-table-cell laytable-cell-1-STATE">867527-21</div>
+                                    </td>
+                                    <td data-field="ORDERNUM" data-off="true" lay-event="clickName">
+                                        <div class="layui-table-cell laytable-cell-1-ORDERNUM"> 23
+                                        </div>
+                                    </td>
+                                    <td data-field="SENDPEOPLE">
+                                        <div class="layui-table-cell laytable-cell-1-SENDPEOPLE">15M</div>
+                                    </td>
+                                    <td data-field="CITY">
+                                        <div class="layui-table-cell laytable-cell-1-CITY">高</div>
+                                    </td>
+                                    <td data-field="PROPERTY">
+                                        <div class="layui-table-cell laytable-cell-1-PROPERTY">覆盖问题</div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="layui-table-tool">
+                            <div class="layui-inline layui-table-page" id="layui-table-page1">
+                                <div class="layui-box layui-laypage layui-laypage-rgb(95, 184, 120)"
+                                     id="layui-laypage-1">
+                                    <a href="javascript:;" class="layui-laypage-prev layui-disabled" data-page="0"><i
+                                            class="layui-icon"></i></a>
+                                    <span class="layui-laypage-curr"><em class="layui-laypage-em"></em><em>1</em></span>
+                                    <a href="javascript:;" class="layui-laypage-next layui-disabled" data-page="2"><i
+                                            class="layui-icon"></i></a>
+                                    <span class="layui-laypage-skip">到第<input type="text" min="1" value="1"
+                                                                              class="layui-input">页
+                                            <button type="button" class="layui-laypage-btn">确定</button></span>
+                                    <span class="layui-laypage-count">共 9 条</span>
+                                    <span class="layui-laypage-limits">
+                                            <select lay-ignore="">
+                        <option value="10" selected="">10 条/页</option>
+                        <option value="50">50 条/页</option>
+                        <option value="1000">1000 条/页</option>
+                    </select>
+                                        </span>
+                                </div>
+                            </div>
+                        </div>
+                        <style>
+                            .laytable-cell-1-STATE {
+                                width: 70px
+                            }
+
+                            .laytable-cell-1-ORDERNUM {
+                                width: 60px
+                            }
+
+                            .laytable-cell-1-SENDPEOPLE {
+                                width: 60px
+                            }
+
+                            .laytable-cell-1-CITY {
+                                width: 60px
+                            }
+
+                            .laytable-cell-1-PROPERTY {
+                                width: 60px
+                            }
+                        </style>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--表单-->
+<div class="box" id="form-sheet">
+    <h1>表单</h1>
+    <div class="box-one clearfix">
+        <h3>1.文本框/多行文本框/下拉框</h3>
+        <div class="col-md-6">
+            <xmp>
+                <!--文本框-->
+                <input class="layui-input">
+                <!--多行文本框-->
+                <textarea class="layui-textarea"></textarea>
+                <!--下拉框-->
+                <select class="form-control">
+                    <option>云南</option>
+                    <option>昆明</option>
+                    <option>西双版纳</option>
+                </select>
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <label>文本框</label>
+            <input class="layui-input">
+            <br/>
+            <label>多行文本框</label>
+            <textarea class="layui-textarea"></textarea>
+            <br/>
+            <label>下拉框</label>
+            <select class="form-control">
+                <option>云南</option>
+                <option>昆明</option>
+                <option>西双版纳</option>
+            </select>
+        </div>
+    </div>
+</div>
+<!--按钮-->
+<div class="box" id="button-style">
+    <h1>按钮</h1>
+    <div class="box-one clearfix">
+        <h3>1.按钮的2种样式</h3>
+        <p>(1) 无边框按钮：btn-borderless</p>
+        <p>(2) 有边框按钮：btn-bordered</p>
+        <div class="col-md-6">
+            <xmp>
+                <!--无边框按钮-->
+                <button type="button" class="btn btn-borderless">工单导入</button>
+                <!--有边框按钮-->
+                <button type="button" class="btn btn-bordered">工单导入</button>
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <div class="text-center">
+                <label>无边框按钮：</label>
+                <button type="button" class="btn btn-borderless">工单导入</button>
+                <br/><br/>
+                <label>有边框按钮：</label>
+                <button type="button" class="btn btn-bordered">工单导入</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="box-one clearfix">
+        <h3>2.常用的按钮配套图标</h3>
+        <div class="col-md-6">
+            <xmp>
+                <!--保存/提交-->
+                <img src="../static/images/img/save.png">
+                <!--确定-->
+                <img src="../static/images/img/ok.png">
+                <!--工单提交/工单确认-->
+                <img src="../static/images/img/submit.png">
+                <!--删除-->
+                <img src="../static/images/img/sign_out2.png">
+                <!--新增-->
+                <img src="../static/images/img/add.png">
+                <!--返回-->
+                <img src="../static/images/img/back2.png">
+                <!--编辑/修改-->
+                <img src="../static/images/img/btn_modify.png">
+                <!--用户级-->
+                <img src="../static/images/img/icon_user_level.png">
+                <!--小区级-->
+                <img src="../static/images/img/icon_cell_level.png">
+                <!--导出-->
+                <img src="../static/images/img/export.png">
+                <!--导入-->
+                <img src="../static/images/img/import.png">
+                <!--地图定位-->
+                <img src="../static/images/img/location.png">
+                <!--查看详情/分析结果-->
+                <img src="../static/images/img/look_detail.png">
+                <!--刷新-->
+                <img src="../static/images/img/reset.png">
+                <!--驳回-->
+                <img src="../static/images/img/map-cancel.png">
+                <!--请选择-->
+                <img src="../static/images/img/select.png">
+                <!--上传图片-->
+                <img src="../static/images/img/up-img.png">
+                <!--等待-->
+                <img src="../static/images/img/funnel.png">
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <!--保存/提交-->
+            <button type="button" class="btn btn-borderless"><img src="../static/images/img/save.png"> 保存</button>
+            <!--确定-->
+            <button type="button" class="btn btn-borderless"><img src="../static/images/img/ok.png"> 确定</button>
+            <!--工单提交/工单确认-->
+            <button type="button" class="btn btn-borderless"><img src="../static/images/img/submit.png"> 工单提交</button>
+            <!--删除-->
+            <button type="button" class="btn btn-borderless"><img src="../static/images/img/sign_out2.png"> 删除</button>
+            <!--新增-->
+            <button type="button" class="btn btn-borderless"><img src="../static/images/img/add.png" style="width: 17px;"> 新增</button>
+            <!--返回-->
+            <button type="button" class="btn btn-borderless"><img src="../static/images/img/back2.png"> 返回</button>
+            <!--编辑/修改-->
+            <button type="button" class="btn btn-borderless"><img src="../static/images/img/btn_modify.png"> 编辑</button>
+            <!--用户级-->
+            <button type="button" class="btn btn-borderless"><img src="../static/images/img/icon_user_level.png" style="width: 18px;"> 用户级</button>
+            <!--小区级-->
+            <button type="button" class="btn btn-borderless"><img src="../static/images/img/icon_cell_level.png" style="width: 18px;"> 小区级</button>
+            <!--导出-->
+            <button type="button" class="btn btn-borderless"><img src="../static/images/img/export.png" style="width: 17px;"> 导出</button>
+            <!--导入-->
+            <button type="button" class="btn btn-borderless"><img src="../static/images/img/import.png" style="width: 17px;"> 导入</button>
+            <!--地图定位-->
+            <button type="button" class="btn btn-borderless"><img src="../static/images/img/location.png"> 定位</button>
+            <!--查看详情/分析结果-->
+            <button type="button" class="btn btn-borderless"><img src="../static/images/img/look_detail.png" style="width: 20px;"> 查看详情</button>
+            <!--刷新-->
+            <button type="button" class="btn btn-borderless"><img src="../static/images/img/reset.png"> 刷新</button>
+            <!--驳回-->
+            <button type="button" class="btn btn-borderless"><img src="../static/images/img/map-cancel.png"> 驳回</button>
+            <!--请选择-->
+            <button type="button" class="btn btn-borderless"><img src="../static/images/img/select.png"> 请选择</button>
+            <!--上传图片-->
+            <button type="button" class="btn btn-borderless"><img src="../static/images/img/up-img.png" style="width: 23px;"> 上传图片</button>
+            <!--等待-->
+            <button type="button" class="btn btn-borderless"><img src="../static/images/img/funnel.png" style="width: 18px;"> 等待</button>
+        </div>
+    </div>
+    <div class="box-one clearfix">
+        <h3>3.按钮居中<small>(.btn-save)</small></h3>
+        <p>常用在有表单操作的模块上</p>
+        <div class="col-md-6">
+            <xmp>
+                <div class="btn-save">
+                    <button type="button" class="btn btn-borderless"><img src="../static/images/img/save.png"> 保存</button>
+                    <button type="button" class="btn btn-borderless"><img src="../static/images/img/ok.png"> 确定</button>
+                </div>
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <div class="btn-save">
+                <button type="button" class="btn btn-borderless"><img src="../static/images/img/save.png"> 保存</button>
+                <button type="button" class="btn btn-borderless"><img src="../static/images/img/ok.png"> 确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--查询操作栏-->
+<div class="box" id="inquiry">
+    <h1>查询操作栏</h1>
+    <div class="box-one clearfix">
+        <h3>1.查询操作栏的布局结构<small>(.bar)</small></h3>
+        <p>(1) 操作栏用类名.bar<br/>(2) 居中的表单操作都放在类名为"form-inline和action-bar"的form标签里<br/>(3) 每个表单都需要单独放在.form-group的div里。</p>
+        <div class="col-md-6">
+            <xmp>
+
+                <div class="bar">
+
+                    <form class="form-inline action-bar">
+
+                        <div class="form-group">
+                            <label>地市</label>
+                            <select class="form-control">
+                                <option>云南</option>
+                                <option>昆明</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>日期</label>
+                            <div class="date" readonly="readonly">
+                                <img class="date-img" src="../static/images/img/date.png">
+                                <input class="layui-input" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input class="layui-input" />
+                        </div>
+
+                        <button type="button" class="btn btn-borderless search"><img src="../static/images/img/search.png"></button>
+
+                    </form>
+                </div>
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <div class="bar">
+                <form class="form-inline action-bar">
+                    <div class="form-group">
+                        <label>地市</label>
+                        <select class="form-control">
+                            <option>云南</option>
+                            <option>昆明</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>日期</label>
+                        <div class="date" readonly="readonly">
+                            <img class="date-img" src="../static/images/img/date.png">
+                            <input class="layui-input" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input class="layui-input" />
+                    </div>
+
+                    <button type="button" class="btn btn-borderless search"><img src="../static/images/img/search.png"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="box-one clearfix">
+        <h3>2.带“返回”的查询操作栏<small>(.back)</small></h3>
+
+        <div class="col-md-6">
+            <xmp>
+                <div class="bar">
+                    <div class="back">
+                        <a href="#">
+                            <img src="../static/images/img/back.png"> 返回
+                        </a>
+                    </div>
+                    <form class="form-inline action-bar">
+                        <div class="form-group">
+                            ...
+                        </div>
+                        <div class="form-group">
+                            ...
+                        </div>
+                        <button type="button" class="btn btn-borderless search"><img src="../static/images/img/search.png"></button>
+                    </form>
+
+                </div>
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <div class="bar">
+                <div class="back">
+                    <a href="#">
+                        <img src="../static/images/img/back.png"> 返回
+                    </a>
+                </div>
+                <form class="form-inline action-bar">
+                    <div class="form-group">
+                        <label>地市</label>
+                        <select class="form-control">
+                            <option>云南</option>
+                            <option>昆明</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>日期</label>
+                        <div class="date" readonly="readonly">
+                            <img class="date-img" src="../static/images/img/date.png">
+                            <input class="layui-input" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-borderless search"><img src="../static/images/img/search.png"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="box-one clearfix">
+        <h3>3.带按钮的查询操作栏</h3>
+        <p>(1) 给按钮加上“.pull-right”可以向右浮动。</p>
+        <p>(2) 排在搜索按钮后面的使用无边框按钮“.btn-borderless”，向右浮动的用有边框按钮“.bordered”</p>
+        <div class="col-md-6">
+            <xmp>
+                <div class="bar">
+                    <div class="back">
+                        <a href="#">
+                            <img src="../static/images/img/back.png"> 返回
+                        </a>
+                    </div>
+                    <form class="form-inline action-bar">
+                        <div class="form-group"> ...</div>
+                        <div class="form-group"> ...</div>
+                        <button type="button" class="btn btn-borderless search"><img src="../static/images/img/search.png"></button>
+                        <button type="button" class="btn btn-borderless">工单导入</button>
+
+                        <button type="button" class="btn btn-bordered pull-right">
+                            <img src="../static/images/img/export.png"> 导出当前
+                        </button>
+                        <button type="button" class="btn btn-bordered pull-right">
+                            <img src="../static/images/img/export.png"> 导出热点
+                        </button>
+                    </form>
+
+                </div>
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <div class="bar">
+                <div class="back">
+                    <a href="#">
+                        <img src="../static/images/img/back.png"> 返回
+                    </a>
+                </div>
+                <form class="form-inline action-bar">
+                    <div class="form-group">
+                        <label>地市</label>
+                        <select class="form-control">
+                            <option>云南</option>
+                            <option>昆明</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>日期</label>
+                        <div class="date" readonly="readonly">
+                            <img class="date-img" src="../static/images/img/date.png">
+                            <input class="layui-input" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-borderless search"><img src="../static/images/img/search.png"></button>
+                    <button type="button" class="btn btn-borderless">工单导入</button>
+
+                    <button type="button" class="btn btn-bordered pull-right">
+                        <img src="../static/images/img/export.png"> 导出当前
+                    </button>
+                    <button type="button" class="btn btn-bordered pull-right">
+                        <img src="../static/images/img/export.png"> 导出热点
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--标签页-->
+<div class="box" id="tab-page">
+    <h1>标签页</h1>
+    <div class="box-one clearfix">
+        <h3>1.标签页的布局结构</h3>
+        <p>在bootstrap的标签页控件基础上，覆盖了原来的样式。</p>
+        <div class="col-md-6">
+            <xmp>
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#home" data-toggle="tab">home</a>
+                    </li>
+                    <li><a href="#next" data-toggle="tab">next</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="home">
+                        home
+                    </div>
+                    <div class="tab-pane fade" id="next">
+                        next
+                    </div>
+                </div>
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#home" data-toggle="tab">home</a>
+                </li>
+                <li><a href="#next" data-toggle="tab">next</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="home">home</div>
+                <div class="tab-pane fade" id="next">next</div>
+            </div>
+        </div>
+    </div>
+    <div class="box-one clearfix">
+        <h3>2.居中的标签<small>(.nav-tabs-center)</small></h3>
+        <p>给ul标签加上“.nav-tabs-center”。</p>
+        <div class="col-md-6">
+            <xmp>
+                <ul class="nav nav-tabs nav-tabs-center">
+                    <li class="active">
+                        <a href="#home" data-toggle="tab">home</a>
+                    </li>
+                    <li><a href="#next" data-toggle="tab">next</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="home">
+                        home
+                    </div>
+                    <div class="tab-pane fade" id="next">
+                        next
+                    </div>
+                </div>
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <ul class="nav nav-tabs nav-tabs-center">
+                <li class="active">
+                    <a href="#home2" data-toggle="tab">home</a>
+                </li>
+                <li><a href="#next2" data-toggle="tab">next</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="home2">home</div>
+                <div class="tab-pane fade" id="next2">next</div>
+            </div>
+        </div>
+    </div>
+    <div class="box-one clearfix">
+        <h3>3.大标签页ul<small>(.big-nav-a)</small></h3>
+        <p>给li的a标签加上“.big-nav-a”。</p>
+        <div class="col-md-6">
+            <xmp>
+                <ul class="nav nav-tabs nav-tabs-center">
+                    <li class="active">
+                        <a class="big-nav-a" href="#home" data-toggle="tab">home</a>
+                    </li>
+                    <li><a class="big-nav-a" href="#next" data-toggle="tab">next</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="home">
+                        home
+                    </div>
+                    <div class="tab-pane fade" id="next">
+                        next
+                    </div>
+                </div>
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <ul class="nav nav-tabs nav-tabs-center">
+                <li class="active">
+                    <a class="big-nav-a" href="#home3" data-toggle="tab">home</a>
+                </li>
+                <li><a class="big-nav-a" href="#next3" data-toggle="tab">next</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="home3">home</div>
+                <div class="tab-pane fade" id="next3">next</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--突显数字-->
+<div class="box" id="feature">
+    <h1>突显数字的样式</h1>
+    <div class="box-one clearfix">
+        <h3>1.突显数字的布局结构</h3>
+        <div class="col-md-6">
+            <xmp>
+                <div class="big-data">
+                    <h5><img src="../static/images/img/wo_gross.png"> 工单总数</h5>
+                    <p class="prominent">
+                        <span>2</span>
+                        <span>2</span>
+                        <span>3</span>
+                    </p>
+                </div>
+
+                <div class="small-data">
+                    <h5><img src="../static/images/img/wo_gross.png"> 工单总数</h5>
+                    <p class="prominent">
+                        <span>2</span>
+                        <span>2</span>
+                        <span>3</span>
+                    </p>
+                </div>
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <div class="big-data">
+                <h5><img src="../static/images/img/wo_gross.png"> 工单总数</h5>
+                <p class="prominent">
+                    <span>2</span>
+                    <span>2</span>
+                    <span>3</span>
+                </p>
+            </div>
+            <div class="small-data">
+                <h5><img src="../static/images/img/wo_gross.png"> 工单总数</h5>
+                <p class="prominent">
+                    <span>2</span>
+                    <span>2</span>
+                    <span>3</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="box-one clearfix">
+        <div class="clearfix">
+            <h3>2.自适应平均排列<small>(.flex-center)</small></h3>
+            <h4>2.1.当一行有多个突显数字时，给他们外层加上类名“.flex-center”的div.</h4>
+            <div class="col-md-6">
+                <xmp>
+                    <div class="flex-center">
+                        <div class="big-data">
+                            ...
+                        </div>
+                        <div class="big-data">
+                            ...
+                        </div>
+                        <div class="big-data">
+                            ...
+                        </div>
+                        <div class="big-data">
+                            ...
+                        </div>
+                        <div class="big-data">
+                            ...
+                        </div>
+                    </div>
+                </xmp>
+            </div>
+            <div class="col-md-6">
+                <div class="flex-center">
+                    <div class="big-data">
+                        <h5><img src="../static/images/img/wo_gross.png"> 工单总数</h5>
+                        <p class="prominent">
+                            <span>2</span>
+                            <span>2</span>
+                            <span>3</span>
+                        </p>
+                    </div>
+                    <div class="big-data">
+                        <h5><img src="../static/images/img/wo_gross.png"> 工单总数</h5>
+                        <p class="prominent">
+                            <span>2</span>
+                            <span>2</span>
+                            <span>3</span>
+                        </p>
+                    </div>
+                    <div class="big-data">
+                        <h5><img src="../static/images/img/wo_gross.png"> 工单总数</h5>
+                        <p class="prominent">
+                            <span>2</span>
+                            <span>2</span>
+                            <span>3</span>
+                        </p>
+                    </div>
+                    <div class="big-data">
+                        <h5><img src="../static/images/img/wo_gross.png"> 工单总数</h5>
+                        <p class="prominent">
+                            <span>2</span>
+                            <span>2</span>
+                            <span>3</span>
+                        </p>
+                    </div>
+                    <div class="big-data">
+                        <h5><img src="../static/images/img/wo_gross.png"> 工单总数</h5>
+                        <p class="prominent">
+                            <span>2</span>
+                            <span>2</span>
+                            <span>3</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix">
+            <h4>2.2.配合DIV背景样式来使用的效果</h4>
+            <div class="col-md-6">
+                <xmp>
+                    <div class="glow-box2 clearfix">
+                        <img class="dv-icon-left" src="../static/images/img/dv-icon-left.png">
+                        <img class="dv-icon-right" src="../static/images/img/dv-icon-right.png">
+                        <div class="glow-title-center">
+                            <h4>新增工单</h4>
+                        </div>
+                        <div class="glow-content">
+                            <!--这里放内容-->
+                            <div class="flex-center">
+                                <div class="big-data">
+                                    ...
+                                </div>
+                                <div class="big-data">
+                                    ...
+                                </div>
+                                <div class="big-data">
+                                    ...
+                                </div>
+                                <div class="big-data">
+                                    ...
+                                </div>
+                                <div class="big-data">
+                                    ...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xmp>
+            </div>
+            <div class="col-md-6">
+                <div class="glow-box2 clearfix">
+                    <img class="dv-icon-left" src="../static/images/img/dv-icon-left.png">
+                    <img class="dv-icon-right" src="../static/images/img/dv-icon-right.png">
+                    <div class="glow-title-center">
+                        <h4>新增工单</h4>
+                    </div>
+                    <div class="glow-content">
+                        <!--这里放内容-->
+                        <div class="flex-center">
+                            <div class="big-data">
+                                <h5><img src="../static/images/img/wo_gross.png"> 工单总数</h5>
+                                <p class="prominent">
+                                    <span>2</span>
+                                    <span>2</span>
+                                    <span>3</span>
+                                </p>
+                            </div>
+                            <div class="big-data">
+                                <h5><img src="../static/images/img/wo_gross.png"> 工单总数</h5>
+                                <p class="prominent">
+                                    <span>2</span>
+                                    <span>2</span>
+                                    <span>3</span>
+                                </p>
+                            </div>
+                            <div class="big-data">
+                                <h5><img src="../static/images/img/wo_gross.png"> 工单总数</h5>
+                                <p class="prominent">
+                                    <span>2</span>
+                                    <span>2</span>
+                                    <span>3</span>
+                                </p>
+                            </div>
+                            <div class="big-data">
+                                <h5><img src="../static/images/img/wo_gross.png"> 工单总数</h5>
+                                <p class="prominent">
+                                    <span>2</span>
+                                    <span>2</span>
+                                    <span>3</span>
+                                </p>
+                            </div>
+                            <div class="big-data">
+                                <h5><img src="../static/images/img/wo_gross.png"> 工单总数</h5>
+                                <p class="prominent">
+                                    <span>2</span>
+                                    <span>2</span>
+                                    <span>3</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--进度条-->
+<div class="box" id="progress-bar">
+    <h1>进度条</h1>
+    <div class="box-one clearfix">
+        <h4>一对 “ li ” 标签=一个圆形节点，需要几个节点就加几对 “ li ” 标签。</h4>
+        <div class="col-md-6">
+            <xmp>
+                <div class="progress-box">
+                    <div class="layui-progress">
+                        <div class="node-note">
+                            <div>
+                                <span class="green"></span>已完成
+                            </div>
+                            <div>
+                                <span class="red"></span>待处理
+                            </div>
+                            <div>
+                                <span class="skip"></span>跳过
+                            </div>
+                        </div>
+                        <ul class="progress-node">
+                            <li>
+                                <a class="node-current" href="#"><span class="green">1</span></a>
+                                <div style="display: none"><p>派单时间：2018-07-09 00:00:00</p></div>
+                                <div class="node-info"><p>工单派单</p></div>
+                            </li>
+                            <li>
+                                <a class="node-current " href="#"><span class="green">2</span></a>
+                                <div style="display: none">
+                                    <p>处理人员：admin</p>
+                                    <p>处理部门：待定</p>
+                                    <p>处理时间：2018-07-09 02:00:00</p>
+                                    <p>处理耗时：2小时0分钟</p>
+                                </div>
+                                <div class="node-info">
+                                    <p>工单预处理</p>
+                                    <p></p>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="node-current" href="#"><span class="green">3</span></a>
+                                <div style="display: none">
+                                    <p>处理人员：周永艳</p>
+                                    <p>处理部门：云南</p>
+                                    <p>处理时间：2018-09-03 22:39:06</p>
+                                    <p>处理耗时：57天20时14分</p>
+                                </div>
+                                <div class="node-info">
+                                    <p>工单预分析</p>
+                                    <p></p>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="node-current border-green" href="#"><span class="red">4</span></a>
+                                <div style="display: none">
+                                    <p>处理人员：官渡</p>
+                                    <p>处理部门：官渡</p>
+                                    <p>接单时间：2018-09-04 22:13:09</p>
+                                </div>
+                                <div class="node-info">
+                                    <p>区县解决</p>
+                                    <p style="margin-top: 5px;"></p>
+                                    <p>2018-07-08 02:59:11</p>
+                                    <p></p>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="node-current " href="#"><span class="red">5</span></a>
+                                <div style="display: none">
+                                    <p>处理人员：范少慧</p>
+                                    <p>处理部门：昆明</p>
+                                    <p>处理时间：2018-10-12 17:35:21</p>
+                                    <p>处理耗时：36天23时28分</p>
+                                </div>
+                                <div class="node-info">
+                                    <p>二级质检</p>
+                                    <p></p>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="node-current" href="#"><span class="red">6</span></a>
+                                <div style="display: none">
+                                    <p>处理人员：姚明</p>
+                                    <p>处理部门：云南</p>
+                                    <p>处理时间：2018-09-04 19:26:07</p>
+                                    <p>处理耗时：19小时26分钟</p>
+                                </div>
+                                <div class="node-info">
+                                    <p>一级质检</p>
+                                    <p></p>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="node-current" href="#"><span class="red">7</span></a>
+                                <div style="display: none">83247</div>
+                                <div class="node-info"><p>结单</p></div>
+                            </li>
+                        </ul>
+                        <div class="layui-progress-bar" lay-percent="45%" style="width: 42%;"></div>
+                    </div>
+                </div>
+
+            </xmp>
+            <p>js调用</p>
+            <xmp>
+                //控制流程图悬浮
+                $(".progress-node").on('mouseenter','.node-current',function () {
+                var stateName=$(this).next().next().children().eq(0).text();
+                if($(this).children().attr("class")=='green' || stateVule==stateName){
+                if(stateName=='结单'){return;}
+                flowtip($(this).next().html(),$(this))
+                }else if($(this).children().attr("class")=='skip'){
+                flowtip("该工单不经过该阶段",$(this))
+                }
+                });
+                $(".progress-node").on('mouseleave','.node-current',function () {
+                loadStop();
+                });
+
+
+                function flowtip(str,sid) {
+                layer.tips(str,sid, {
+                tips: 1,
+                time: 10000
+                });
+                }
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <div class="progress-box">
+                <div class="layui-progress">
+                    <div class="node-note">
+                        <div>
+                            <span class="green"></span>已完成
+                        </div>
+                        <div>
+                            <span class="red"></span>待处理
+                        </div>
+                        <div>
+                            <span class="skip"></span>跳过
+                        </div>
+                    </div>
+                    <ul class="progress-node">
+                        <li>
+                            <a class="node-current" href="#"><span class="green">1</span></a>
+                            <div style="display: none"><p>派单时间：2018-07-09 00:00:00</p></div>
+                            <div class="node-info"><p>工单派单</p></div>
+                        </li>
+                        <li>
+                            <a class="node-current " href="#"><span class="green">2</span></a>
+                            <div style="display: none">
+                                <p>处理人员：admin</p>
+                                <p>处理部门：待定</p>
+                                <p>处理时间：2018-07-09 02:00:00</p>
+                                <p>处理耗时：2小时0分钟</p>
+                            </div>
+                            <div class="node-info">
+                                <p>工单预处理</p>
+                                <p></p>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="node-current" href="#"><span class="green">3</span></a>
+                            <div style="display: none">
+                                <p>处理人员：周永艳</p>
+                                <p>处理部门：云南</p>
+                                <p>处理时间：2018-09-03 22:39:06</p>
+                                <p>处理耗时：57天20时14分</p>
+                            </div>
+                            <div class="node-info">
+                                <p>工单预分析</p>
+                                <p></p>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="node-current border-green" href="#"><span class="red">4</span></a>
+                            <div style="display: none">
+                                <p>处理人员：官渡</p>
+                                <p>处理部门：官渡</p>
+                                <p>接单时间：2018-09-04 22:13:09</p>
+                            </div>
+                            <div class="node-info">
+                                <p>区县解决</p>
+                                <p style="margin-top: 5px;"></p>
+                                <p>2018-07-08 02:59:11</p>
+                                <p></p>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="node-current " href="#"><span class="red">5</span></a>
+                            <div style="display: none">
+                                <p>处理人员：范少慧</p>
+                                <p>处理部门：昆明</p>
+                                <p>处理时间：2018-10-12 17:35:21</p>
+                                <p>处理耗时：36天23时28分</p>
+                            </div>
+                            <div class="node-info">
+                                <p>二级质检</p>
+                                <p></p>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="node-current" href="#"><span class="red">6</span></a>
+                            <div style="display: none">
+                                <p>处理人员：姚明</p>
+                                <p>处理部门：云南</p>
+                                <p>处理时间：2018-09-04 19:26:07</p>
+                                <p>处理耗时：19小时26分钟</p>
+                            </div>
+                            <div class="node-info">
+                                <p>一级质检</p>
+                                <p></p>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="node-current" href="#"><span class="red">7</span></a>
+                            <div style="display: none">83247</div>
+                            <div class="node-info"><p>结单</p></div>
+                        </li>
+                    </ul>
+                    <div class="layui-progress-bar" lay-percent="45%" style="width: 42%;"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--常用图表配色-->
+<div class="box" id="chart">
+    <h1>常用图表配色</h1>
+    <p>调用js<xmp><script src="/js/common/echarts.js"></script></xmp></p>
+    <div class="box-one clearfix">
+        <h3>1.单指标柱状图</h3>
+        <div class="col-md-6">
+            <xmp>
+                <div id="rightTopChart" style="width: 100%;height: 300px;margin-top: 15px;"></div>
+            </xmp>
+            <p>js调用</p>
+            <xmp>
+                $(function () {
+                CharSetHttpQualit();
+                })
+
+                function CharSetHttpQualit() {
+                var myChart1 = echarts.init(document.getElementById('rightTopChart1'));
+                option1 = {
+                title: {text: '云南省各地市重复用户分布', textStyle: {color: '#ffffff', fontSize: 18}, x: 'center'},
+                tooltip: {trigger: 'axis'},
+                //           legend: {data:['低覆盖满意度采样'], textStyle:{ color:'#000',fontSize:12},y:'bottom'},
+                //         label: {normal: {show: true, position: 'top', textStyle: {color: '#cdcdcd'}}},
+                grid: {left: '2%', right: '2%', bottom: '5%', top: '18%', containLabel: true},
+                xAxis: {
+                type: 'category', axisLine: {lineStyle: {color: '#28446a', width: 1}},
+                data: ['昆明', '昭通', '曲靖', '怒江', '大理', '普洱', '丽江', '临沧'],
+                axisLabel: {
+                show: true, textStyle: {color: '#5393a2'}, interval: 0,
+                }
+                },
+                yAxis: [{
+                type: 'value', axisLabel: {show: true, textStyle: {color: '#5393a2'}},
+                axisLine: {lineStyle: {color: '#28446a', width: 1}},
+                splitLine: {
+                lineStyle: {
+                color: '#26456a'
+                }
+                }
+                }],
+                series: [{
+                name: '质量',
+                data: [70, 48, 45, 45, 60, 60, 30, 40, 50, 60, 55, 22, 80, 90, 95],
+                type: 'bar', itemStyle: {
+                normal: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                offset: 0,
+                color: '#06bde6'
+                }, {
+                offset: 1,
+                color: '#3976cc'
+                }])
+                }
+                }, barWidth: 25
+                }
+                ],
+                };
+                myChart1.setOption(option1);
+                }
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <div id="rightTopChart1" style="width: 100%;height: 300px;margin-top: 15px;"></div>
+        </div>
+    </div>
+    <div class="box-one clearfix">
+        <h3>2.多指标柱状图</h3>
+        <div class="col-md-6">
+            <xmp>
+                <div id="rightTopChart2" style="width: 100%;height: 300px;margin-top: 15px;"></div>
+            </xmp>
+            <p>js调用</p>
+            <xmp>
+
+                $(function () {
+                CharSetHttpQualit2();
+                })
+
+                function CharSetHttpQualit2() {
+                var myChart2 = echarts.init(document.getElementById('rightTopChart2'));
+                option2 = {
+                title: {text: '云南省各地市重复用户分布', textStyle: {color: '#ffffff', fontSize: 18}, x: 'center'},
+                tooltip: {trigger: 'axis'},
+                //           legend: {data:['低覆盖满意度采样'], textStyle:{ color:'#000',fontSize:12},y:'bottom'},
+                //         label: {normal: {show: true, position: 'top', textStyle: {color: '#cdcdcd'}}},
+                grid: {left: '2%', right: '2%', bottom: '5%', top: '18%', containLabel: true},
+                xAxis: {
+                type: 'category', axisLine: {lineStyle: {color: '#28446a', width: 1}},
+                data: ['规划组', '片区组', '维护室'],
+                axisLabel: {
+                show: true, textStyle: {color: '#5393a2'}, interval: 0,
+                }
+                },
+                yAxis: [{
+                type: 'value', axisLabel: {show: true, textStyle: {color: '#5393a2'}},
+                axisLine: {lineStyle: {color: '#28446a', width: 1}},
+                splitLine: {
+                lineStyle: {
+                color: '#26456a'
+                }
+                }
+                }],
+                series: [{
+                name: '蓝色渐变',
+                type:'bar',
+                barWidth : 20,
+                itemStyle: {
+                normal: {
+                color: new echarts.graphic.LinearGradient(
+                0, 0, 0, 1,
+                [
+                {offset: 0, color: 'rgba(97,182,229,1)'},
+                {offset: 1, color: 'rgba(97,182,229,0.5)'}
+                ]
+                )
+                }
+                },
+                data:[80, 68, 75, 35]
+                },
+                {
+                name:'绿色渐变',
+                type:'bar',
+                barWidth : 20,
+                itemStyle: {
+                normal: {
+                color: new echarts.graphic.LinearGradient(
+                0, 0, 0, 1,
+                [
+                {offset: 0, color: 'rgba(160,209,23,1)'},
+                {offset: 1, color: 'rgba(160,209,23,0.5)'}
+                ]
+                )
+                }
+                },
+                data:[76, 44, 48, 39]
+                },
+                {
+                name: '粉色渐变',
+                type:'bar',
+                barWidth : 20,
+                itemStyle: {
+                normal: {
+                color: new echarts.graphic.LinearGradient(
+                0, 0, 0, 1,
+                [
+                {offset: 0, color: 'rgba(205,151,233,1)'},
+                {offset: 1, color: 'rgba(205,151,233,0.5)'}
+                ]
+                )
+                }
+                },
+                data:[90, 88, 33, 40]
+                },
+                {
+                name: '橙色渐变',
+                type:'bar',
+                barWidth : 20,
+                itemStyle: {
+                normal: {
+                color: new echarts.graphic.LinearGradient(
+                0, 0, 0, 1,
+                [
+                {offset: 0, color: 'rgba(255,142,0,1)'},
+                {offset: 1, color: 'rgba(255,142,0,0.5)'}
+                ]
+                )
+                }
+                },
+                data:[70, 48, 45, 45]
+                }
+                ]
+                };
+                myChart2.setOption(option2);
+                }
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <div id="rightTopChart2" style="width: 100%;height: 300px;margin-top: 15px;"></div>
+        </div>
+    </div>
+    <div class="box-one clearfix">
+        <h3>3.折线图</h3>
+        <p>四种颜色可选：<br/>1.蓝色：#61b6e5（RGB：97,182,229）<br/>2.粉色：#cd97e9（RGB：205,151,233）<br/>3.绿色：#a0d117（RGB：160,209,23）<br/>4.橙色：#ff8e00（RGB：255,142,0）</p>
+        <div class="col-md-6">
+            <xmp>
+                <div id="page2LeftTopChart1" style="width: 100%;height: 300px;margin-top: 15px;"></div>
+            </xmp>
+            <p>js调用</p>
+            <xmp>
+                $(function () {
+                CharSetHttpQualit3();
+                })
+
+                function CharSetHttpQualit3() {
+                var myChart3 = echarts.init(document.getElementById('page2LeftTopChart1'));
+                option3 = {
+                title: {text: '云南省各地市重复用户分布', textStyle: {color: '#ffffff', fontSize: 18}, x: 'center'},
+                tooltip: {trigger: 'axis'},
+                //           legend: {data:['低覆盖满意度采样'], textStyle:{ color:'#000',fontSize:12},y:'bottom'},
+                //         label: {normal: {show: true, position: 'top', textStyle: {color: '#cdcdcd'}}},
+                grid: {left: '2%', right: '2%', bottom: '5%', top: '18%', containLabel: true},
+                xAxis: {
+                type: 'category', axisLine: {lineStyle: {color: '#28446a', width: 1}},
+                data: ['昆明', '昭通', '曲靖', '怒江', '大理', '普洱', '丽江', '临沧'],
+                axisLabel: {
+                show: true, textStyle: {color: '#5393a2'}, interval: 0,
+                }
+                },
+                yAxis: [{
+                type: 'value', axisLabel: {show: true, textStyle: {color: '#5393a2'}},
+                axisLine: {lineStyle: {color: '#28446a', width: 1}},
+                splitLine: {
+                lineStyle: {
+                color: '#26456a'
+                }
+                }
+                }],
+                series: [
+                {
+                name: '蓝色',
+                type: 'line',
+                data: [36,42,44,78,55,65,41,90],
+                itemStyle: {normal: {lineStyle: {width: 3, color: '#61b6e5'}, color: '#61b6e5'}},
+                areaStyle: {normal: {color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                offset: 0, color: 'rgba(97,182,229,0.5)'}, {
+                offset: 1, color: 'rgba(97,182,229,0)'}])}}
+                }]
+                };
+                myChart3.setOption(option3);
+                }
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <div id="page2LeftTopChart1" style="width: 100%;height: 300px;margin-top: 15px;"></div>
+            <div id="page2LeftTopChart2" style="width: 100%;height: 300px;margin-top: 15px;"></div>
+            <div id="page2LeftTopChart3" style="width: 100%;height: 300px;margin-top: 15px;"></div>
+            <div id="page2LeftTopChart4" style="width: 100%;height: 300px;margin-top: 15px;"></div>
+        </div>
+    </div>
+</div>
+<!--自适应排列表单和内容-->
+<div class="box" id="div-flex">
+    <h1>自适应排列表单和内容</h1>
+    <div class="box-one clearfix">
+        <h3>1.布局结构</h3>
+        <p>(1) 最外层的div需要加类名“.form-flex”</p>
+        <p>(2) “.layui-form-item”代表一行。“.layui-inline”代表一行里的每列。</p>
+        <div class="col-md-6">
+            <xmp>
+                <div class="form-flex">
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">用户号码：</label>
+                            <div class="layui-input-inline">123123123123</div>
+                        </div>
+
+                        <div class="layui-inline">
+                            <label class="layui-form-label">用户号码：</label>
+                            <div class="layui-input-inline">123123123123</div>
+                        </div>
+                    </div>
+                </div>
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <div class="form-flex">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">用户号码：</label>
+                        <div class="layui-input-inline">123123123123</div>
+                    </div>
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">用户号码：</label>
+                        <div class="layui-input-inline">123123123123</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-one clearfix">
+        <h3>2.自适应排列</h3>
+        <p>以一行2列为例：在“.layui-inline”的后面加上“.layui-inline-2”,即可平均排列。</p>
+        <div class="col-md-6">
+            <xmp>
+                <div class="form-flex">
+                    <div class="layui-form-item">
+                        <div class="layui-inline layui-inline-2">
+                            <label class="layui-form-label">用户号码：</label>
+                            <div class="layui-input-inline">123123123123</div>
+                        </div>
+
+                        <div class="layui-inline layui-inline-2">
+                            <label class="layui-form-label">用户号码：</label>
+                            <div class="layui-input-inline">123123123123</div>
+                        </div>
+                    </div>
+                </div>
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <div class="form-flex">
+                <div class="layui-form-item">
+                    <div class="layui-inline layui-inline-2">
+                        <label class="layui-form-label">用户号码：</label>
+                        <div class="layui-input-inline">123123123123</div>
+                    </div>
+
+                    <div class="layui-inline layui-inline-2">
+                        <label class="layui-form-label">用户号码：</label>
+                        <div class="layui-input-inline">123123123123</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-one clearfix">
+        <h3>3.自适应排列（配合DIV背景样式使用）</h3>
+        <p>(1) 一行1列：用“.layui-inline-1”,表示每列宽度100%。</p>
+        <p>(2) 一行2列：用“.layui-inline-2”,表示每列宽度50%。</p>
+        <p>(3) 一行3列：用“.layui-inline-3”,表示每列宽度33%。</p>
+        <p>(4) 一行4列：用“.layui-inline-4”,表示每列宽度25%。</p>
+        <div class="col-md-6">
+            <xmp>
+                <div class="glow-box2 clearfix">
+                    <img class="dv-icon-right" src="../static/images/img/dv-icon-right.png">
+                    <div class="glow-title">
+                        <span class="blue"></span>
+                        <h4>新增工单</h4>
+                    </div>
+                    <div class="glow-content">
+                        <div class="form-flex">
+                            <div class="layui-form-item">
+                                <div class="layui-inline layui-inline-1">
+                                    <label class="layui-form-label">我是一列：</label>
+                                    <div class="layui-input-inline">.layui-inline-1</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline layui-inline-2">
+                                    <label class="layui-form-label">我是两列：</label>
+                                    <div class="layui-input-inline">.layui-inline-2</div>
+                                </div>
+
+                                <div class="layui-inline layui-inline-2">
+                                    <label class="layui-form-label">我是两列：</label>
+                                    <div class="layui-input-inline">.layui-inline-2</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline layui-inline-3">
+                                    <label class="layui-form-label">我是三列：</label>
+                                    <div class="layui-input-inline">.layui-inline-3</div>
+                                </div>
+                                <div class="layui-inline layui-inline-3">
+                                    <label class="layui-form-label">我是三列：</label>
+                                    <div class="layui-input-inline">.layui-inline-3</div>
+                                </div>
+                                <div class="layui-inline layui-inline-3">
+                                    <label class="layui-form-label">我是三列：</label>
+                                    <div class="layui-input-inline">.layui-inline-3</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline layui-inline-4">
+                                    <label class="layui-form-label">我是四列：</label>
+                                    <div class="layui-input-inline">.layui-inline-4</div>
+                                </div>
+                                <div class="layui-inline layui-inline-4">
+                                    <label class="layui-form-label">我是四列：</label>
+                                    <div class="layui-input-inline">.layui-inline-4</div>
+                                </div>
+                                <div class="layui-inline layui-inline-4">
+                                    <label class="layui-form-label">我是四列：</label>
+                                    <div class="layui-input-inline">.layui-inline-4</div>
+                                </div>
+                                <div class="layui-inline layui-inline-4">
+                                    <label class="layui-form-label">我是四列：</label>
+                                    <div class="layui-input-inline">.layui-inline-4</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <div class="glow-box2 clearfix">
+                <img class="dv-icon-right" src="../static/images/img/dv-icon-right.png">
+                <div class="glow-title">
+                    <span class="blue"></span>
+                    <h4>新增工单</h4>
+                </div>
+                <div class="glow-content">
+                    <div class="form-flex">
+                        <div class="layui-form-item">
+                            <div class="layui-inline layui-inline-1">
+                                <label class="layui-form-label">我是一列：</label>
+                                <div class="layui-input-inline">.layui-inline-1</div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-inline layui-inline-2">
+                                <label class="layui-form-label">我是两列：</label>
+                                <div class="layui-input-inline">.layui-inline-2</div>
+                            </div>
+
+                            <div class="layui-inline layui-inline-2">
+                                <label class="layui-form-label">我是两列：</label>
+                                <div class="layui-input-inline">.layui-inline-2</div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-inline layui-inline-3">
+                                <label class="layui-form-label">我是三列：</label>
+                                <div class="layui-input-inline">.layui-inline-3</div>
+                            </div>
+                            <div class="layui-inline layui-inline-3">
+                                <label class="layui-form-label">我是三列：</label>
+                                <div class="layui-input-inline">.layui-inline-3</div>
+                            </div>
+                            <div class="layui-inline layui-inline-3">
+                                <label class="layui-form-label">我是三列：</label>
+                                <div class="layui-input-inline">.layui-inline-3</div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-inline layui-inline-4">
+                                <label class="layui-form-label">我是四列：</label>
+                                <div class="layui-input-inline">.layui-inline-4</div>
+                            </div>
+                            <div class="layui-inline layui-inline-4">
+                                <label class="layui-form-label">我是四列：</label>
+                                <div class="layui-input-inline">.layui-inline-4</div>
+                            </div>
+                            <div class="layui-inline layui-inline-4">
+                                <label class="layui-form-label">我是四列：</label>
+                                <div class="layui-input-inline">.layui-inline-4</div>
+                            </div>
+                            <div class="layui-inline layui-inline-4">
+                                <label class="layui-form-label">我是四列：</label>
+                                <div class="layui-input-inline">.layui-inline-4</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-one clearfix">
+        <h3>4.小分辨率/内容太长被挤压换行的问题</h3>
+        <p>方法一：在“.layui-form-item”后面加上“.item-wrap”。强制列里的内容不换行，内容超出DIV背景样式后，列自动换行。</p>
+        <div class="col-md-6">
+            <xmp>
+                <div class="form-flex">
+                    <div class="layui-form-item item-wrap">
+                        <div class="layui-inline layui-inline-4">
+                            <label class="layui-form-label">我是四列：</label>
+                            <div class="layui-input-inline">.layui-inline-4</div>
+                        </div>
+                        <div class="layui-inline layui-inline-4">
+                            <label class="layui-form-label">我是四列：</label>
+                            <div class="layui-input-inline">.layui-inline-4</div>
+                        </div>
+                        <div class="layui-inline layui-inline-4">
+                            <label class="layui-form-label">我是四列：</label>
+                            <div class="layui-input-inline">.layui-inline-4</div>
+                        </div>
+                        <div class="layui-inline layui-inline-4">
+                            <label class="layui-form-label">我是四列：</label>
+                            <div class="layui-input-inline">.layui-inline-4</div>
+                        </div>
+                    </div>
+                </div>
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <div class="col-md-6">
+                <div class="glow-box2 clearfix">
+                    <img class="dv-icon-right" src="../static/images/img/dv-icon-right.png">
+                    <div class="glow-title">
+                        <span class="blue"></span>
+                        <h4>加上item-wrap后效果</h4>
+                    </div>
+                    <div class="glow-content">
+                        <div class="form-flex">
+                            <div class="layui-form-item">
+                                <div class="layui-inline layui-inline-1">
+                                    <label class="layui-form-label">我是一列：</label>
+                                    <div class="layui-input-inline">.layui-inline-1</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item item-wrap">
+                                <div class="layui-inline layui-inline-2">
+                                    <label class="layui-form-label">我是两列：</label>
+                                    <div class="layui-input-inline">.layui-inline-2</div>
+                                </div>
+
+                                <div class="layui-inline layui-inline-2">
+                                    <label class="layui-form-label">我是两列：</label>
+                                    <div class="layui-input-inline">.layui-inline-2</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item item-wrap">
+                                <div class="layui-inline layui-inline-3">
+                                    <label class="layui-form-label">我是三列：</label>
+                                    <div class="layui-input-inline">.layui-inline-3</div>
+                                </div>
+                                <div class="layui-inline layui-inline-3">
+                                    <label class="layui-form-label">我是三列：</label>
+                                    <div class="layui-input-inline">.layui-inline-3</div>
+                                </div>
+                                <div class="layui-inline layui-inline-3">
+                                    <label class="layui-form-label">我是三列：</label>
+                                    <div class="layui-input-inline">.layui-inline-3</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item item-wrap">
+                                <div class="layui-inline layui-inline-4">
+                                    <label class="layui-form-label">我是四列：</label>
+                                    <div class="layui-input-inline">.layui-inline-4</div>
+                                </div>
+                                <div class="layui-inline layui-inline-4">
+                                    <label class="layui-form-label">我是四列：</label>
+                                    <div class="layui-input-inline">.layui-inline-4</div>
+                                </div>
+                                <div class="layui-inline layui-inline-4">
+                                    <label class="layui-form-label">我是四列：</label>
+                                    <div class="layui-input-inline">.layui-inline-4</div>
+                                </div>
+                                <div class="layui-inline layui-inline-4">
+                                    <label class="layui-form-label">我是四列：</label>
+                                    <div class="layui-input-inline">.layui-inline-4</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="glow-box2 clearfix">
+                    <img class="dv-icon-right" src="../static/images/img/dv-icon-right.png">
+                    <div class="glow-title">
+                        <span class="blue"></span>
+                        <h4>没有加item-wrap的效果</h4>
+                    </div>
+                    <div class="glow-content">
+                        <div class="form-flex">
+                            <div class="layui-form-item">
+                                <div class="layui-inline layui-inline-1">
+                                    <label class="layui-form-label">我是一列：</label>
+                                    <div class="layui-input-inline">.layui-inline-1</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline layui-inline-2">
+                                    <label class="layui-form-label">我是两列：</label>
+                                    <div class="layui-input-inline">.layui-inline-2</div>
+                                </div>
+
+                                <div class="layui-inline layui-inline-2">
+                                    <label class="layui-form-label">我是两列：</label>
+                                    <div class="layui-input-inline">.layui-inline-2</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline layui-inline-3">
+                                    <label class="layui-form-label">我是三列：</label>
+                                    <div class="layui-input-inline">.layui-inline-3</div>
+                                </div>
+                                <div class="layui-inline layui-inline-3">
+                                    <label class="layui-form-label">我是三列：</label>
+                                    <div class="layui-input-inline">.layui-inline-3</div>
+                                </div>
+                                <div class="layui-inline layui-inline-3">
+                                    <label class="layui-form-label">我是三列：</label>
+                                    <div class="layui-input-inline">.layui-inline-3</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline layui-inline-4">
+                                    <label class="layui-form-label">我是四列：</label>
+                                    <div class="layui-input-inline">.layui-inline-4</div>
+                                </div>
+                                <div class="layui-inline layui-inline-4">
+                                    <label class="layui-form-label">我是四列：</label>
+                                    <div class="layui-input-inline">.layui-inline-4</div>
+                                </div>
+                                <div class="layui-inline layui-inline-4">
+                                    <label class="layui-form-label">我是四列：</label>
+                                    <div class="layui-input-inline">.layui-inline-4</div>
+                                </div>
+                                <div class="layui-inline layui-inline-4">
+                                    <label class="layui-form-label">我是四列：</label>
+                                    <div class="layui-input-inline">.layui-inline-4</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="box-one clearfix">
+        <!--<h3>4.小分辨率/内容太长被挤压换行的问题</h3>-->
+        <p>方法二：如果只需要某个".layui-form-label"或者“.layui-input-inline”里的内容不换行，则单独在它后面加上“.flex-nowrap”即可</p>
+        <p>注意：“.item-wrap”就不需要加了。</p>
+        <div class="col-md-6">
+            <xmp>
+                <div class="form-flex">
+                    <div class="layui-form-item">
+                        <div class="layui-inline layui-inline-2">
+                            <label class="layui-form-label flex-nowrap">我是两列：</label>
+                            <div class="layui-input-inline">.layui-inline-2.layui-inline-2</div>
+                        </div>
+                        <div class="layui-inline layui-inline-2">
+                            <label class="layui-form-label flex-nowrap">我是两列：</label>
+                            <div class="layui-input-inline">.layui-inline-2.layui-inline-2</div>
+                        </div>
+                    </div>
+                </div>
+            </xmp>
+        </div>
+        <div class="col-md-6">
+            <div class="col-md-6">
+                <div class="glow-box2 clearfix">
+                    <img class="dv-icon-right" src="../static/images/img/dv-icon-right.png">
+                    <div class="glow-title">
+                        <span class="blue"></span>
+                        <h4>只有label加上flex-nowrap的效果</h4>
+                    </div>
+                    <div class="glow-content">
+                        <div class="form-flex">
+                            <div class="layui-form-item">
+                                <div class="layui-inline layui-inline-2">
+                                    <label class="layui-form-label flex-nowrap">我是两列：</label>
+                                    <div class="layui-input-inline">.layui-inline-2.layui-inline-2</div>
+                                </div>
+                                <div class="layui-inline layui-inline-2">
+                                    <label class="layui-form-label flex-nowrap">我是两列：</label>
+                                    <div class="layui-input-inline">.layui-inline-2.layui-inline-2</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="glow-box2 clearfix">
+                    <img class="dv-icon-right" src="../static/images/img/dv-icon-right.png">
+                    <div class="glow-title">
+                        <span class="blue"></span>
+                        <h4>只有内容加上flex-nowrap的效果</h4>
+                    </div>
+                    <div class="glow-content">
+                        <div class="form-flex">
+                            <div class="layui-form-item">
+                                <div class="layui-inline layui-inline-2">
+                                    <label class="layui-form-label">我是两列：</label>
+                                    <div class="layui-input-inline flex-nowrap">.layui-inline-2.layui-inline-2</div>
+                                </div>
+                                <div class="layui-inline layui-inline-2">
+                                    <label class="layui-form-label">我是两列：</label>
+                                    <div class="layui-input-inline flex-nowrap">.layui-inline-2.layui-inline-2</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="glow-box2 clearfix">
+                    <img class="dv-icon-right" src="../static/images/img/dv-icon-right.png">
+                    <div class="glow-title">
+                        <span class="blue"></span>
+                        <h4>没有加flex-nowrap的效果</h4>
+                    </div>
+                    <div class="glow-content">
+                        <div class="form-flex">
+                            <div class="layui-form-item">
+                                <div class="layui-inline layui-inline-2">
+                                    <label class="layui-form-label">我是两列：</label>
+                                    <div class="layui-input-inline">.layui-inline-2.layui-inline-2</div>
+                                </div>
+                                <div class="layui-inline layui-inline-2">
+                                    <label class="layui-form-label">我是两列：</label>
+                                    <div class="layui-input-inline">.layui-inline-2.layui-inline-2</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- 通用js 引用汇总-->
+<div th:include="admin/common/html/js :: onload_js"></div>
+
+</body>
+
+</body>
+<script th:src="@{/static/js/common/echarts.js}"></script>
+
+<script>
+    //控制流程图悬浮
+    $(".progress-node").on('mouseenter','.node-current',function () {
+        var stateName=$(this).next().next().children().eq(0).text();
+        if($(this).children().attr("class")=='green' || stateVule==stateName){
+            if(stateName=='结单'){return;}
+            flowtip($(this).next().html(),$(this))
+        }else if($(this).children().attr("class")=='skip'){
+            flowtip("该工单不经过该阶段",$(this))
+        }
+    });
+    $(".progress-node").on('mouseleave','.node-current',function () {
+        loadStop();
+    });
+
+
+    function flowtip(str,sid) {
+        layer.tips(str,sid, {
+            tips: 1,
+            time: 10000
+        });
+    }
+</script>
+<script>
+    $(function () {
+        CharSetHttpQualit();
+    })
+
+    function CharSetHttpQualit() {
+        var myChart1 = echarts.init(document.getElementById('rightTopChart1'));
+        option1 = {
+            title: {text: '云南省各地市重复用户分布', textStyle: {color: '#ffffff', fontSize: 18}, x: 'center'},
+            tooltip: {trigger: 'axis'},
+            //           legend: {data:['低覆盖满意度采样'], textStyle:{ color:'#000',fontSize:12},y:'bottom'},
+            //         label: {normal: {show: true, position: 'top', textStyle: {color: '#cdcdcd'}}},
+            grid: {left: '2%', right: '2%', bottom: '5%', top: '18%', containLabel: true},
+            xAxis: {
+                type: 'category', axisLine: {lineStyle: {color: '#28446a', width: 1}},
+                data: ['昆明', '昭通', '曲靖', '怒江', '大理', '普洱', '丽江', '临沧'],
+                axisLabel: {
+                    show: true, textStyle: {color: '#5393a2'}, interval: 0,
+                }
+            },
+            yAxis: [{
+                type: 'value', axisLabel: {show: true, textStyle: {color: '#5393a2'}},
+                axisLine: {lineStyle: {color: '#28446a', width: 1}},
+                splitLine: {
+                    lineStyle: {
+                        color: '#26456a'
+                    }
+                }
+            }],
+            series: [{
+                name: '质量',
+                data: [70, 48, 45, 45, 60, 60, 30, 40, 50, 60, 55, 22, 80, 90, 95],
+                type: 'bar', itemStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: '#06bde6'
+                        }, {
+                            offset: 1,
+                            color: '#3976cc'
+                        }])
+                    }
+                }, barWidth: 25
+            }
+            ],
+        };
+        myChart1.setOption(option1);
+    }
+</script>
+<script>
+    $(function () {
+        CharSetHttpQualit2();
+    })
+
+    function CharSetHttpQualit2() {
+        var myChart2 = echarts.init(document.getElementById('rightTopChart2'));
+        option2 = {
+            title: {text: '云南省各地市重复用户分布', textStyle: {color: '#ffffff', fontSize: 18}, x: 'center'},
+            tooltip: {trigger: 'axis'},
+            //           legend: {data:['低覆盖满意度采样'], textStyle:{ color:'#000',fontSize:12},y:'bottom'},
+            //         label: {normal: {show: true, position: 'top', textStyle: {color: '#cdcdcd'}}},
+            grid: {left: '2%', right: '2%', bottom: '5%', top: '18%', containLabel: true},
+            xAxis: {
+                type: 'category', axisLine: {lineStyle: {color: '#28446a', width: 1}},
+                data: ['规划组', '片区组', '维护室'],
+                axisLabel: {
+                    show: true, textStyle: {color: '#5393a2'}, interval: 0,
+                }
+            },
+            yAxis: [{
+                type: 'value', axisLabel: {show: true, textStyle: {color: '#5393a2'}},
+                axisLine: {lineStyle: {color: '#28446a', width: 1}},
+                splitLine: {
+                    lineStyle: {
+                        color: '#26456a'
+                    }
+                }
+            }],
+            series: [{
+                name: '蓝色渐变',
+                type:'bar',
+                barWidth : 20,
+                itemStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                {offset: 0, color: 'rgba(97,182,229,1)'},
+                                {offset: 1, color: 'rgba(97,182,229,0.5)'}
+                            ]
+                        )
+                    }
+                },
+                data:[80, 68, 75, 35]
+            },
+                {
+                    name:'绿色渐变',
+                    type:'bar',
+                    barWidth : 20,
+                    itemStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(
+                                0, 0, 0, 1,
+                                [
+                                    {offset: 0, color: 'rgba(160,209,23,1)'},
+                                    {offset: 1, color: 'rgba(160,209,23,0.5)'}
+                                ]
+                            )
+                        }
+                    },
+                    data:[76, 44, 48, 39]
+                },
+                {
+                    name: '粉色渐变',
+                    type:'bar',
+                    barWidth : 20,
+                    itemStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(
+                                0, 0, 0, 1,
+                                [
+                                    {offset: 0, color: 'rgba(205,151,233,1)'},
+                                    {offset: 1, color: 'rgba(205,151,233,0.5)'}
+                                ]
+                            )
+                        }
+                    },
+                    data:[90, 88, 33, 40]
+                },
+                {
+                    name: '橙色渐变',
+                    type:'bar',
+                    barWidth : 20,
+                    itemStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(
+                                0, 0, 0, 1,
+                                [
+                                    {offset: 0, color: 'rgba(255,142,0,1)'},
+                                    {offset: 1, color: 'rgba(255,142,0,0.5)'}
+                                ]
+                            )
+                        }
+                    },
+                    data:[70, 48, 45, 45]
+                }
+            ]
+        };
+        myChart2.setOption(option2);
+    }
+</script>
+<script>
+    $(function () {
+        CharSetHttpQualit3();
+        CharSetHttpQualit4();
+        CharSetHttpQualit5();
+        CharSetHttpQualit6();
+    })
+
+    function CharSetHttpQualit3() {
+        var myChart3 = echarts.init(document.getElementById('page2LeftTopChart1'));
+        option3 = {
+            title: {text: '云南省各地市重复用户分布', textStyle: {color: '#ffffff', fontSize: 18}, x: 'center'},
+            tooltip: {trigger: 'axis'},
+            //           legend: {data:['低覆盖满意度采样'], textStyle:{ color:'#000',fontSize:12},y:'bottom'},
+            //         label: {normal: {show: true, position: 'top', textStyle: {color: '#cdcdcd'}}},
+            grid: {left: '2%', right: '2%', bottom: '5%', top: '18%', containLabel: true},
+            xAxis: {
+                type: 'category', axisLine: {lineStyle: {color: '#28446a', width: 1}},
+                data: ['昆明', '昭通', '曲靖', '怒江', '大理', '普洱', '丽江', '临沧'],
+                axisLabel: {
+                    show: true, textStyle: {color: '#5393a2'}, interval: 0,
+                }
+            },
+            yAxis: [{
+                type: 'value', axisLabel: {show: true, textStyle: {color: '#5393a2'}},
+                axisLine: {lineStyle: {color: '#28446a', width: 1}},
+                splitLine: {
+                    lineStyle: {
+                        color: '#26456a'
+                    }
+                }
+            }],
+            series: [
+                {
+                    name: '蓝色',
+                    type: 'line',
+                    data: [36,42,44,78,55,65,41,90],
+                    itemStyle: {normal: {lineStyle: {width: 3, color: '#61b6e5'}, color: '#61b6e5'}},
+                    areaStyle: {normal: {color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0, color: 'rgba(97,182,229,0.5)'}, {
+                                offset: 1, color: 'rgba(97,182,229,0)'}])}}
+                }]
+        };
+        myChart3.setOption(option3);
+    }
+    function CharSetHttpQualit4() {
+        var myChart3 = echarts.init(document.getElementById('page2LeftTopChart2'));
+        option4 = {
+            title: {text: '云南省各地市重复用户分布', textStyle: {color: '#ffffff', fontSize: 18}, x: 'center'},
+            tooltip: {trigger: 'axis'},
+            //           legend: {data:['低覆盖满意度采样'], textStyle:{ color:'#000',fontSize:12},y:'bottom'},
+            //         label: {normal: {show: true, position: 'top', textStyle: {color: '#cdcdcd'}}},
+            grid: {left: '2%', right: '2%', bottom: '5%', top: '18%', containLabel: true},
+            xAxis: {
+                type: 'category', axisLine: {lineStyle: {color: '#28446a', width: 1}},
+                data: ['昆明', '昭通', '曲靖', '怒江', '大理', '普洱', '丽江', '临沧'],
+                axisLabel: {
+                    show: true, textStyle: {color: '#5393a2'}, interval: 0,
+                }
+            },
+            yAxis: [{
+                type: 'value', axisLabel: {show: true, textStyle: {color: '#5393a2'}},
+                axisLine: {lineStyle: {color: '#28446a', width: 1}},
+                splitLine: {
+                    lineStyle: {
+                        color: '#26456a'
+                    }
+                }
+            }],
+            series: [
+                {
+                    name: '粉色',
+                    type: 'line',
+                    data: [36,42,44,78,55,65,41,90],
+                    itemStyle: {normal: {lineStyle: {width: 3, color: '#cd97e9'}, color: '#cd97e9'}},
+                    areaStyle: {normal: {color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0, color: 'rgba(205,151,233,0.5)'}, {
+                                offset: 1, color: 'rgba(205,151,233,0)'}])}}
+                }]
+        };
+        myChart3.setOption(option4);
+    }
+    function CharSetHttpQualit5() {
+        var myChart3 = echarts.init(document.getElementById('page2LeftTopChart3'));
+        option3 = {
+            title: {text: '云南省各地市重复用户分布', textStyle: {color: '#ffffff', fontSize: 18}, x: 'center'},
+            tooltip: {trigger: 'axis'},
+            //           legend: {data:['低覆盖满意度采样'], textStyle:{ color:'#000',fontSize:12},y:'bottom'},
+            //         label: {normal: {show: true, position: 'top', textStyle: {color: '#cdcdcd'}}},
+            grid: {left: '2%', right: '2%', bottom: '5%', top: '18%', containLabel: true},
+            xAxis: {
+                type: 'category', axisLine: {lineStyle: {color: '#28446a', width: 1}},
+                data: ['昆明', '昭通', '曲靖', '怒江', '大理', '普洱', '丽江', '临沧'],
+                axisLabel: {
+                    show: true, textStyle: {color: '#5393a2'}, interval: 0,
+                }
+            },
+            yAxis: [{
+                type: 'value', axisLabel: {show: true, textStyle: {color: '#5393a2'}},
+                axisLine: {lineStyle: {color: '#28446a', width: 1}},
+                splitLine: {
+                    lineStyle: {
+                        color: '#26456a'
+                    }
+                }
+            }],
+            series: [
+                {
+                    name: '绿色',
+                    type: 'line',
+                    data: [36,42,44,78,55,65,41,90],
+                    itemStyle: {normal: {lineStyle: {width: 3, color: '#a0d117'}, color: '#a0d117'}},
+                    areaStyle: {normal: {color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0, color: 'rgba(160,209,23,0.5)'}, {
+                                offset: 1, color: 'rgba(160,209,23,0)'}])}}
+                }]
+        };
+        myChart3.setOption(option3);
+    }
+    function CharSetHttpQualit6() {
+        var myChart3 = echarts.init(document.getElementById('page2LeftTopChart4'));
+        option3 = {
+            title: {text: '云南省各地市重复用户分布', textStyle: {color: '#ffffff', fontSize: 18}, x: 'center'},
+            tooltip: {trigger: 'axis'},
+            //           legend: {data:['低覆盖满意度采样'], textStyle:{ color:'#000',fontSize:12},y:'bottom'},
+            //         label: {normal: {show: true, position: 'top', textStyle: {color: '#cdcdcd'}}},
+            grid: {left: '2%', right: '2%', bottom: '5%', top: '18%', containLabel: true},
+            xAxis: {
+                type: 'category', axisLine: {lineStyle: {color: '#28446a', width: 1}},
+                data: ['昆明', '昭通', '曲靖', '怒江', '大理', '普洱', '丽江', '临沧'],
+                axisLabel: {
+                    show: true, textStyle: {color: '#5393a2'}, interval: 0,
+                }
+            },
+            yAxis: [{
+                type: 'value', axisLabel: {show: true, textStyle: {color: '#5393a2'}},
+                axisLine: {lineStyle: {color: '#28446a', width: 1}},
+                splitLine: {
+                    lineStyle: {
+                        color: '#26456a'
+                    }
+                }
+            }],
+            series: [
+                {
+                    name: '橙色',
+                    type: 'line',
+                    data: [36,42,44,78,55,65,41,90],
+                    itemStyle: {normal: {lineStyle: {width: 3, color: '#ff8e00'}, color: '#ff8e00'}},
+                    areaStyle: {normal: {color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0, color: 'rgba(255,142,0,0.5)'}, {
+                                offset: 1, color: 'rgba(255,142,0,0)'}])}}
+                }]
+        };
+        myChart3.setOption(option3);
+    }
+</script>
+</html>

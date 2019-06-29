@@ -1,0 +1,30 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<!-- JavaScript -->
+<div  th:fragment="onload_js">	
+	<script type="text/javascript">
+	window.rootPath="[[${rootPath}]]";//项目webapp名称
+	var a1='[[${moRes}]]'.replace(/&quot;/g,"'");//model返回值
+	if(a1!=null && a1!=undefined && a1!=""){
+		window.moRes=eval('(' + a1 + ')');
+	}
+</script>
+
+<!--	css引用-->
+	<link rel="stylesheet" th:href="@{/static/layui/css/layui.css}">
+	<link rel="stylesheet" th:href="@{/static/css/common/bootstrap.min.css}">
+
+	<link rel="stylesheet" th:href="@{/static/css/common/style.css}">
+	<link rel="stylesheet" th:href="@{/static/font-awesome-4.7.0/css/font-awesome.min.css}">
+
+
+
+	<!--	js引用-->
+	<script th:src="@{/static/layui/layui.js}"></script>
+	<script th:src="@{/static/js/common/jquery-3.1.1.js}"></script>
+	<script th:src="@{/static/js/common/jquery.cookie.js}"></script>
+	<script th:src="@{/static/js/common/common.js}"></script>
+
+
+	
+</div>
+   

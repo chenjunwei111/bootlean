@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+
+<div class="ue-container">
+    <select multiple="multiple" size="10" name="doublebox" class="userContainer">
+    </select>
+</div>
+<div class="container" style="text-align: center;position: absolute;bottom: 20px;width: 100%;">
+    <div class="row clearfix">
+        <div class="col-md-12 btn-save" style="margin-left: 0px;margin-top: 6px;">
+            <a class="layui-btn color-highlight" id="btnSubmit">确认</a>
+            <a class="layui-btn color-highlight" id="btnCancel">取消</a>
+        </div>
+    </div>
+</div>
+
+<!-- 通用js 引用汇总-->
+<div th:include="admin/common/html/js :: onload_js"></div>
+
+<style>
+    .ue-container {
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 3%;
+        padding: 10px 40px 20px;
+        border: none;
+        /*background: #fff;*/
+        margin-top: 10px;
+    }
+    .box1 label,.box2 label{
+        color:#84EEFE;
+        margin-bottom: 0;
+        font-size: 15px;
+        font-weight: 100;
+    }
+
+    .ue-form{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #1e4f6b;
+        background-color: #162b44;
+        height: 34px;
+    }
+    input::-webkit-input-placeholder {
+        color: #cdcdcd;
+    }
+    option{
+        padding: 5px 0;
+    }
+    .settingUp-btns{
+        display: none;
+    }
+    .btn-box{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        height: 252px;
+    }
+    .db-btn{
+        margin-bottom: 5px;
+    }
+    .btn-default {
+        color: #ffffff;
+        background-color: rgb(7, 93, 112);
+        border-color: rgb(7, 93, 112);
+    }
+    .clear1,.clear2{
+        padding: 1px 8px;
+        display: none;
+    }
+    .layui-btn{
+        padding: 0 40px;
+        height: 34px;
+        line-height: 34px;
+        font-size: 15px;
+        border-radius: 4px;
+    }
+    .select3{
+        border: 1px solid #1e4f6b;
+        background-color: #162b44;
+    }
+
+    .form-control{
+        background-color: transparent!important;
+    }
+</style>
+</body>
+<script th:src="@{/static/js/admin/role/roleAddUser.js}"></script>
+<script th:src="@{/static/js/common/doublebox-bootstrap.js}"></script>
+
+
+<script>
+
+    $(function () {
+
+    })
+</script>
+</html>

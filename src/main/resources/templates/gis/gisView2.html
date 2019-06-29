@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>地图2</title>
+    <style>
+        .div-chart h4 {
+            padding: 25px 0 15px 20px;
+            font-size: 18px;
+        }
+
+        .table > tbody > tr > td {
+            border-top: none;
+        }
+
+        .map-status {
+            position: relative
+        }
+
+        .layui-table[lay-even] tr:nth-child(even) {
+            background-color: transparent;
+        }
+
+        .layui-table-view .layui-table td {
+            padding: 5px 0px;
+        }
+
+        .layui-table-view .layui-table td, .layui-table-view .layui-table th {
+            padding: 0 0px;
+        }
+
+        .layui-icon {
+            color: #85EFFF;
+        }
+
+        .bar .color-highlight {
+            color: #85EFFF;
+            background-color: rgba(0, 144, 171, 0.5);
+            border: 1px solid #85EFFF;
+            margin-right: 5px;
+            border-radius: 2px;
+        }
+
+        .bar .color-highlight:hover {
+            color: #85EFFF;
+            background-color: rgba(0, 144, 171, 0.5);
+            border: 1px solid #85EFFF;
+            margin-right: 5px;
+            border-radius: 2px;
+        }
+
+        .bar .color-highlight:focus {
+            color: #85EFFF;
+            background-color: rgba(0, 144, 171, 0.5);
+            border: 1px solid #85EFFF;
+            margin-right: 5px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+
+
+<!--<div class="row" id="content">-->
+<div class="col-md-4">
+    <div id="tableData" lay-filter="tableData" lay-data="{id: 'tableData'}"></div>
+</div>
+<div class="col-md-8">
+    <div id="maps" style="position: relative;height:649px;width:100%; border: 1px solid #1e4f6b;"></div>
+
+</div>
+
+<!--</div>-->
+
+<!-- 通用js 引用汇总-->
+<div th:include="admin/common/html/js :: onload_js"></div>
+
+</body>
+
+
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=1XjLLEhZhQNUzd93EjU5nOGQ"></script>
+
+<script th:src="@{/static/js/mapv/spdbmap.js}"></script>
+<script th:src="@{/static/js/gis/gisView2.js}"></script>
+
+<script type="text/html" id="toolopt">
+    <span title="明细" lay-event="detail"><i class="layui-icon">&#xe647;</i></span>
+</script>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="bar">
+<div class="form-inline action-bar">
+    <div class="form-group">
+        <label>用户名</label>
+        <input class="layui-input" id="inputUname">
+    </div>
+
+    <button type="button" class="btn btn-borderless" id="search">
+        <img src="../static/images/img/search.png">
+    </button>
+</div>
+</div>
+
+<div class="col-md-12">
+    <div class="glow-box1 clearfix">
+        <img class="icon-glow-left-top" src="../static/images/img/icon-glow-left-top.png">
+        <img class="icon-glow-right-top" src="../static/images/img/icon-glow-right-top.png">
+        <img class="icon-glow-left-bottom" src="../static/images/img/icon-glow-left-bottom.png">
+        <img class="icon-glow-right-bottom" src="../static/images/img/icon-glow-right-bottom.png">
+        <div class="glow-title">
+            <h4>用户展示</h4>
+        </div>
+        <div class="glow-content">
+            <table id="userTable" lay-filter="userTable" lay-data="{id: 'userTableid'}"></table>
+        </div>
+    </div>
+
+</div>
+
+
+<script type="text/html" id="barDemo">
+    <button type="button" class="btn btn-bordered btn-table" lay-event="updateRole"><img src="../static/images/img/icon_user_level.png">角色</button>
+    <button type="button" class="btn btn-bordered btn-table" lay-event="edit"><img src="../static/images/img/save.png">保存</button>
+    <button type="button" class="btn btn-bordered btn-table" lay-event="del"><img src="../static/images/img/sign_out2.png">删除</button>
+</script>
+
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <button type="button" class="btn btn-bordered "  onclick="btnClickAddPre()" >
+            <img src="../static/images/img/add.png">
+            新增用户
+        </button>
+        <!--        <button class="layui-btn layui-btn-sm" lay-event="getCheckData1">获取单选行数据</button>-->
+        <!--        <button class="layui-btn layui-btn-sm" lay-event="getCheckData2">获取复选行数据</button>-->
+        <!--        <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>-->
+        <!--        <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>-->
+    </div>
+</script>
+
+
+<!-- 通用js 引用汇总-->
+<div th:include="admin/common/html/js :: onload_js"></div>
+
+
+</body>
+<script th:src="@{/static/js/admin/user/user.js}"></script>
+
+<script>
+
+
+</script>
+</html>

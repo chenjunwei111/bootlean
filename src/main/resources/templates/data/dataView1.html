@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>数据管理</title>
+</head>
+<body>
+
+<div class="glow-box1 clearfix">
+    <img class="icon-glow-left-top" src="../static/images/img/icon-glow-left-top.png">
+    <img class="icon-glow-right-top" src="../static/images/img/icon-glow-right-top.png">
+    <img class="icon-glow-left-bottom" src="../static/images/img/icon-glow-left-bottom.png">
+    <img class="icon-glow-right-bottom" src="../static/images/img/icon-glow-right-bottom.png">
+    <div class="glow-title">
+        <h4>数据列表</h4>
+    </div>
+    <div class="glow-content">
+        <table id="userTable" lay-filter="userTable" lay-data="{id: 'userTableid'}"></table>
+    </div>
+</div>
+
+<!-- 通用js 引用汇总-->
+<div th:include="admin/common/html/js :: onload_js"></div>
+
+</body>
+
+
+</html>

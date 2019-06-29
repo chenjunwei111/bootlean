@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cjw.boot.mapper.admin.MenuMapper">
+	<!--部门信息返回对象 -->
+	<resultMap id="ResultMapMenu" type="com.cjw.boot.pojo.admin.MenuPojo">
+		<result property="functionCode" column="FUNCTION_CODE" javaType="String"
+			jdbcType="VARCHAR" />
+		<result property="title" column="FUNCTION_NAME"
+			javaType="String" jdbcType="VARCHAR" />
+		<result property="functionParentCode" column="FUNCTION_PARENT_CODE" javaType="String"
+			jdbcType="VARCHAR" />
+		<result property="icon" column="FUNCTION_ICON" javaType="String"
+			jdbcType="VARCHAR" />
+		<result property="href" column="FUNCTION_HREF" javaType="String"
+			jdbcType="VARCHAR" />
+		<result property="description" column="DESCRIPTION" javaType="String"
+			jdbcType="VARCHAR" />
+		<result property="isvalid" column="ISVALID" javaType="Integer"
+			jdbcType="INTEGER" />
+		<result property="sequence" column="SEQUENCE" javaType="Integer"
+			jdbcType="INTEGER" />
+		<result property="perms" column="PERMS" javaType="String"
+				jdbcType="VARCHAR" />
+		<result property="permsType" column="PERMS_TYPE" javaType="String"
+				jdbcType="VARCHAR" />
+	</resultMap>
+
+	<!--信息插入语句 
+	<insert id="insert" parameterType="com.spdb.pojo.base.DepartmentPojo">
+	
+	</insert>-->
+
+	<!--信息查询数据集语句(传参在form中) -->
+<!--	<select id="queryMenuList" parameterType="com.cjw.boot.pojo.admin.MenuPojo"-->
+<!--		resultMap="ResultMapMenu">-->
+<!--<![CDATA[-->
+<!-- SELECT * FROM CFUNCTION ORDER BY FUNCTION_CODE-->
+<!-- ]]>-->
+<!--	</select>-->
+	
+	
+	<select id="queryMenuListCode" resultMap="ResultMapMenu">
+        <![CDATA[
+		select * from T_SYS_PREMISSION_2 order by SEQUENCE
+         ]]>
+	</select>
+	
+	
+
+
+
+
+	<!--用户权限更新语句 -->
+	<update id="updatePremission" parameterType="com.cjw.boot.pojo.admin.MenuPojo">
+		UPDATE T_SYS_PREMISSION_2
+		<trim prefix="set" suffixOverrides=",">
+			<if test="functionCode != null and functionCode!='' ">FUNCTION_CODE = #{functionCode},</if>
+			<if test="title != null and title!='' ">FUNCTION_NAME = #{title},</if>
+			<if test="functionParentCode and functionParentCode!='' ">FUNCTION_PARENT_CODE = #{functionParentCode},</if>
+			<if test="icon  and icon!='' ">FUNCTION_ICON = #{icon},</if>
+			<if test="href  and href!='' ">FUNCTION_HREF = #{href},</if>
+			<if test="description  and description!='' ">DESCRIPTION = #{description},</if>
+			<if test="isvalid != null  ">ISVALID = #{isvalid},</if>
+			<if test="sequence != null and sequence!='' ">SEQUENCE = #{sequence},</if>
+			<if test="perms  and perms!='' ">PERMS = #{perms},</if>
+			<if test="permsType  and permsType!='' ">PERMS_TYPE = #{permsType},</if>
+		</trim>
+		<where>
+			<if test="functionCode != null and functionCode!='' ">FUNCTION_CODE = #{functionCode}</if>
+		</where>
+	</update>
+
+
+<!--	删除插入语句 -->
+		<delete id="delPremision" parameterType="com.cjw.boot.pojo.admin.MenuPojo">
+        delete from T_SYS_PREMISSION_2 where FUNCTION_CODE = #{functionCode}
+		</delete>
+
+	<!--菜单插入语句 -->
+		<insert id="insertPremission" parameterType="com.cjw.boot.pojo.admin.MenuPojo">
+			INSERT INTO T_SYS_PREMISSION_2 (
+			FUNCTION_CODE, FUNCTION_NAME, FUNCTION_PARENT_CODE, FUNCTION_ICON, FUNCTION_HREF, DESCRIPTION, ISVALID, SEQUENCE,PERMS,PERMS_TYPE)
+			VALUES
+			(#{functionCode,jdbcType=VARCHAR},#{title,jdbcType=VARCHAR},#{functionParentCode,jdbcType=VARCHAR},#{icon,jdbcType=VARCHAR}
+			,#{href,jdbcType=VARCHAR},#{description,jdbcType=VARCHAR},#{isvalid,jdbcType=INTEGER},#{sequence,jdbcType=INTEGER}
+			,#{perms,jdbcType=VARCHAR} , #{permsType,jdbcType=VARCHAR} )
+		</insert>
+
+</mapper>

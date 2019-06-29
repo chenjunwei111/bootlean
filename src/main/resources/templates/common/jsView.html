@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>常用JS模版</title>
+    <style>
+        .navbar-nav li a{
+            color:#85EFFF;
+        }
+        .box{
+            margin-top: 20px;
+            border-top: 1px solid #1E4E6A;
+        }
+    </style>
+</head>
+<body>
+
+<!--目录-->
+<!--<div class="box clearfix">-->
+<!--    <h1>目录</h1>-->
+<!--    <ul class="nav navbar-nav">-->
+<!--        <li><a href="#dataTable">数据表格</a></li>-->
+<!--        <li><a href="#table-style">表格</a></li>-->
+<!--    </ul>-->
+<!--</div>-->
+<!--&lt;!&ndash;回顶&ndash;&gt;-->
+<!--<a href="#" style="color: #FFFFFF;"><div class="back-top">返回<br/>顶部</div></a>-->
+
+
+<!--数据表格引用-->
+<div class="box" id="decorate">
+    <h3>数据表格</h3>
+    <div class="box-one clearfix">
+        <div class="col-md-6">
+            <xmp th:inline="none" style="height:450px;overflow-y: auto">
+
+                <!--HTML代码-->
+                <div class="glow-box1 clearfix">
+        <img class="icon-glow-left-top" src="../static/images/img/icon-glow-left-top.png">
+        <img class="icon-glow-right-top" src="../static/images/img/icon-glow-right-top.png">
+        <img class="icon-glow-left-bottom" src="../static/images/img/icon-glow-left-bottom.png">
+        <img class="icon-glow-right-bottom" src="../static/images/img/icon-glow-right-bottom.png">
+                    <div class="glow-title">
+                        <h4>数据</h4>
+                    </div>
+                    <div class="glow-content">
+                        <table id="xxxx" lay-filter="xxxx" lay-data="{id: 'xxxx'}"></table>
+                    </div>
+                </div>
+
+                <!--JS代码-->
+                layui.use('table', function(){
+                var table = layui.table;
+                //第一个实例
+                table.render({
+                // id:'idTest',
+                elem: '#userTable'
+                ,defaultToolbar: ['filter', 'exports']
+                ,height: 400
+                ,toolbar: '#toolbarDemo'
+                ,url: rootPath+'/UserController/listUser' //数据接口
+                ,page: true //开启分页
+                ,cols: [[ //表头
+                {type:'numbers'}
+                ,{type: 'checkbox'}
+                ,{type:'radio'}
+                ,{field: 'id', title: '用户编码',sort:true,width:150}
+                ,{field: 'username', title: '用户名', edit: 'text',width:180}
+                ,{fixed: 'right',  title:'操作', toolbar: '#barDemo', width:240}
+                ]],
+                done: function(res, curr, count){
+                },
+                });
+                //头工具栏事件
+                table.on('toolbar(userTable)', function(obj){
+                var checkStatus = table.checkStatus('userTable');
+                switch(obj.event){
+                case 'getCheckData1':
+                var data = checkStatus.data;
+                layer.alert(JSON.stringify(data));
+                break;
+                case 'getCheckData2':
+                var data = checkStatus.data;
+                layer.alert(JSON.stringify(data));
+                break;
+                case 'getCheckLength':
+                var data = checkStatus.data;
+                layer.msg('选中了：'+ data.length + ' 个');
+                break;
+                case 'isAll':
+                layer.msg(checkStatus.isAll ? '全选': '未全选');
+                break;
+
+                };
+                });
+
+                //监听行工具事件
+                table.on('tool(userTable)', function(obj){
+                var data = obj.data;
+                // console.log(obj)
+                if(obj.event === 'del'){
+                layer.confirm('真的删除么', function(index){
+                obj.del();
+                layer.close(index);
+                });
+                }
+                else if(obj.event === 'edit'){
+                editUserInfo(data);
+                }else if(obj.event==='updateRole'){
+                }
+                });
+
+                //监听行单击事件（单击事件为：rowDouble）
+                table.on('row(userTable)', function(obj){
+                var data = obj.data;
+
+                layer.alert(JSON.stringify(data), {
+                title: '当前行数据：'
+                });
+
+                //标注选中样式
+                obj.tr.addClass('layui-table-click').siblings().removeClass('layui-table-click');
+                });
+
+
+                // 监听单元格编辑
+                table.on('edit(userTable)', function(obj){
+                var value = obj.value //得到修改后的值
+                ,data = obj.data //得到所在行所有键值
+                ,field = obj.field; //得到字段
+                layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
+                });
+                });
+            </xmp>
+        </div>
+
+        <div class="col-md-6">
+            <div class="glow-box1 clearfix">
+                <img class="icon-glow-left-top" src="../static/images/img/icon-glow-left-top.png">
+                <img class="icon-glow-right-top" src="../static/images/img/icon-glow-right-top.png">
+                <img class="icon-glow-left-bottom" src="../static/images/img/icon-glow-left-bottom.png">
+                <img class="icon-glow-right-bottom" src="../static/images/img/icon-glow-right-bottom.png">
+                <div class="glow-title">
+                    <h4>数据</h4>
+                </div>
+                <div class="glow-content">
+                    <table id="userTable" lay-filter="userTable" lay-data="{id: 'userTableid'}"></table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--时间选择器-->
+<div class="box" id="dateSelect">
+    <h3>时间选择器</h3>
+    <div class="box-one clearfix">
+        <div class="col-md-6">
+            <xmp th:inline="none">
+                <!--HTML代码-->
+                <div class="form-group">
+                    <label>日期</label>
+                    <div class="date" readonly="readonly">
+                        <img class="date-img" src="../static/images/img/date.png">
+                        <input class="layui-input" autocomplete="off" id="dateTime2">
+                    </div>
+                </div>
+                <!--JS代码-->
+                layui.use('laydate', function() {
+                var laydate=layui.laydate;
+                laydate.render({
+                elem: '#dateTime2', //指定元素
+                // range:true
+                });
+                });
+            </xmp>
+        </div>
+
+        <div class="col-md-6">
+            <div class="bar">
+            <div class="form-group">
+                <label>日期</label>
+                <div class="date" readonly="readonly">
+                    <img class="date-img" src="../static/images/img/date.png">
+                    <input class="layui-input" autocomplete="off" id="dateTime">
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--GIS代码-->
+<div class="box" id="gisDiv">
+    <h3>GIS代码</h3>
+    <div class="box-one clearfix">
+        <div class="col-md-6">
+            <xmp th:inline="none">
+                <!--HTML代码-->
+                <div id="mapss" style="position: relative;height:300px;width:100%; border: 1px solid #1e4f6b;"></div>
+                <!--JS代码-->
+                drawxdr.map();//调用
+                var drawxdr=
+                {
+                map: function () {
+                waitjs("UCMap",function () {
+                var m = new UCMap.UCLoctions();
+                if (!m.mapover()) {
+                m.setparameters({
+                mcity: '昆明',
+                mcitycode: 530100,
+                mdate: '20190214',
+                mselector: 'mapss',
+                mType: basemap.MapType.mrRsrp,
+                }, 'base'
+                ); m.map(); } }) }, }
+            </xmp>
+        </div>
+
+        <div class="col-md-6">
+            <div id="maps" style="position: relative;height:400px;width:100%; border: 1px solid #1e4f6b;"></div>
+        </div>
+
+    </div>
+</div>
+
+<!--ajax代码-->
+<div class="box" id="ajaxDiv">
+    <h3>ajax代码调用</h3>
+    <div class="box-one clearfix">
+        <div class="col-md-6">
+            <xmp th:inline="none">
+                <!--对象传参法-->
+                var pojo={};
+                $.ajax({
+                type:'post',
+                url:rootPath+'',
+                data:JSON.stringify(pojo),
+                dataType:"json",
+                contentType:"application/json",
+                success:function (res) {
+                },
+                error:function (res) {
+                }
+                });
+            </xmp>
+        </div>
+
+        <div class="col-md-6">
+            <xmp th:inline="none">
+            <!--正常传参法-->
+            var pojo={};
+            $.ajax({
+            type:'post',
+            url:rootPath+'',
+            data:{par1:par1}
+            contentType:"application/json",
+            success:function (res) {
+            },
+            error:function (res) {
+            }
+            });
+            </xmp>
+        </div>
+
+    </div>
+</div>
+
+
+<!--图表调用代码-->
+<div class="box" id="chartsDiv">
+    <h3>图表调用代码</h3>
+    <div class="box-one clearfix">
+        <div class="col-md-6">
+            <xmp th:inline="none" style="overflow-y: auto;height: 300px">
+function initChart() {
+var myChart1 = echarts.init(document.getElementById('rightTopChart1'));
+option1 = {
+title: {text: '数据分布', textStyle: {color: '#ffffff', fontSize: 18}, x: 'center'},
+tooltip: {trigger: 'axis'},
+//           legend: {data:['低覆盖满意度采样'], textStyle:{ color:'#000',fontSize:12},y:'bottom'},
+//         label: {normal: {show: true, position: 'top', textStyle: {color: '#cdcdcd'}}},
+grid: {left: '2%', right: '2%', bottom: '5%', top: '18%', containLabel: true},
+xAxis: {
+type: 'category', axisLine: {lineStyle: {color: '#28446a', width: 1}},
+data: ['昆明', '昭通', '曲靖', '怒江', '大理', '普洱', '丽江', '临沧'],
+axisLabel: {
+show: true, textStyle: {color: '#5393a2'}, interval: 0,
+}
+},
+yAxis: [{
+type: 'value', axisLabel: {show: true, textStyle: {color: '#5393a2'}},
+axisLine: {lineStyle: {color: '#28446a', width: 1}},
+splitLine: {
+lineStyle: {
+color: '#26456a'
+}
+}
+}],
+series: [{
+name: '质量',
+data: [70, 48, 45, 45, 60, 60, 30, 40, 50, 60, 55, 22, 80, 90, 95],
+type: 'bar', itemStyle: {
+normal: {
+color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+offset: 0,
+color: '#06bde6'
+}, {
+offset: 1,
+color: '#3976cc'
+}])
+}
+}, barWidth: 25
+}
+],
+};
+myChart1.setOption(option1);
+}
+            </xmp>
+        </div>
+
+        <div class="col-md-6">
+            <div id="rightTopChart1" style="width: 100%;height: 300px;"></div>
+        </div>
+
+    </div>
+</div>
+
+
+<div th:include="admin/common/html/js :: onload_js"></div>
+
+</body>
+
+<script type="text/html" id="barDemo">
+    <button type="button" class="btn btn-bordered btn-table" lay-event="updateRole"><img src="../static/images/img/icon_user_level.png">角色</button>
+    <button type="button" class="btn btn-bordered btn-table" lay-event="edit"><img src="../static/images/img/save.png">保存</button>
+    <button type="button" class="btn btn-bordered btn-table" lay-event="del"><img src="../static/images/img/sign_out2.png">删除</button>
+</script>
+
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <button type="button" class="btn btn-bordered "  onclick="btnClickAddPre()" >
+            <img src="../static/images/img/add.png">
+            新增用户
+        </button>
+                <button class="btn btn-bordered " lay-event="getCheckData1">获取单选行数据</button>
+                <button class="btn btn-bordered " lay-event="getCheckData2">获取复选行数据</button>
+                <button class="btn btn-bordered " lay-event="getCheckLength">获取选中数目</button>
+                <button class="btn btn-bordered " lay-event="isAll">验证是否全选</button>
+    </div>
+</script>
+
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=1XjLLEhZhQNUzd93EjU5nOGQ"></script>
+
+<script  th:src="@{/static/js/mapv/spdbmap.js}"></script>
+
+<script th:src="@{/static/js/common/jsView.js}"></script>
+<script th:src="@{/static/js/common/echarts.js}"></script>
+
+
+<script>
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,1684 @@
+html,body{height: 100%;width: 100%;margin:0;padding:0;}
+body{
+    background: #12152e;
+    background: url(../../images/img/bg.png) fixed center center no-repeat;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    position:absolute;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/login/lgbg.png',sizingMethod='scale');
+    font-family: arial, "微软雅黑";
+    color: #ffffff;
+
+    scrollbar-face-color:#0a4554;
+    scrollbar-track-color:#0f2137;
+    scrollbar-arrow-color:#0a4554;
+
+    word-break:break-all;/*解决数字和字母不会换行问题*/
+}
+.layui-bg-red {
+    background-color: #FF0000 !important;
+}
+a:hover{
+    text-decoration: none;
+}
+.posit-re{
+    position: relative;
+}
+.posit-ad{
+    position: absolute;
+}
+.flex-center {
+    display: flex;
+    justify-content: space-around;
+}
+/*导航右上角个人信息的二级菜单修改*/
+.layui-nav-child2{
+    background: #1C4D6F;
+    border: 1px solid #0cbcf2;
+    box-shadow: 0px 0px 13px rgba(57, 191, 244, 0.24) inset;
+}
+.header-demo .layui-nav .layui-nav-item a {
+    color: #AEB7C2;
+}
+.header-demo .layui-nav .layui-nav-item a:hover{
+    color: #ffffff;
+}
+.header-demo .layui-nav .layui-this{
+    background-color: #1e4f6b;
+}
+.layui-nav .layui-nav-child dd.layui-this a, .layui-nav-child dd.layui-this{
+
+}
+/*导航右上角个人信息的二级菜单修改 end*/
+
+/*修改<input>的'placeholder属性'的文字颜色*/
+input::-webkit-input-placeholder { /* WebKit browsers */
+    color: #cdcdcd;
+}
+
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #cdcdcd;
+}
+
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #cdcdcd;
+}
+
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #cdcdcd;
+}
+/*修改文本框'placeholder属性'的文字颜色 END*/
+
+/*修改<textarea>的'placeholder属性'的文字颜色*/
+textarea::-webkit-input-placeholder { /* WebKit browsers */
+    color: #cdcdcd;
+}
+
+textarea:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #cdcdcd;
+}
+
+textarea::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #cdcdcd;
+}
+
+textarea:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #cdcdcd;
+}
+/*修改<textarea>的'placeholder属性'的文字颜色 END*/
+
+.iwidth{
+    width:230px;
+}
+.patop{
+    padding-top: 13px!important;
+}
+
+.btn{
+    font-size: 14px!important;
+}
+.btn{
+    color: #0cbcf2!important;
+}
+
+.btn img{
+    /*width: 15px;*/
+    padding-bottom: 3px;
+    margin-right: 2px;
+}
+/*表单提交*/
+.btn-save{
+    text-align: center;
+    margin: 18px 0px;
+}
+.btn-save .btn{
+    font-size: 17px!important;
+}
+.btn-save .btn{
+    color: #B5E1EC;
+}
+.btn-save .btn:hover{
+    color: #84EEFE;
+    text-decoration: none;
+    background: rgba(6, 109, 128, 0.2);
+}
+.btn-save .btn img{
+    width: 15px;
+    padding-bottom: 3px;
+    margin-right: 2px;
+}
+/*表单提交 end*/
+/*按钮样式一*/
+.color-highlight,.btn-borderless{
+    color: #B5E1EC;
+    border-color: transparent;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.color-highlight:hover,.btn-borderless:hover{
+    color: #84EEFE;
+    text-decoration: none;
+    background: rgba(6, 109, 128, 0.2);
+}
+/*按钮样式一 end*/
+/*按钮样式二*/
+.btn-dark,.btn-bordered{
+    background-color: rgba(12, 188, 242, 0.2);
+    border: 1px solid #236c94;
+    margin-right: 3px;
+    border-radius: 2px;
+    margin-right: 3px;
+}
+.btn-dark:hover,.btn-bordered:hover{
+    border: 1px solid #0CBCF2;
+    color: #0CBCF2;
+    background-color: rgba(12, 188, 242, 0.3);
+    box-shadow: 0px 0px 18px rgba(61,141,215,0.4) inset;
+}
+/*按钮样式二 end*/
+/*DIV背景样式一*/
+.glow-box{
+    position: relative;
+    border-radius: 0px;
+    background: rgba(22,160,239,0.1) !important;
+    border: 1px solid #39bff4;
+    box-shadow: 0px 0px 18px rgba(61,141,215,0.4) inset;
+}
+.glow-box:before{
+    position: absolute;
+    left: -6px;
+    top: -6px;
+    background-image: url(../../images/img/glow1.png);
+    width: 20px;
+    height: 20px;
+}
+.glow-box:after{
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    background-image: url(../../images/img/glow3.png);
+    width: 20px;
+    height: 20px;
+}
+.glow-box .glow-title{
+    background: url(../../images/img/bg-title1.png);
+    max-width: 334px;
+    height: 45px;
+    margin: auto;
+    text-align: center;
+}
+.glow-box .glow-title h4{
+    padding: 18px 0 0;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+}
+
+.glow-box .glow-title-1{
+    background: url(../../images/img/bg-title.png);
+    width: 210px;
+    height: 65px;
+    margin: auto;
+    margin-top: -24px;
+    text-align: center;
+}
+.glow-box .glow-title-1 h4{
+    padding: 22px 0 0;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+}
+
+.glow-box .glow-decorate{
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    bottom: 0;
+}
+.glow-box .decorate-left{
+    position: absolute;
+    left: -6px;
+    bottom: -5px;
+    background-image: url(../../images/img/glow2.png);
+    width: 20px;
+    height: 20px;
+}
+.glow-box .decorate-right{
+    position: absolute;
+    right: -6px;
+    bottom: -6px;
+    background-image: url(../../images/img/glow4.png);
+    width: 20px;
+    height: 20px;
+}
+.glow-box .glow-title-2{
+    position: relative;
+}
+.glow-box .glow-title-2 h4{
+    position: relative;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    padding-left: 40px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.glow-box .glow-title-2 h4:before{
+    position: absolute;
+    left: 10px;
+    top: 19px;
+    background-image: url(../../images/img/glow-box1-left.png);
+    width: 23px;
+    height: 18px;
+}
+.glow-box .glow-title-2 .form-control{
+    width: auto;
+    position: absolute;
+    top: 13px;
+    left: 130px;
+}
+
+.glow-box .operation-left{
+    position: absolute;
+    top: 14px;
+    left: 25px;
+    z-index: 9;
+}
+.glow-box .operation-left .form-control{
+    display: inline-block;
+    width: auto;
+}
+/*DIV背景样式一 end*/
+/*DIV背景样式二*/
+.glow-box2{
+    position: relative;
+    -moz-box-shadow:0px 0px 30px rgba(61,141,215,0.5) inset;               /* For Firefox3.6+ */
+    -webkit-box-shadow:0px 0px 30px rgba(61,141,215,0.5) inset;            /* For Chrome5+, Safari5+ */
+    box-shadow:0px 0px 30px rgba(61,141,215,0.5) inset;                    /* For Latest Opera */
+    border-radius: 0px;
+    background: rgba(22,160,239,.2);
+    border: 1px solid #2f9ac4;
+    margin: 10px;
+    width: auto;
+    height: 180px;
+    padding-bottom: 23px;
+}
+.glow-box2:before{
+    position: absolute;
+    left: -10px;
+    top:-10px;
+    background-image: url(../../images/img/box2-left.png);
+    width: 156px;
+    height: 198px;
+}
+.glow-box2:after{
+    position: absolute;
+    right: -1px;
+    top:-1px;
+    background-image: url(../../images/img/box2-right.png);
+    width: 147px;
+    height: 180px;
+}
+.glow-box2 .glow-title h4{
+    padding: 20px 0px 15px 15px;
+    font-size: 17px;
+}
+.glow-box2 .glow-title .blue,.blue{
+    display: inline-block;
+    background-color: #02fcff;
+    width: 5px;
+    height: 20px;
+    position: absolute;
+    top: 17px;
+    left: 0;
+}
+.glow-box2 .glow-title2,.glow-box2 .glow-title-center{
+    position: absolute;
+    background: url(../../images/img/bg-title.png);
+    width: 210px;
+    height: 76px;
+    margin: auto;
+    top:-24px;
+    left:0px;
+    right:0px;
+    text-align: center;
+}
+.glow-box2 .glow-title2 h4,.glow-box2 .glow-title-center h4 {
+    padding-top: 22px;
+    font-weight: 100;
+    font-size: 18px;
+}
+.glow-box2 .glow-title-center+.glow-content{
+    margin-top: 50px;
+}
+.glow-box2 .glow-content{
+
+}
+.glow-box2 .glow-content .layui-table-view{
+    margin-left: 0px;
+    margin-right: 0;
+}
+.glow-box2 .glow-content .btn-save{
+    margin: 0px;
+}
+/*DIV背景样式二 END*/
+
+/*样式四*/
+.table-b {
+    text-align: center;
+    padding-top: 10px;
+}
+.glow-box4 {
+    position: relative;
+    color: #ffffff;
+    background-color: rgba(12, 188, 242, 0.3);
+    border: 1px solid #0cbcf2;
+    border-radius: 2px;
+    text-align: center;
+    padding: 6px 12px;
+    font-size: 16px;
+    margin: 10px 0 25px;
+}
+.glow-box4:before{
+    position: absolute;
+    left: -6px;
+    top: -6px;
+    background-image: url(../../images/img/glow-box4-left.png);
+    width: 51px;
+    height: 27px;
+}
+.glow-box4:after{
+    position: absolute;
+    right: -6px;
+    bottom: -6px;
+    background-image: url(../../images/img/glow-box4-right.png);
+    width: 27px;
+    height: 21px;
+}
+/*样式四 end*/
+
+/*地图的样式*/
+.maps-box{
+    padding: 5px;
+    position: relative;
+    border-radius: 0px;
+    background: rgba(22,160,239,0.1) !important;
+    border: 1px solid #39bff4;
+    box-shadow: 0px 0px 18px rgba(61,141,215,0.4) inset;
+}
+.maps-box .decorate-left{
+    position: absolute;
+    left: -3px;
+    bottom: -1px;
+    background-image: url(../../images/img/maps2.png);
+    width: 5px;
+    height: 145px;
+}
+.maps-box .decorate-right{
+    position: absolute;
+    right: -3px;
+    top: -10px;
+    background-image: url(../../images/img/maps1.png);
+    width: 148px;
+    height: 137px;
+}
+/*地图的样式end*/
+/*地图样式二*/
+.maps-box2{
+    position: relative;
+    border-radius: 0px;
+    background: rgba(22,160,239,0.1) !important;
+    border: 1px solid #39bff4;
+    box-shadow: 0px 0px 18px rgba(61,141,215,0.4) inset;
+}
+.maps-box2:before{
+    position: absolute;
+    left: -6px;
+    top: -6px;
+    background-image: url(../../images/img/glow1.png);
+    width: 20px;
+    height: 20px;
+}
+.maps-box2:after{
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    background-image: url(../../images/img/glow3.png);
+    width: 20px;
+    height: 20px;
+}
+.maps-box2 .decorate-left{
+    position: absolute;
+    left: -6px;
+    bottom: -5px;
+    background-image: url(../../images/img/glow2.png);
+    width: 20px;
+    height: 20px;
+}
+.maps-box2 .decorate-right{
+    position: absolute;
+    right: -6px;
+    bottom: -6px;
+    background-image: url(../../images/img/glow4.png);
+    width: 20px;
+    height: 20px;
+}
+.maps-box2 .maps-title{
+    text-align: center;
+}
+.maps-box2 .maps-title h4{
+    padding: 18px 0 0;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+}
+.maps-box2 .maps-decorate:before{
+    position: absolute;
+    left: 8px;
+    top: -1px;
+    background-image: url(../../images/img/icon-maps1.png);
+    width: 57px;
+    height: 23px;
+}
+.maps-box2 .maps-decorate:after{
+    position: absolute;
+    right: 8px;
+    top: -1px;
+    background-image: url(../../images/img/icon-maps2.png);
+    width: 56px;
+    height: 23px;
+}
+/*地图样式二 end*/
+/*表格*/
+.table-box{
+    position: relative;
+    margin: 60px 10px 0px;
+}
+.table-full-screen{
+    margin: auto;
+    width: 99%;
+    margin-top: 70px!important;
+}
+.table-box .table-title,.list-title{
+    position: absolute;
+    background: url(../../images/img/bg-title2.png);
+    width: 234px;
+    height: 58px;
+    margin: auto;
+    top: -58px;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+}
+.table-box .table-title:before{
+    position: absolute;
+    left: -78px;
+    bottom: 0;
+    background-image: url(../../images/img/bg-title2-left.png);
+    width: 84px;
+    height: 31px;
+}
+.table-box .table-title:after{
+    position: absolute;
+    right: -78px;
+    bottom: 0;
+    background-image: url(../../images/img/bg-title2-right.png);
+    width: 84px;
+    height: 31px;
+}
+.table-box .table-title h4 ,.list-title h4 {
+    padding-top: 20px;
+    font-weight: 100;
+    font-size: 18px;
+}
+.btn-left{
+    position: absolute;
+    top: -40px;
+    left: 0px;
+}
+.btn-right,.list-btn{
+    position: absolute;
+    top: -42px;
+    right: 0px;
+}
+.table-box .btn{
+    font-size: 14px!important;
+}
+.layui-table th{
+    background: rgba(25,54,81,0);
+}
+.layui-table-view .layui-table th{
+    padding: 0 2px;
+}
+.layui-table-view .layui-table td {
+    padding: 5px 2px;
+}
+.layui-table thead tr, .layui-table-fixed-l tr, .layui-table-header, .layui-table-mend, .layui-table-patch, .layui-table-tool{
+    background: rgba(25,54,81,0);
+}
+.layui-table-tool{
+    background: rgba(6, 109, 128, 0.12);
+}
+.layui-table td, .layui-table th, .layui-table-header, .layui-table-tool, .layui-table-view, .layui-table[lay-skin=row], .layui-table[lay-skin=line]{
+    border:none;
+}
+.layui-table-body{
+    background-color: rgba(0, 144, 171, 0)!important;
+    margin-right: 0px!important;
+    border-top: 1px solid rgba(67,196,248,.3);
+}
+.layui-table-view{
+    margin: 0px;
+    border: 1px solid rgba(57,191,244,0.5)!important;
+    background: rgba(57,191,244,0.15);
+}
+.glow-content .layui-table-view{
+    margin: 5px 10px 10px;
+}
+.layui-table-view table{
+    width: 100%!important;
+    text-align: center;
+    background-color: rgba(57,191,244,0);
+    margin: 20px 10px;
+}
+
+.layui-table-view table thead{
+    color: #5ee9fe;
+    background: #17476b;
+}
+.layui-table-view table thead th{
+    text-align: center;
+}
+.layui-table-view table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    border-top: 1px solid #1A405B;
+}
+.layui-table-view table>thead>tr>th{
+    border-bottom: 1px solid #1E4E6A;
+}
+.layui-table-view .table-hover>tbody>tr:hover{
+    background-color:#183952;
+}
+.layui-table-view .layui-table-cell{
+    margin: auto!important;
+}
+.layui-table tr{
+    border-bottom: 1px solid #1E4E6A;
+}
+
+.glow-content .layui-table-view{
+    background: rgba(57,191,244,0.1);
+    /*border:none;*/
+}
+.glow-content .layui-table-view table{
+    /*background-color: rgba(24,57,82,0.1);*/
+}
+.glow-content .layui-table tr{
+    border-bottom: 1px solid rgba(67,196,248, 0.1);
+}
+/*表格 END*/
+
+/*滚动条*/
+::-webkit-scrollbar/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+{
+    width: 7px;
+    height: 7px;
+    background-color: rgba(18,31,29,0);
+}
+
+::-webkit-scrollbar-track/*定义滚动条轨道 内阴影+圆角*/
+{
+    border-radius: 0px;
+    background-color: #0c4270!important;
+}
+
+::-webkit-scrollbar-thumb/*定义滑块 内阴影+圆角*/
+{
+    border-radius: 5px;
+    background-color: #1892c3!important;
+}
+/*滚动条 end*/
+
+/*表格的样式*/
+.table-box1{
+    position: relative;
+    border-radius: 0px;
+    background: rgba(22,160,239,0.1) !important;
+    border: 1px solid rgba(12,188,242,0.8);
+    box-shadow: 0px 0px 18px rgba(61,141,215,0.4) inset;
+}
+.table-box1:before{
+    background-image: url(../../images/img/table-left.png);
+    position: absolute;
+    top: 11px;
+    left: -1px;
+    width: 11px;
+    height: 21px;
+}
+.table-box1 .table-title{
+    padding: 13px 10px 10px 15px;
+    font-size: 16px;
+}
+.table-box1 .table-title h4{
+    font-size: 16px;
+}
+.table-box1 .btn-right{
+    top: 7px;
+    right: 5px;
+}
+.table-box1 .btn-right .btn{
+    padding: 3px 10px;
+}
+.table-box1 .layui-table-view，.table-box2 .layui-table-view{
+    background: rgba(57,191,244,.1)!important;
+}
+.table-box2{
+    position: relative;
+    border-radius: 0px;
+    margin-top: 12px;
+    padding-top: 38px;
+    background: rgba(22,160,239,0.1) !important;
+    border: 1px solid #39bff4;
+    box-shadow: 0px 0px 18px rgba(61,141,215,0.4) inset;
+}
+.table-box2 .table-title{
+    position: absolute;
+    background: url(../../images/img/table-title-top.png);
+    width: 234px;
+    height: 53px;
+    margin: auto;
+    top: -22px;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+}
+.table-box2 .table-title h4 {
+    font-weight: 100;
+    padding-top: 19px;
+    font-size: 17px;
+}
+.table-box2 .btn-left{
+    top: 5px;
+    left: 5px;
+}
+.table-box2 .btn-right{
+    top: 5px;
+    right: 5px;
+}
+.table-box2 .btn-left .btn,.table-box2 .btn-right .btn{
+    padding: 3px 10px;
+}
+/*表格的样式end*/
+/*layui弹窗的头部样式*/
+.layui-layer .layui-layer-lan .layui-layer-title {
+    background: #16354F !important;
+    padding-top: 10px;
+    color: #85EFFF !important;
+}
+.layui-layer .layui-layer-ico {
+    background: url(../../images/img/sign_out2.png) no-repeat !important;
+}
+/*layui弹窗的头部样式 end*/
+/*大数字突出显示-背景*/
+.data-box{
+    position: relative;
+    -moz-box-shadow:0px 0px 30px rgba(61,141,215,0.5) inset;               /* For Firefox3.6+ */
+    -webkit-box-shadow:0px 0px 30px rgba(61,141,215,0.5) inset;            /* For Chrome5+, Safari5+ */
+    box-shadow:0px 0px 30px rgba(61,141,215,0.5) inset;                    /* For Latest Opera */
+    border-radius: 0px;
+    background: rgba(22,160,239,.2);
+    border: 1px solid #2f9ac4;
+    margin: 25px 10px 10px;
+    width: auto;
+    height: 180px;
+    padding-bottom: 23px;
+}
+.data-box:before{
+    position: absolute;
+    left: -10px;
+    top:-10px;
+    background-image: url(../../images/img/box2-left.png);
+    width: 156px;
+    height: 198px;
+}
+.data-box:after{
+    position: absolute;
+    right: -1px;
+    top:-1px;
+    background-image: url(../../images/img/box2-right.png);
+    width: 147px;
+    height: 180px;
+}
+.data-box .data-title h4{
+    /*padding: 20px 0px 15px 15px;*/
+    font-size: 17px;
+}
+.data-box .data-title{
+    position: absolute;
+    background: url(../../images/img/bg-title.png);
+    width: 210px;
+    height: 76px;
+    margin: auto;
+    top:-24px;
+    left:0px;
+    right:0px;
+    text-align: center;
+}
+
+.data-box .data-title h4{
+    padding-top: 22px;
+    font-weight: 100;
+    font-size: 18px;
+}
+.data-box .data-title+.data-content{
+    margin-top: 50px;
+}
+.data-box .data-content{
+}
+.data-box .data-content .layui-table-view{
+    margin-left: 0px;
+    margin-right: 0;
+}
+.data-box .data-content .btn-save{
+    margin: 0px;
+}
+/*大数字突出显示-背景 END*/
+/*大数字突出显示*/
+.big-data {
+    text-align: center;
+    position: relative;
+    /*min-width: 200px;*/
+}
+.big-data .pull-left img{
+    margin-right: 10px;
+}
+.big-data h5{
+    font-size: 16px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.flex-center>.big-data:first-of-type .prominent,.flex-center>.small-data:first-of-type .prominent{
+    color: #01fff8;
+}
+.flex-center>.big-data:nth-child(2) .prominent,.flex-center>.small-data:nth-child(2) .prominent{
+    color: #a0d117;
+}
+.flex-center>.big-data:nth-child(3) .prominent,.flex-center>.small-data:nth-child(3) .prominent{
+    color: #ffd849;
+}
+.flex-center>.big-data:nth-child(4) .prominent,.flex-center>.small-data:nth-child(4) .prominent{
+    color: #e5b4ff ;
+}
+.flex-center>.big-data:nth-child(5) .prominent,.flex-center>.small-data:nth-child(5) .prominent{
+    color: #ff8e00;
+}
+.big-data .prominent {
+    font-size: 38px;
+    margin-top: 5px;
+    font-weight: bold;
+    background: rgba(22,160,239,.2);
+    padding: 6px 10px;
+    margin-bottom: 5px;
+    letter-spacing: 0.03em;
+}
+/*.big-data .prominent span {*/
+    /*background: rgba(0, 144, 171, 0.2);*/
+    /*display: inline-block;*/
+    /*padding: 0 2px;*/
+    /*margin-left: -5px;*/
+    /*font-size: 38px;*/
+/*}*/
+.small-data {
+    height: 77px;
+    text-align: center;
+    position: relative;
+}
+
+.small-data h5 {
+    padding-top: 12px;
+    color: #85EFFF;
+}
+.small-data h5 img{
+    width:16px;
+}
+.small-data .prominent {
+    font-size: 24px;
+}
+
+.small-data .prominent span {
+    font-size: 24px;
+}
+/*大数字突出显示 end*/
+/*大数字突出显示效果二*/
+.electricity-box{
+    margin-top: 15px;
+    height: 205px;
+}
+.electricity-box .glow-content{
+    margin-top: 6px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+.electricity-box .glow-content .electricity-data img{
+    width: 40px;
+    margin-bottom: 8px;
+    margin-right: 5px;
+}
+.electricity-box .glow-content .electricity-data .prominent{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.electricity-data h5,.electricity-data .prominent{
+    display: inline-block;
+}
+.electricity-data h5{
+    font-size: 16px;
+}
+/*大数字突出显示效果二 end*/
+/*表单*/
+.layui-textarea{
+    min-height: 80px;
+    border: 1px solid #277695;
+    background-color: rgba(57,191,244,0.2);
+    /*box-shadow: 0px 0px 8px rgba(80,227,194,0.25) inset;*/
+}
+.layui-input{
+    height:34px;
+    background-color: rgba(57,191,244,0.2)!important;
+    border: 1px solid #277695;
+}
+.input-location,.glow-input{
+    position: relative;
+    border: 1px solid #277695!important;
+    background-color: rgba(57,191,244,0.2)!important;
+    display: inline-block;
+    padding-left: 10px;
+    width: 100%;
+    height: 34px;
+    color: #ffffff;
+    border-radius: 4px;
+}
+.layui-input:hover,.layui-input:focus,.layui-textarea:hover,.layui-textarea:focus,.input-location:hover,.input-location:focus,.glow-input:hover,.glow-input:focus,.inputSector:hover,.inputSector:focus{
+    border: 1px solid #39bff4!important;
+}
+
+.inputSector{
+    position: relative;
+    color: #FFFFFF;
+    background-color: rgba(74, 144, 226, 0.1) !important;
+    border-radius: 2px;
+    border: 1px solid #1e4f6b;;
+    display: inline-block;
+    width: 200px;
+    height: 34px;
+    padding-left: 10px;
+}
+
+.inputSector .input_search_key{
+    height: 34px;
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+.inputSector .inputSector-memory{
+    height: auto;
+    /*margin-top: 30px;*/
+    overflow: auto;
+    position: absolute;
+    z-index: 9999;
+    /*width: 200px!important;*/
+    background-color: rgb(10, 69, 84);
+}
+.inputSector .clickX{
+    position: absolute;
+    cursor: pointer;
+    top: 3px;
+    right: 7px;
+    background: rgba(0,0,0,0.8);
+    padding: 0px 2px;
+}
+.form-control{/*下拉框样式*/
+    color: #ffffff;
+    height: 30px;
+    padding: 3px 12px;
+    background-color: #1D597D!important;
+    border: 1px solid #39bff4!important;
+    border-radius: 2px;
+}
+/*表格的多选框样式*/
+.layui-form-checkbox i {
+    color: #162B44;
+}
+.layui-form-checkbox[lay-skin=primary] i {
+    border: 1px solid #1e4f6b;
+    background-color: #162b44;
+}
+/*表格的多选框样式 end*/
+
+/*可勾选的下拉框*/
+.SumoSelect{
+    color: #ffffff;
+    width: auto!important;
+    height: 30px;
+    padding: 3px 12px;
+    border-radius: 2px;
+    background-color: #1D597D;
+    border: 1px solid #39bff4;
+}
+.SumoSelect > .CaptionCont > span {
+    width: auto;
+    min-width: 166px;
+}
+.SumoSelect > .CaptionCont{
+    background: #1D597D;
+    border: none;
+}
+.SumoSelect:focus > .CaptionCont,.SumoSelect:hover > .CaptionCont, .SumoSelect.open > .CaptionCont {
+    box-shadow: none;
+    border-color: #266E78;
+}
+.SumoSelect > .CaptionCont > label{
+    right: -18px;
+}
+.SumoSelect > .optWrapper > .options li label{
+    font-size: 14px;
+    padding-top: 3px;
+}
+.SumoSelect > .optWrapper{
+    border:none;
+}
+.SumoSelect > .optWrapper > .options{
+    background: #1D597D;
+    border: 1px solid #39bff4;
+}
+.SumoSelect > .optWrapper > .options li.opt{
+    border: none;
+}
+.SumoSelect > .optWrapper > .options li.opt:hover{
+    background: rgba(57,191,244,0.2);
+}
+.SumoSelect > .CaptionCont > label > i{
+    background-image:url(../../images/img/21.png);
+}
+/*可勾选的下拉框 end*/
+/*表单 end*/
+
+/*查询栏*/
+.bar{
+    position: relative;
+    background: none;
+    border-radius: 2px;
+}
+.back{
+    float: left;
+    margin: 13px 0 0 15px;
+    cursor: pointer;
+}
+/*.back img{*/
+    /*width: 12px;*/
+/*}*/
+.back a{
+    color: #43c3f7!important;
+    font-size: 16px;
+}
+.bar label{
+    color: #FFFFFF;
+}
+.bar button{
+    font-size: 14px!important;
+}
+
+.bar .btn-bordered img{
+    /*margin-bottom: 3px;*/
+}
+.bar .search{
+    padding: 4px 6px;
+}
+.bar .search img{
+    width: 18px;
+}
+.bar .input-location,.bar .glow-input,.bar .layui-input{
+    display: inline-block;
+    width: 150px;
+    height: 30px;
+}
+.bar .inputSector{
+    height: 30px;
+}
+.bar .inputSector .input_search_key{
+    height: 28px;
+}
+.bar .inputSector .clickX{
+    top: 6px;
+}
+.bar .date{
+    position: relative;
+    display: inline-block;
+}
+.bar .date .date-img{
+    position: absolute;
+    top: 8px;
+    left: 7px;
+    width: 14px;
+}
+.bar .date .layui-input{
+    padding-left: 25px;
+}
+.action-bar{
+    text-align: center;
+    padding-top: 7px;
+}
+.action-bar label{
+    font-size: 16px;
+    font-weight:normal;
+    margin-right: 5px;
+}
+
+.form-group{
+    margin-right: 15px;
+}
+/*查询栏 end*/
+
+/*flex布局排列表单*/
+.form-flex .layui-form-item{
+    display: flex;
+    margin-bottom: 0px;
+}
+.layui-form-item .layui-form-label{
+    width: auto;
+    min-width: 60px;
+    color: #B5E1EC!important;
+    padding-left: 0px!important;
+    padding-right: 0;
+    margin-bottom: 0;
+    /*padding-bottom: 5px;*/
+}
+.form-flex .layui-form-item .layui-form-label{
+    text-align: left;
+    line-height: 22px;
+    padding: 0px;
+}
+.form-flex .layui-form-item .layui-inline{
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: auto;
+}
+.form-flex .layui-form-item .layui-inline-1{
+    flex-basis: 100%;
+    display: flex;
+}
+
+.form-flex .layui-form-item .layui-inline-2{
+    flex-basis: 50%;
+    display: flex;
+}
+.form-flex .layui-form-item .layui-inline-3{
+    flex-basis: 33%;
+    display: flex;
+}
+.form-flex .layui-form-item .layui-inline-4{
+    flex-basis: 25%;
+    display: flex;
+}
+.form-flex .layui-form-item .layui-input-inline{
+    word-break: break-all;
+    width: auto;
+    /*margin-top: 7px;*/
+    /*padding-left: 5px;*/
+    /*padding-right: 10px;*/
+    line-height: 22px;
+ }
+.form-flex .item-wrap{
+    flex-wrap: wrap;
+}
+.form-flex .item-wrap .layui-input-inline,.form-flex .item-wrap .layui-form-label{
+    white-space: nowrap;
+}
+.flex-nowrap{
+    white-space: nowrap;
+}
+/*flex布局排列表单 end*/
+
+/*进度条*/
+.progress-box{
+    margin-bottom: 10px;
+}
+.progress-box .layui-progress {
+    position: relative;
+    margin: 15px 50px 40px;
+    background-color: #4f7a8d;
+}
+.progress-box .layui-progress .node-note {
+    position: absolute;
+    right: 0;
+    top: -80px;
+}
+.progress-box .layui-progress .node-note div {
+    float: left;
+    margin-left: 10px;
+}
+.progress-box .layui-progress .node-note span {
+    padding: 1px 9px;
+    margin-right: 5px;
+}
+.progress-box .layui-progress .node-note .green {
+    background: #0cbcf2;
+}
+.progress-box .progress-node {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: -5px;
+    z-index: 1;
+}
+.progress-box .progress-node li {
+    position: relative;
+}
+.progress-box .progress-node li .node-current {
+    border-radius: 50%;
+    padding: 5px 0px;
+    color: #ffffff;
+}
+.progress-box .progress-node .border-green {
+    border: 5px solid rgba(12,188,242,0.3);
+}
+.progress-box .progress-node li span, .node-note span {
+    padding: 5px 9px;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+.progress-box .node-info {
+    position: absolute;
+    width: 205px;
+    left: -88px;
+    text-align: center;
+    top: 32px;
+    color: #ffffff;
+}
+.layui-progress .green {
+    background: #0cbcf2;
+}
+.layui-progress .red {
+    background: #db4643;
+}
+.layui-progress .skip {
+    background: #ECBA02;
+}
+.progress-box .layui-progress-bar {
+    background-color: #68acca;
+}
+/*进度条 end*/
+
+/*常亮的*/
+.box-light{
+    display: inline-block;
+    font-size: 16px;
+    border: 1px solid #84EEFE;
+    padding: 1px 12px 3px;
+    border-radius: 2px;
+    color: #84EEFE;
+    margin-left: 20px;
+    background: rgba(0, 144, 171, 0.5);
+}
+/*常亮的 end*/
+
+.hr-line{
+    height:1px;
+    border:none;
+    border-top:1px solid #1e4f6b;
+}
+.label-check{
+    font-weight: 100;
+}
+.table>tbody>tr>td{
+    border-top:none;
+}
+/*地图状态颜色*/
+.map-green{
+    background: #23d331;
+}
+.map-blue{
+    background: #2eb9e4;
+}
+.map-yellow{
+    background: #f4d033;
+}
+.map-orange{
+    background: #e98304;
+}
+.map-red{
+    background: #ed1c1e;
+}
+.rise{/*指数上升*/
+    color: #00d910;
+}
+.decline{/*指数下降*/
+    color: #ff8e00;
+}
+
+/*标签页*/
+.nav-tabs-center{
+    display: flex!important;
+    justify-content: center!important;
+    margin-bottom: 10px;
+}
+.big-nav-a{
+    padding: 10px 81px!important;
+    font-size: 15px!important;
+}
+.nav-tabs{
+    border-bottom: none;
+}
+.nav-tabs>li{
+    position: relative;
+    margin: 5px 0px 0px 10px;
+    border: 1px solid rgba(11,108,138,0.5);
+    padding: 3px;
+    border-radius: 0px;
+}
+.nav-tabs>li:focus, .nav-tabs>li:hover{
+    border: 1px solid rgba(11,108,138,1);
+    box-shadow: 0px 0px 25px rgba(61,141,215,0.6) inset;
+}
+.nav-tabs>li.active, .nav-tabs>li.active:focus, .nav-tabs>li.active:hover{
+    border: 1px solid rgba(11,108,138,1);
+    box-shadow: 0px 0px 25px rgba(61,141,215,0.6) inset;
+}
+.nav-tabs>li:before{
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    background: rgba(67,196,248,0.3);
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    z-index: 1;
+}
+.nav-tabs>li:after{
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    background: rgba(67,196,248,0.3);
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+}
+.nav-tabs>li.active:before,.nav-tabs>li:focus::before,.nav-tabs>li:hover::before{
+    background: rgba(67,196,248,1);
+}
+.nav-tabs>li.active:after,.nav-tabs>li:focus::after,.nav-tabs>li:hover::after{
+    background: rgba(67,196,248,1);
+}
+
+.nav-tabs>li>a{
+    color: #aeb7c2;
+    background-color: rgba(57,191,244,0.2);
+    border: 1px solid rgb(31,105,134);
+    border-radius: 0px;
+    padding: 5px 34px;
+    font-size: 14px;
+    margin-right: 0;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    color: #ffffff;
+    background: linear-gradient(to bottom, #2B6C9B, #205584 50%, #2B6C9B);
+    border: 1px solid #2f94bb;
+}
+.nav-tabs>li>a:focus, .nav-tabs>li>a:hover{
+    color: #ffffff;
+    background: linear-gradient(to bottom, #2B6C9B, #205584 50%, #2B6C9B);
+    border: 1px solid #2f94bb;
+}
+.nav-tabs>li>a:before{
+    position: absolute;
+    left: 2px;
+    bottom:2px;
+    background: rgba(67,196,248,0.3);
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    z-index: 1;
+}
+.nav-tabs>li>a:after{
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+    background: rgba(67,196,248,0.3);
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+}
+.nav-tabs>li.active>a:before,.nav-tabs>li>a:focus::before,.nav-tabs>li>a:hover::before{
+    background: rgba(67,196,248,1);
+}
+.nav-tabs>li.active>a:after,.nav-tabs>li>a:focus::after,.nav-tabs>li>a:hover::after{
+    background: rgba(67,196,248,1);
+}
+/*标签页 END*/
+
+/*分页*/
+.layui-table-tool{
+    background: rgba(57,191,244,0.05);
+    text-align: center;
+}
+.layui-disabled, .layui-disabled:hover{
+    color: #a7b0bb!important;
+}
+.layui-laypage .layui-laypage-curr em{
+    color: #ffffff;
+    font-size: 14px;
+}
+.layui-table-tool .layui-laypage a{
+    color: #85EFFF;
+}
+.layui-table-tool .layui-laypage span{
+    color: #ffffff;
+}
+.layui-laypage input{
+    background: rgba(57,191,244,0.2);
+    border: 1px solid #39bff4;
+}
+.layui-laypage-limits select{
+    background: #1D597D;
+    border: 1px solid #39bff4;
+}
+.layui-table-tool .layui-laypage button{
+    background: none;
+    color: #85EFFF;
+    border: none;
+    font-size: 14px;
+}
+/*分页 end*/
+
+/*地图控件底下信息的样式*/
+.map-status{
+    border: none!important;
+    /*color: #85EFFF;*/
+}
+.lon-lat-label{
+    padding-left: 10px!important;
+    padding-top: 5px!important;
+}
+.zoom-class-label{
+    padding-top: 3px!important;
+}
+.map-date-label{
+    padding-top: 3px!important;
+}
+.sel-info-btn{
+    padding-top: 0px!important;
+}
+.vertical-line{
+    border-left: 1px solid #3768cc!important;
+}
+
+/*当前页颜色*/
+.btn-active{
+    color: #85EFFF;
+    background-color: rgba(0, 144, 171, 0.5);
+    border: 1px solid #85EFFF;
+}
+
+/*通告信息滚动*/
+.scroll-box{
+    border: 5px solid #1e4f6b;
+    border-radius: 2px;
+    margin: 0 15px 15px;
+    padding: 0 15px;
+    height: 310px;
+    overflow:scroll;
+}
+.star img{
+    width: 15px;
+    padding-bottom: 5px;
+}
+.scroll-box h5{
+    color: #85EFFF;
+    margin: 15px 0 0px;
+    font-size: 16px;
+}
+.vip-one{/*红色预警*/
+    color: #ed1c1e;
+}
+.vip-two{/*橙色预警*/
+    color: #e98304;
+}
+.vip-three{/*黄色预警*/
+    color: #f4d033;
+}
+.scroll-box ul li{
+    margin: 15px 0;
+}
+.scroll-box ul li span{
+    margin: 0px 5px;
+}
+.vip-number{
+    font-size: 18px;
+}
+/*通告信息滚动 end*/
+/*提示小弹窗的样式*/
+.layui-layer-dialog{
+    background: #0F2136!important;
+}
+.layui-layer-title{
+    background-color: #0e4b72!important;
+    color:#43c3f7!important;
+    border-bottom:none!important;
+}
+.layui-layer-ico{
+    background: url(../../images/img/sign_out2.png) no-repeat!important;
+}
+.layui-layer-btn a{
+    border: 1px solid #68b7c5!important;
+    background: none!important;
+    color: #68b7c5!important;
+}
+.layui-layer-btn .layui-layer-btn0{
+    border: 1px solid #68b7c5!important;
+    background: none!important;
+    color: #68b7c5!important;
+}
+.layui-layer-content span{
+    color: #ffffff!important;
+}
+/*提示小弹窗的样式 end*/
+
+.layui-layer-msg {
+    min-width: 180px;
+    border: 1px solid #347597!important;
+    box-shadow: none;
+}
+.layui-layer-dialog .layui-layer-padding{
+    background-color: rgba(0, 144, 171, 0.2)!important;
+}
+
+
+/*弹窗-地图窗口的样式调整（原位置：spdbmap.css）*/
+.map-position{
+    display: block;
+    left: 35%;
+    background: #132C3F;
+    color: #ffffff;
+    width: 220px;
+    height: 150px;
+    border-radius: 4px;
+}
+.line-split{
+    border-bottom: 1px solid #1e4f6b!important;
+    width: 100%!important;
+}
+.p-content{
+    text-align: center;
+}
+.p-content-text{
+    display: initial;
+    height: 34px;
+}
+.p-content-cancel{
+    width: 25px!important;
+    height: 25px!important;
+}
+.p-content-ok{
+    padding: 2px 10px!important;
+    background: none!important;
+    border-radius: 4px!important;
+    border: 1px solid #85EFFF!important;
+    color: #85EFFF;
+}
+.p-content-ok:hover{
+    background: none!important;
+    border: 1px solid #85EFFF!important;
+    color: #85EFFF!important;
+}
+.map-address-poi{
+    border:none!important;
+    height: 413px!important;
+    overflow: auto;
+}
+.map-address-poi .layui-table-view{
+    background: rgb(21,38,60);
+    margin: 0px 10px;
+    padding: 0px;
+}
+/*弹窗-地图窗口的样式调整（原位置：spdbmap.css） end*/
+
+/*投诉预分析地图里的弹窗表格专用-因布局和其他表格不统一*/
+.address-info{}
+
+.address-info .layui-table th{
+    background: rgba(25,54,81,0);
+}
+.address-info .layui-table thead tr, .address-info .layui-table-fixed-l tr, .address-info .layui-table-header, .address-info .layui-table-mend, .address-info .layui-table-patch, .address-info .layui-table-tool{
+    background: rgba(25,54,81,0);
+}
+.address-info .layui-table td, .address-info .layui-table th, .address-info .layui-table-header, .address-info .layui-table-tool, .address-info .layui-table-view, .address-info .layui-table[lay-skin=row], .address-info .layui-table[lay-skin=line]{
+    border:none;
+}
+.address-info .layui-table-body{
+    background-color: rgba(25,54,81,0.2)!important;
+    margin-right: 0px!important;
+}
+.address-info{
+    /*margin: 20px 0px 0px 10px;*/
+    /*border: 1px solid #1E4E6A!important;*/
+}
+.address-info table{
+    width: 100%!important;
+    text-align: center;
+    border: none;
+    background-color: rgba(24,57,82,0.6);
+    margin: 0px;
+}
+.address-info table thead{
+    color: #85EFFF;
+    background: rgba(25,54,81,1);
+    -moz-box-shadow:0px 0px 20px #1E4E6A inset;               /* For Firefox3.6+ */
+    -webkit-box-shadow:0px 0px 20px #1E4E6A inset;            /* For Chrome5+, Safari5+ */
+    box-shadow:0px 0px 20px #1E4E6A inset;                    /* For Latest Opera */
+}
+.address-info table thead th{
+    text-align: center;
+    background-color: transparent;
+}
+.address-info .table-bordered>thead>tr>th ,.address-info .table-bordered>tbody>tr>td {
+    border: none;
+    border-top: 1px solid #1A405B;
+}
+.address-info table>tbody>tr>td, .address-info .table>tbody>tr>th, .address-info .table>tfoot>tr>td, .address-info .table>tfoot>tr>th, .address-info .table>thead>tr>td, .address-info .table>thead>tr>th{
+    border-top: 1px solid #1A405B;
+}
+.address-info table>thead>tr>th{
+    border-bottom: 1px solid #1E4E6A;
+}
+.address-info .table-hover>tbody>tr:hover{
+    background-color:#183952;
+}
+.address-info .table-bordered>tbody>tr>td>a{
+    color: #85EFFF;
+}
+.address-info .table-bordered>tbody>tr>td>a:hover{
+    color: #85EFFF;
+}
+.address-info .layui-table tr{
+    border-bottom: 1px solid #1E4E6A;
+}
+.address-info .layui-table td{
+    padding: 5px 10px;
+}
+/*投诉预分析地图里的弹窗表格专用-因布局和其他表格不统一 END*/
+
+/*电平控件的调整*/
+.rangeslider{
+    margin-top: 5px!important;
+}
+.rangeslider, .rangeslider__fill{
+    height: 10px!important;
+    background: #cdcdcd!important;
+}
+.rangeslider__fill{
+    background: #05d6cb!important;
+}
+.rangeslider__handle{
+    width: 20px!important;
+    height: 20px!important;
+    top: -5px!important;
+}
+output{
+    color: #ffffff;
+    text-align: center;
+    padding-top: 5px;
+}
+/*电平控件的调整 end*/
+
+/*弹窗的背景色*/
+.layui-layer{
+    background-color: #0b3d5d!important;
+}
+/*弹窗的背景色end*/
+/*按钮上的三角形*/
+.element:before{
+    content: '';
+    width: 0px;
+    height: 0;
+    border: 17.7px solid transparent;
+    border-left-color: #85EFFF;
+    position: absolute;
+    left: 100.5%;
+    top: 54.5%;
+    margin-top: -19px;
+    border-radius: 2px;
+}
+.element:after{
+    content: "";
+    width: 0;
+    height: 0;
+    border: 15.5px solid transparent;
+    border-left-color: #0F5772;
+    position: absolute;
+    left: 100%;
+    top: 57%;
+    margin-top: -18px;
+}
+
+.element-right:before{
+    content: '';
+    width: 0px;
+    height: 0;
+    border: 17.7px solid transparent;
+    border-right-color: #85EFFF;
+    position: absolute;
+    right: 100.5%;
+    top: 54.5%;
+    margin-top: -19px;
+    border-radius: 2px;
+}
+.element-right:after{
+    content: "";
+    width: 0;
+    height: 0;
+    border: 15.5px solid transparent;
+    border-right-color: #0F5772;
+    position: absolute;
+    right: 100%;
+    top: 57%;
+    margin-top: -18px;
+}
+/*按钮上的三角形 end*/
+
+.highlight{
+    color:#F6C602;
+    display: block;
+    padding: 4px 0px;
+}
+
+/*地图控件上的表格样式调整*/
+.map-table{
+    margin: 0;
+}
+.map-table th{
+    padding: 10px 0;
+}
+/*地图控件上的表格样式调整 end*/

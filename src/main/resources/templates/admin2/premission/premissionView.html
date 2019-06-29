@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*.form-flex .layui-form-item .layui-inline */
+        /*{*/
+        /*    width: 100%;*/
+        /*}*/
+    </style>
+</head>
+<body >
+
+<div class="bar">
+<!--    <div class="back">-->
+<!--        <a href="#">-->
+<!--            <img src="../static/images/img/back.png"> 返回-->
+<!--        </a>-->
+<!--    </div>-->
+    <form class="form-inline action-bar">
+        <div class="form-group">
+            <label>权限类型</label>
+            <select class="form-control" id="preType">
+                <option value="all">全部</option>
+                <option value="view">视图</option>
+                <option value="list">列表</option>
+                <option value="other">其它</option>
+                <option value="add">增</option>
+                <option value="del">删</option>
+                <option value="select">查</option>
+                <option value="edit">改</option>
+            </select>
+        </div>
+        <div class="form-group" >
+            <select class="form-control hide" id="preTypeChild">
+                <option value="all">全部</option>
+                <option value="one">一级目录</option>
+                <option value="two">二级目录</option>
+                <option value="three">三级目录</option>
+            </select>
+        </div>
+        <button type="button" class="btn btn-borderless" id="search"><img src="../static/images/img/search.png"></button>
+    </form>
+
+</div>
+
+<div class="col-md-12">
+    <div class="glow-box1 clearfix">
+        <img class="icon-glow-left-top" src="../static/images/img/icon-glow-left-top.png">
+        <img class="icon-glow-right-top" src="../static/images/img/icon-glow-right-top.png">
+        <img class="icon-glow-left-bottom" src="../static/images/img/icon-glow-left-bottom.png">
+        <img class="icon-glow-right-bottom" src="../static/images/img/icon-glow-right-bottom.png">
+        <div class="glow-title">
+            <h4>权限展示</h4>
+        </div>
+        <div class="glow-content">
+            <table id="dataTable" lay-filter="dataTable" lay-data="{id: 'dataTable'}"></table>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+<script type="text/html" id="barDemo">
+    <button type="button" class="btn btn-bordered btn-table" lay-event="edit"><img src="../static/images/img/save.png">保存</button>
+    <button type="button" class="btn btn-bordered btn-table" lay-event="del"><img src="../static/images/img/sign_out2.png">删除</button>
+</script>
+
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <button type="button" class="btn btn-bordered "  onclick="btnClickAddPre()" ><img src="../static/images/img/add.png">新增权限</button>
+<!--        <button class="layui-btn layui-btn-sm" lay-event="getCheckData1">获取单选行数据</button>-->
+<!--        <button class="layui-btn layui-btn-sm" lay-event="getCheckData2">获取复选行数据</button>-->
+<!--        <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>-->
+<!--        <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>-->
+    </div>
+</script>
+
+
+<!-- 通用js 引用汇总-->
+<div th:include="admin/common/html/js :: onload_js"></div>
+
+</body>
+
+
+</body>
+<script th:src="@{/static/js/admin/premission/premission.js}"></script>
+
+</html>

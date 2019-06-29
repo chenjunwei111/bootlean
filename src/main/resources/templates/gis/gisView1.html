@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>地图管理1</title>
+</head>
+<body>
+
+<div class="col-md-4">
+    <div class="glow-box1 clearfix">
+        <img class="icon-glow-left-top" src="../static/images/img/icon-glow-left-top.png">
+        <img class="icon-glow-right-top" src="../static/images/img/icon-glow-right-top.png">
+        <img class="icon-glow-left-bottom" src="../static/images/img/icon-glow-left-bottom.png">
+        <img class="icon-glow-right-bottom" src="../static/images/img/icon-glow-right-bottom.png">
+        <div class="glow-title">
+            <h4>基站列表</h4>
+        </div>
+        <div class="glow-content">
+            <table id="sectorTable" lay-filter="sectorTable" lay-data="{id: 'sectorTableid'}"></table>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-8">
+    <div id="maps" style="position: relative;height:649px;width:100%; border: 1px solid #1e4f6b;margin-top: 43px"></div>
+</div>
+
+
+<!-- 通用js 引用汇总-->
+<div th:include="admin/common/html/js :: onload_js"></div>
+
+</body>
+
+
+
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=1XjLLEhZhQNUzd93EjU5nOGQ"></script>
+
+<script  th:src="@{/static/js/mapv/spdbmap.js}"></script>
+
+<script th:src="@{/static/js/gis/gisView1.js}"></script>
+<!--<script type="text/javascript" th:src="@{/static/js/mapv/ThemMaps.js}"></script>-->
+
+</html>

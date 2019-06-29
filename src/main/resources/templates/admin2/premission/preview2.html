@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body >
+<input id="msg"   />
+12
+
+<!-- 通用js 引用汇总-->
+<div th:include="admin/common/html/js :: onload_js"></div>
+
+</body>
+
+</body>
+
+<script th:src="@{/static/js/common/echarts.js}"></script>
+
+<script>
+
+$(function () {
+    $("#msg").val(moRes.msg);
+})
+</script>
+</html>

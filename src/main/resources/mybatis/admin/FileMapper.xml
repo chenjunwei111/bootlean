@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cjw.boot.mapper.image.FileMapper">
+    <!--1返回对象-->
+    <resultMap id="ResultMapTSysFile2" type="com.cjw.boot.pojo.image.FilePojo">
+        <result property="id" column="id" javaType="String" jdbcType="VARCHAR"/>
+        <result property="fileName" column="FILE_NAME" javaType="String" jdbcType="VARCHAR"/>
+        <result property="createUserId" column="CREATE_USER_ID" javaType="String" jdbcType="VARCHAR"/>
+        <result property="createUserName" column="CREATE_USER_NAME" javaType="String" jdbcType="VARCHAR"/>
+        <result property="createTime" column="CREATE_TIME" jdbcType="TIMESTAMP"/>
+        <result property="updateUserId" column="UPDATE_USER_ID" javaType="String" jdbcType="VARCHAR"/>
+        <result property="updateUserName" column="UPDATE_USER_NAME" javaType="String" jdbcType="VARCHAR"/>
+        <result property="updateTime" column="UPDATE_TIME" jdbcType="TIMESTAMP"/>
+        <result property="filePath" column="FILE_PATH" javaType="String" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--1插入语句-->
+    <insert id="addFile" parameterType="com.cjw.boot.pojo.image.FilePojo">
+        INSERT INTO T_SYS_FILE_2 (ID, FILE_NAME, CREATE_USER_ID, CREATE_USER_NAME, CREATE_TIME, UPDATE_USER_ID,
+                                  UPDATE_USER_NAME, UPDATE_TIME, FILE_PATH)
+        VALUES ( #{id,jdbcType=VARCHAR}, #{fileName,jdbcType=VARCHAR}
+               , #{createUserId,jdbcType=VARCHAR}, #{createUserName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}
+               , #{updateUserId,jdbcType=VARCHAR}, #{updateUserName,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{filePath,jdbcType=VARCHAR})
+    </insert>
+
+    <!--1删除语句-->
+    <delete id="delFile" parameterType="com.cjw.boot.pojo.image.FilePojo">
+        DELETE FROM T_SYS_FILE_2
+        <where>
+            <if test="id != null and id!='' ">ID = #{id}</if>
+        </where>
+
+    </delete>
+
+    <!--1更新语句-->
+    <update id="updateFile" parameterType="com.cjw.boot.pojo.image.FilePojo">
+        UPDATE T_SYS_FILE_2
+
+        <trim prefix="set" suffixOverrides=",">
+            <if test="fileName != null and fileName!='' ">FILE_NAME = #{fileName}</if>
+            <if test="createUserId != null and createUserId!='' ">,CREATE_USER_ID = #{createUserId}</if>
+            <if test="createUserName != null and createUserName!='' ">,CREATE_USER_NAME = #{createUserName}</if>
+            <if test="createTime != null  ">,CREATE_TIME = #{createTime}</if>
+            <if test="updateUserId != null and updateUserId!='' ">,UPDATE_USER_ID = #{updateUserId}</if>
+            <if test="updateUserName != null and updateUserName!='' ">,UPDATE_USER_NAME = #{updateUserName}</if>
+            <if test="updateTime != null  ">,UPDATE_TIME = #{updateTime}</if>
+            <if test="filePath != null and filePath!='' ">,FILE_PATH = #{filePath}</if>
+        </trim>
+        <where>
+            <if test="id != null and id!='' ">AND ID = #{id}</if>
+        </where>
+    </update>
+
+    <!--1查询数据集语句(传参在form中)-->
+    <select id="listFile" parameterType="com.cjw.boot.pojo.image.FilePojo" resultMap="ResultMapTSysFile2">
+        <![CDATA[
+ SELECT  ID, FILE_NAME, CREATE_USER_ID, CREATE_USER_NAME, CREATE_TIME, UPDATE_USER_ID, UPDATE_USER_NAME, UPDATE_TIME, FILE_PATH FROM T_SYS_FILE_2
+ ]]>
+        <where>
+            <if test="id != null and id!='' ">ID = #{id}</if>
+            <if test="fileName != null and fileName!='' ">and FILE_NAME = #{fileName}</if>
+            <if test="createUserName != null and createUserName!='' ">and CREATE_USER_NAME = #{createUserName}</if>
+
+        </where>
+    </select>
+
+
+</mapper>

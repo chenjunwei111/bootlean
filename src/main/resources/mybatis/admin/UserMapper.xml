@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cjw.boot.mapper.admin.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.cjw.boot.pojo.admin.UserPojo" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="EMAIL" property="email" jdbcType="VARCHAR" />
+    <result column="ISVALID" property="isvalid" jdbcType="VARCHAR" />
+    <result column="DISCRIPTION" property="discription" jdbcType="VARCHAR" />
+    <result column="LASTTIME" property="lasttime" jdbcType="TIMESTAMP" />
+  </resultMap>
+
+
+  <select id="queryUserName" parameterType="String" resultType="com.cjw.boot.pojo.admin.UserPojo">
+    select * from T_SYS_USER_2 where username=#{username}
+  </select>
+
+
+  <!--a2插入语句-->
+  <insert id="addUser" parameterType="com.cjw.boot.pojo.admin.UserPojo">
+    INSERT INTO T_SYS_USER_2 (
+      ID,USERNAME,PASSWORD,EMAIL,ISVALID,DISCRIPTION,LASTTIME)
+    VALUES
+    (#{id,jdbcType=VARCHAR},#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{email,jdbcType=VARCHAR}
+    ,#{isvalid,jdbcType=VARCHAR},#{discription,jdbcType=VARCHAR},#{lasttime,jdbcType=DATE})
+  </insert>
+
+  <!--a2删除语句-->
+  <delete id="delUser" parameterType="com.cjw.boot.pojo.admin.UserPojo">
+    DELETE FROM T_SYS_USER_2
+    <where>
+      <if test="id != null and id!='' ">ID = #{id}</if>
+<!--      <if test="username != null and username!='' "> AND USERNAME = #{username}</if>-->
+<!--      <if test="password != null and password!='' "> AND PASSWORD = #{password}</if>-->
+<!--      <if test="email != null and email!='' "> AND EMAIL = #{email}</if>-->
+<!--      <if test="isvalid != null and isvalid!='' "> AND ISVALID = #{isvalid}</if>-->
+<!--      <if test="discription != null and discription!='' "> AND DISCRIPTION = #{discription}</if>-->
+<!--      <if test="lasttime != null and lasttime!='' "> AND LASTTIME = #{lasttime}</if>-->
+    </where>
+
+  </delete>
+
+  <!--a2更新语句-->
+  <update id="updateUser" parameterType="com.cjw.boot.pojo.admin.UserPojo">
+    UPDATE T_SYS_USER_2
+
+    <trim prefix="set" suffixOverrides=",">
+      <if test="id != null and id!='' ">ID = #{id}</if>
+      <if test="username != null and username!='' ">,USERNAME = #{username}</if>
+      <if test="password != null and password!='' ">,PASSWORD = #{password}</if>
+      <if test="email != null and email!='' ">,EMAIL = #{email}</if>
+      <if test="isvalid != null and isvalid!='' ">,ISVALID = #{isvalid}</if>
+      <if test="discription != null and discription!='' ">,DISCRIPTION = #{discription}</if>
+      <if test="lasttime != null  ">,LASTTIME = #{lasttime}</if>
+    </trim>
+    <where>
+      <if test="id != null and id!='' "> AND ID = #{id}</if>
+<!--      <if test="username != null and username!='' "> AND USERNAME = #{username}</if>-->
+<!--      <if test="password != null and password!='' "> AND PASSWORD = #{password}</if>-->
+<!--      <if test="email != null and email!='' "> AND EMAIL = #{email}</if>-->
+<!--      <if test="isvalid != null and isvalid!='' "> AND ISVALID = #{isvalid}</if>-->
+<!--      <if test="discription != null and discription!='' "> AND DISCRIPTION = #{discription}</if>-->
+<!--      <if test="lasttime != null and lasttime!='' "> AND LASTTIME = #{lasttime}</if>-->
+    </where>
+  </update>
+
+  <!--a2查询数据集语句(传参在form中)-->
+  <select id="listUser" parameterType="com.cjw.boot.pojo.admin.UserPojo" resultMap="BaseResultMap">
+    <![CDATA[
+ SELECT  ID,USERNAME,PASSWORD,EMAIL,ISVALID,DISCRIPTION,LASTTIME FROM T_SYS_USER_2
+ ]]>
+    <where>
+      <if test="id != null and id!='' ">ID = #{id}</if>
+      <if test="username != null and username!='' "> and USERNAME  LIKE  '%${username}%' </if>
+      <if test="password != null and password!='' "> and PASSWORD = #{password}</if>
+      <if test="email != null and email!='' "> and EMAIL = #{email}</if>
+      <if test="isvalid != null and isvalid!='' "> and ISVALID = #{isvalid}</if>
+      <if test="discription != null and discription!='' "> and DISCRIPTION = #{discription}</if>
+      <if test="lasttime != null and lasttime!='' "> and LASTTIME = #{lasttime}</if>
+    </where>
+  </select>
+
+</mapper>

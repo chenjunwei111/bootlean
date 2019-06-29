@@ -1,0 +1,93 @@
+#led-ctrl{
+    position: absolute;
+    /*border: 1px solid red;*/
+    /*background: greenyellow;*/
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    top: 8px;
+    /*box-shadow: rgb(102, 102, 102) 0px 0px 10px;*/
+    /*background-color: rgba(0, 0, 0, 0.1);//*/
+    /*border-radius: 50%;*/
+    clear: both;
+    text-align: center;
+    background:rgba(0, 0, 0, 0)  url('../../images/map/symbols/lyrctrl.png') no-repeat;
+    background-size: 25px 25px;
+}
+
+#led-content {
+    border: 1px solid #d5d5d5;
+    border-radius: 4px;
+    background: #fff;
+
+    position: relative;
+    right: 1px;
+    width: 200px;
+    top:33px;
+    opacity: 0;
+    display: block;
+}
+.led-buss{
+    padding-top: 1px;
+    display: inline-block;
+    /*border-top: 1px solid silver;*/
+    width: 100%;
+    height: 23px;
+}
+
+.led-sub{
+    padding-top: 1px;
+    display: inline-block;
+    /*border-top: 1px solid silver;*/
+    width: 100%;
+    /*height: 25px;*/
+}
+
+.led-buss i{
+     float: left;
+    width: 20px;
+    height: 20px;
+     /*border: 1px solid red;*/
+     margin-top: 3px;
+     margin-left: 2px;
+    /*cursor: pointer;*/
+}
+
+.led-sub i{
+    float: left;
+   width: 18px;
+    height: 18px;
+    /*border: 1px solid red;*/
+    margin-top: 3px;
+    margin-left: 2px;
+}
+
+.led-buss span{
+    float: left;
+    font-size: 12px;
+    margin-left: 5px;
+    margin-top: 3px;
+    color: #4f4f4f;
+}
+.led-sub span{
+    float: left;
+    font-size: 10px;
+    margin-left: 5px;
+    margin-top: 6px;
+    color: #4f4f4f;
+}
+#led-Lyr
+{
+    right: 0;
+    position: absolute;
+    top: 5%;
+}
+.led-mutil-content
+{
+    box-shadow: inset 0px 1px 1px 1px #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+}
+.s-mutil{
+    cursor: pointer;
+    font-weight: bold;
+}

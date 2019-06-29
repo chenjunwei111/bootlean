@@ -1,0 +1,69 @@
+.web-context-menu {
+	margin:0;padding:0;display:none;
+	font-size:10px;
+	width:100px;/*调整1级菜单宽度*/
+	position: fixed;
+	z-index:9;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+	background:#fff;
+}
+.web-context-menu * {margin:0;padding:0;font-style:normal;color: black}
+.web-context-menu-items { }
+.web-context-menu-items .menu-item-line {
+	border-bottom:1px solid #efefef;width:93.5%;margin:0 auto;
+}
+.web-context-menu-items #r-up-menu-item #last-menu-item,
+.web-context-menu-items #r-down-menu-item #last-menu-item
+{
+    text-align: center;
+    font-size: 17px;
+    padding-top: 0px;
+}
+
+.web-context-menu-items .menu-item-line:last-child {
+	display:none;
+}
+.web-context-menu-items .web-context-menu-item {
+	position:relative;
+    height: 25px;
+	text-align: left;
+}
+.web-context-menu-items .web-context-menu-item:last-child {
+	border:0;
+}
+.web-context-menu-items .web-context-menu-item .menu-item-name {
+	display:block;
+    padding:2px 7px 10px 10px;
+}
+
+.web-context-menu-items .web-context-menu-item #last-menu-item{
+    cursor:pointer;
+}
+
+.web-context-menu-items .web-context-menu-item:hover .menu-item-name {
+	background:rgba(0,0,0,.01);
+}
+.web-context-menu-items .web-context-menu-item > .web-context-menu-items {
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+	background:#fff;
+}
+.web-context-menu-items .web-context-menu-item:hover > .web-context-menu-items {
+	display:block;
+}
+.web-context-menu-items .web-context-menu-item .menu-item-name > i {
+	display:inline-block;
+	transform:rotate(90deg);
+	float:right;
+	margin-right:5px;
+	color:#aaa;
+}
+
+/*菜单（2级以上）宽度须同时调整right和width*/
+.web-context-menu-items .web-context-menu-item > .web-context-menu-items {
+	position:absolute;
+	right: -135px;
+	top: 0;
+	width: 135px;
+	display: none;
+	text-align: center;
+}

@@ -1,0 +1,305 @@
+body {
+    background: #16354F;
+    color: #ffffff;
+    margin-top: 26px;
+}
+.posit-re{
+    position: relative;
+}
+.posit-ad{
+    position: absolute;
+}
+.layui-form-label{
+    color: #B5E1EC!important;
+}
+/*修改文本框提示文字的颜色*/
+input::-webkit-input-placeholder { /* WebKit browsers */
+    color: #cdcdcd;
+}
+
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #cdcdcd;
+}
+
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #cdcdcd;
+}
+
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #cdcdcd;
+}
+/*修改文本框提示文字的颜色 END*/
+/*修改多行文本框提示文字的颜色*/
+textarea::-webkit-input-placeholder { /* WebKit browsers */
+    color: #cdcdcd;
+}
+
+textarea:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #cdcdcd;
+}
+
+textarea::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #cdcdcd;
+}
+
+textarea:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #cdcdcd;
+}
+/*修改多行文本框提示文字的颜色 END*/
+.layui-layer{
+    background: none!important;
+}
+/*多选框默认颜色*/
+.layui-textarea {
+    border: 1px solid #1e4f6b;
+    background-color: #1D4465;
+    color: #ffffff;
+}
+
+.layui-textarea:hover {
+    border: 1px solid #1e4f6b !important;
+}
+
+.layui-textarea:focus {
+    border: 1px solid #1e4f6b !important;
+}
+
+/*普通输入框样式*/
+.input-location {
+    border: 1px solid #1e4f6b !important;
+    background-color: #162b44 !important;
+    color: #ffffff !important;
+}
+
+.layui-input:hover, .layui-input:focus, .layui-textarea:hover, .layui-textarea:focus {
+    border: 1px solid #68b7c5 !important;
+}
+
+/*输入框默认颜色*/
+.layui-input {
+    border: 1px solid #1e4f6b;
+    background-color: #1D4465;
+    color: #ffffff;
+}
+
+.form-control { /*下拉框样式*/
+    background: #075D70;
+    color: #ffffff;
+    border: 1px solid #075D70;
+    height: 30px;
+    padding: 3px 12px;
+}
+/*按钮样式*/
+.btn-save{
+    text-align: center;
+    margin-top: 18px;
+}
+.btn-save button{
+    font-size: 17px;
+}
+.btn-save button,.color-highlight{
+    color: #68b7c5;
+    background: none;
+    border: 1px solid #68b7c5;
+}
+.btn-save button:hover,.color-highlight:hover{
+    color: #84EEFE;
+    border: 1px solid #84EEFE;
+    text-decoration: none;
+    background: rgba(6, 109, 128, 0.5);
+}
+.btn-save button img{
+    width: 15px;
+    padding-bottom: 3px;
+    margin-right: 2px;
+}
+/*按钮样式 end*/
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+    width: 7px;
+    height: 7px;
+    background-color: rgba(18,31,29,0);
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+    border-radius: 5px;
+    background-color: rgba(17,31,54,0.8) !important;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+    /*width: 5px;*/
+    border-radius: 5px;
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);*/
+    background-color: rgba(0,201,201,0.5) !important;
+}
+/*半透明的表格*/
+.layui-table th{
+    background: rgba(25,54,81,0);
+}
+.layui-table thead tr, .layui-table-fixed-l tr, .layui-table-header, .layui-table-mend, .layui-table-patch, .layui-table-tool{
+    background: rgba(25,54,81,0);
+}
+.layui-table td, .layui-table th, .layui-table-header, .layui-table-tool, .layui-table-view, .layui-table[lay-skin=row], .layui-table[lay-skin=line]{
+    border:none;
+}
+.layui-table-body{
+    background-color: rgba(25,54,81,0)!important;
+    margin-right: 0px!important;
+}
+.layui-table-view{
+    margin: 20px 0px 0px 10px;
+}
+.layui-table-view table{
+    width: 100%!important;
+    text-align: center;
+    border: 1px solid #1e4f6b;
+    background-color: rgba(24,57,82,0.6);
+    margin: 20px 10px;
+}
+.layui-table-view table thead{
+    color: #85EFFF;
+    background: rgba(25,54,81,1);
+    -moz-box-shadow:0px 0px 20px #1E4E6A inset;               /* For Firefox3.6+ */
+    -webkit-box-shadow:0px 0px 20px #1E4E6A inset;            /* For Chrome5+, Safari5+ */
+    box-shadow:0px 0px 20px #1E4E6A inset;                    /* For Latest Opera */
+}
+.layui-table-view table thead th{
+    text-align: center;
+}
+.layui-table-view table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    border-top: 1px solid #1A405B;
+}
+.layui-table-view table>thead>tr>th{
+    border-bottom: 1px solid #1E4E6A;
+}
+.layui-table-view .table-hover>tbody>tr:hover{
+    background-color:#183952;
+}
+.layui-table tr{
+    border-bottom: 1px solid #1E4E6A;
+}
+.layui-table-view .layui-table td{
+    padding: 5px 10px;
+}
+/*半透明的表格 END*/
+/*分页*/
+.layui-table-tool{
+    background: #183952;
+}
+.layui-disabled, .layui-disabled:hover{
+    color: #85EFFF !important;
+}
+.layui-laypage .layui-laypage-curr em{
+    color: #000000;
+    font-size: 14px;
+}
+.layui-table-tool .layui-laypage a, .layui-table-tool .layui-laypage span{
+    color: #85EFFF;
+}
+.layui-laypage input{
+    background: #162b44;
+    border:1px solid #1e4f6b;
+}
+.layui-laypage-limits select{
+    background: #162b44;
+    border:1px solid #1e4f6b;
+}
+.layui-table-tool .layui-laypage button{
+    background: none;
+    color: #85EFFF;
+    border: none;
+    font-size: 14px;
+}
+/*分页 end*/
+
+/*提示小弹窗的样式*/
+.layui-layer-dialog{
+    background: #0F2136!important;
+}
+.layui-layer-title{
+    background-color: #132C3F!important;
+    color:#85EFFF!important;
+    border-bottom:none!important;
+}
+.layui-layer-ico{
+    background: url(../../images/img/sign_out2.png) no-repeat!important;
+}
+.layui-layer-btn a{
+    border: 1px solid #68b7c5!important;
+    background: none!important;
+    color: #68b7c5!important;
+}
+.layui-layer-btn .layui-layer-btn0{
+    border: 1px solid #68b7c5!important;
+    background: none!important;
+    color: #68b7c5!important;
+}
+/*提示小弹窗的样式 end*/
+
+.layui-form-radio i:hover, .layui-form-radioed i{
+    color: #85EFFF;
+}
+/*分页*/
+.layui-table-tool{
+    background: rgba(6, 109, 128, 0.12);
+    text-align: center;
+}
+.layui-disabled, .layui-disabled:hover{
+    color: #85EFFF !important;
+}
+.layui-laypage .layui-laypage-curr em{
+    color: #ffffff;
+    font-size: 14px;
+}
+.layui-table-tool .layui-laypage a, .layui-table-tool .layui-laypage span{
+    color: #85EFFF;
+}
+.layui-laypage input{
+    background: #162b44;
+    border:1px solid #1e4f6b;
+}
+.layui-laypage-limits select{
+    background: #162b44;
+    border:1px solid #1e4f6b;
+}
+.layui-table-tool .layui-laypage button{
+    background: none;
+    color: #85EFFF;
+    border: none;
+    font-size: 14px;
+}
+/*分页 end*/
+/*标签页*/
+.nav-tabs{
+    border-bottom: none;
+}
+.nav-tabs>li{
+    margin: 10px 5px 0px 5px;
+}
+.nav-tabs>li>a{
+    border-radius: 4px;
+    color: #cdcdcd;
+    background-color: rgba(0, 144, 171, 0.2);
+    border: 1px solid rgba(0, 144, 171, 0.2);
+    border-radius: 2px;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    color: #85EFFF;
+    background-color: rgba(0, 144, 171, 0.5);
+    border:1px solid #85EFFF;
+}
+.nav-tabs>li>a:hover{
+    border-color: #85EFFF;
+    color: #85EFFF;
+}
+.nav>li>a:focus, .nav>li>a:hover{
+    background-color: rgba(0, 144, 171, 0.5);
+    color: #85EFFF;
+}
+/*标签页 END*/

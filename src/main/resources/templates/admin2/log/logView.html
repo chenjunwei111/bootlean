@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>日志展示</title>
+</head>
+<body>
+
+
+<div class="col-md-12">
+    <div class="glow-box1 clearfix">
+        <img class="icon-glow-left-top" src="../static/images/img/icon-glow-left-top.png">
+        <img class="icon-glow-right-top" src="../static/images/img/icon-glow-right-top.png">
+        <img class="icon-glow-left-bottom" src="../static/images/img/icon-glow-left-bottom.png">
+        <img class="icon-glow-right-bottom" src="../static/images/img/icon-glow-right-bottom.png">
+        <div class="glow-title">
+            <h4>日志展示</h4>
+        </div>
+        <div class="glow-content">
+            <table id="logTable1" lay-filter="logTable1" lay-data="{id: 'logTableid1'}"></table>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-12">
+    <div class="glow-box1 clearfix">
+        <img class="icon-glow-left-top" src="../static/images/img/icon-glow-left-top.png">
+        <img class="icon-glow-right-top" src="../static/images/img/icon-glow-right-top.png">
+        <img class="icon-glow-left-bottom" src="../static/images/img/icon-glow-left-bottom.png">
+        <img class="icon-glow-right-bottom" src="../static/images/img/icon-glow-right-bottom.png">
+        <div class="glow-title">
+            <h4>日志统计</h4>
+        </div>
+        <div class="glow-content">
+           <div class="col-md-6">
+               <table id="logTable2" lay-filter="logTable2" lay-data="{id: 'logTable2Id'}"></table>
+           </div>
+            <div class="col-md-6">
+                <table id="logTable3" lay-filter="logTable3" lay-data="{id: 'logTable3Id'}"></table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 通用js 引用汇总-->
+<div th:include="admin/common/html/js :: onload_js"></div>
+
+
+</body>
+
+<script th:src="@{/static/js/admin/log/log.js}"></script>
+
+
+</html>

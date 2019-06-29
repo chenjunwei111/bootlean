@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .imgSize {
+            width: 600px;
+            /*height: 440px;*/
+        }
+    </style>
+</head>
+<body>
+
+<div class="col-md-12">
+
+    <!--    <div id="treeSimple" class="usertree"></div>-->
+    <!--    <img th:src="'../FileController/viewImg/1560580258990'">-->
+    <!--    <img th:src="'../FileController/viewImg/1560580343837'">-->
+
+    <div class="glow-box1 clearfix">
+        <img class="icon-glow-left-top" src="../static/images/img/icon-glow-left-top.png">
+        <img class="icon-glow-right-top" src="../static/images/img/icon-glow-right-top.png">
+        <img class="icon-glow-left-bottom" src="../static/images/img/icon-glow-left-bottom.png">
+        <img class="icon-glow-right-bottom" src="../static/images/img/icon-glow-right-bottom.png">
+        <div class="glow-title">
+            <h4>文件展示</h4>
+        </div>
+        <div class="glow-content">
+
+           <div style="display: flex">
+               <div class="layui-upload">
+                   <button type="button" class="btn btn-bordered " id="uploadImg"><img
+                           src="../static/images/img/up-img.png">单个上传
+                   </button>
+                   <div class="layui-upload-list">
+                       <img class="layui-upload-img" id="demo1">
+                       <p id="demoText"></p>
+                   </div>
+               </div>
+
+
+               <div class="layui-upload" style="margin-left: -105px">
+                   <button type="button" class="btn btn-bordered " id="uploadImgS"><img
+                           src="../static/images/img/up-img.png">批量上传
+                   </button>
+                   <div class="layui-upload-list" id="demo2"></div>
+               </div>
+           </div>
+
+            <script type="text/html" id="barDemo">
+                <!--            <button type="button" class="btn btn-bordered btn-table" lay-event="updateUser"><img src="../static/images/img/icon_user_level.png">查看</button>-->
+                <button type="button" class="btn btn-bordered btn-table" lay-event="edit"><img
+                        src="../static/images/img/save.png">保存
+                </button>
+
+                <button type="button" id="updateImg" class="btn btn-bordered btn-table" lay-event="updateImg"><img
+                        src="../static/images/img/submit.png">重传
+                </button>
+
+                <button type="button" class="btn btn-bordered btn-table" lay-event="del"><img
+                        src="../static/images/img/sign_out2.png">删除
+                </button>
+            </script>
+
+
+            <script type="text/html" id="showImg">
+                <img lay-event="clickImg" id="fileImage" th:src="'../FileController/viewImg/{{d.id}}'">
+            </script>
+
+            <table id="fileTable" lay-filter="fileTable" lay-data="{id: 'fileTableid'}"></table>
+        </div>
+    </div>
+
+
+</div>
+
+<!--隐藏的重传按钮-->
+<div class="layui-upload" style="display: none">
+    <button type="button" class="btn btn-bordered " id="uploadImg2"><img src="../static/images/img/up-img.png">重传
+    </button>
+</div>
+
+<!-- 通用js 引用汇总-->
+<div th:include="admin/common/html/js :: onload_js"></div>
+
+</body>
+
+<script th:src="@{/static/js/image/file.js}"></script>
+
+<script>
+
+    $(function () {
+
+    })
+</script>
+</html>

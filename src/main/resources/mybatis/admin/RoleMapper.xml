@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cjw.boot.mapper.admin.RoleMapper">
+    <!--1返回对象-->
+    
+    <resultMap id="ResultMapTSysRole2" type="com.cjw.boot.pojo.admin.RolePojo">
+        <result property="value" column="value" javaType="String" jdbcType="VARCHAR"/>
+        <result property="roleName" column="ROLE_NAME" javaType="String" jdbcType="VARCHAR"/>
+        <result property="description" column="DESCRIPTION" javaType="String" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="TreeMap" type="com.cjw.boot.pojo.admin.TreePojo">
+        <result property="title" column="TITLE" javaType="String" jdbcType="VARCHAR"/>
+        <result property="id" column="ID" javaType="String" jdbcType="VARCHAR"/>
+        <result property="checked" column="CHECKED" javaType="Boolean" jdbcType="VARCHAR"/>
+<!--        <result property="disabled" column="DISABLED" javaType="Boolean" jdbcType="VARCHAR"/>-->
+        <result property="parent" column="parent" javaType="string" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+    <!--1插入语句-->
+    <insert id="addRole" parameterType="com.cjw.boot.pojo.admin.RolePojo">
+        INSERT INTO T_SYS_ROLE_2 (ID, ROLE_NAME, DESCRIPTION)
+        VALUES (#{id,jdbcType=VARCHAR}, #{roleName,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR})
+    </insert>
+
+    <!--1删除语句-->
+    <delete id="delRole" parameterType="com.cjw.boot.pojo.admin.RolePojo">
+        DELETE FROM T_SYS_ROLE_2
+        <where>
+            <if test="id != null and id!='' ">ID = #{id}</if>
+        </where>
+
+    </delete>
+
+    <!--1更新语句-->
+    <update id="updateRole" parameterType="com.cjw.boot.pojo.admin.RolePojo">
+        UPDATE T_SYS_ROLE_2
+
+        <trim prefix="set" suffixOverrides=",">
+            <if test="id != null and id!='' ">ID = #{id}</if>
+            <if test="roleName != null and roleName!='' ">,ROLE_NAME = #{roleName}</if>
+            <if test="description != null and description!='' ">,DESCRIPTION = #{description}</if>
+        </trim>
+        <where>
+            <if test="id != null and id!='' ">AND ID = #{id}</if>
+        </where>
+    </update>
+
+    <!--1查询数据集语句(传参在form中)-->
+    <select id="listRole" parameterType="com.cjw.boot.pojo.admin.RolePojo" resultMap="ResultMapTSysRole2">
+        <![CDATA[
+ SELECT  ID,ROLE_NAME,DESCRIPTION FROM T_SYS_ROLE_2
+ ]]>
+        <where>
+            <if test="id != null and id!='' ">ID = #{id}</if>
+            <if test="roleName != null and roleName!='' ">and ROLE_NAME like '%${roleName}%'</if>
+            <if test="description != null and description!='' ">and DESCRIPTION = #{description}</if>
+        </where>
+    </select>
+
+
+    <!--1查询数据集语句(传参在form中)-->
+    <select id="listTree" parameterType="com.cjw.boot.pojo.admin.TreePojo" resultMap="TreeMap">
+        <![CDATA[
+select FUNCTION_CODE as value, FUNCTION_NAME as title,FUNCTION_PARENT_CODE as parent,
+ISVALID as disabled,NVL2(pr.role_code,1 ,0 ) checked
+from T_SYS_PREMISSION_2 p left join T_SYS_PERMISSION_ROLE_2 pr
+on p.FUNCTION_CODE=pr.PERMISSION_CODE and pr.ROLE_CODE= #{roleCode} order by p.SEQUENCE
+ ]]>
+    </select>
+
+</mapper>

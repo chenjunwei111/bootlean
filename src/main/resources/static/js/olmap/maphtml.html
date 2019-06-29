@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Hello, World</title>
+        <style type="text/css">
+            html{height:100%}
+            body{height:100%;margin:0px;padding:0px}
+            #container{height:100%}
+        </style>
+        <script type="text/javascript" src="../olmap/olmap-modify.js">
+        </script>
+    </head>
+<body>
+<div id="container"></div>
+<script type="text/javascript">
+
+
+        var outputPath = '../olmap/tiles/';    //地图瓦片所在的文件夹
+        var fromat = ".png";    //格式
+
+        var tileLayer = new BMap.TileLayer();
+        tileLayer.getTilesUrl = function (tileCoord, zoom) {
+            var x = tileCoord.x;
+            var y = tileCoord.y;
+            var url = outputPath + zoom + '/' + x + '_' + y + fromat;
+            return url;
+        }
+        var tileMapType = new BMap.MapType('tileMapType', tileLayer);
+
+
+        var map = new BMap.Map("container",{ mapType: tileMapType });          // 创建地图实例
+        var point = new BMap.Point(102.762764, 25.002435);  // 创建点坐标
+        map.centerAndZoom(point, 10);
+        setTimeout(function () {
+        map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+        map.addControl(new BMap.NavigationControl()); //缩放按钮
+    },5000)
+
+</script>
+</body>
+</html>
