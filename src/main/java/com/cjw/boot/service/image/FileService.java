@@ -9,7 +9,7 @@ import com.cjw.boot.pojo.image.FilePojo;
 import com.cjw.boot.service.diy.DiySqlService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.apache.commons.io.FileExistsException;
+//import org.apache.commons.io.FileExistsException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -129,7 +129,7 @@ public class FileService {
             String uid = session.getAttribute("id").toString();
             String uName = session.getAttribute("userName").toString();
 
-            pojo.setFilePath("D:/profile/" + newFileName);
+            pojo.setFilePath(V2Config.getProfile() + newFileName);
             pojo.setUpdateTime(new Timestamp(System.currentTimeMillis()));
             pojo.setUpdateUserName(uName);
             pojo.setUpdateUserId(uid);
@@ -137,7 +137,7 @@ public class FileService {
             if (fileMapper.updateFile(pojo) == 1) {
                 String res = FileUtils.updateFileName(oldFilePath, newFileName);//修改文件名称
                 if ("修改失败".equals(res) || "文件不存在".equals(res)) {
-                    throw new FileExistsException();
+                    throw new Exception();
                 } else {
                     return 1;
                 }

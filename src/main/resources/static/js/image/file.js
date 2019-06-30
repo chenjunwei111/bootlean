@@ -193,6 +193,8 @@ layui.use('upload', function() {
     //普通图片上传
     var uploadInst1 = upload.render({
         elem: '#uploadImg'
+        ,method: 'post'
+        ,field:'file'
         , url: rootPath + '/FileController/fileUpload'
         , before: function (obj) {
             //预读本地文件示例，不支持ie8
@@ -222,6 +224,7 @@ layui.use('upload', function() {
     //图片重传
     var uploadInst2 = upload.render({
         elem: '#uploadImg2'
+        ,field:'file'
         // , data: {file2:JSON.stringify(changeImgPojo)}
         , url: rootPath + '/FileController/changeImage'
         , before: function (obj) {
@@ -240,12 +243,12 @@ layui.use('upload', function() {
             if(res.msg==undefined){
                 return layer.msg('无该权限');
             }else{
-                //演示失败状态，并实现重传
-                // var demoText = $('#demoText');
-                // demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
-                // demoText.find('.demo-reload').on('click', function () {
-                //     uploadInst.upload();
-                // });
+                // 演示失败状态，并实现重传
+                var demoText = $('#demoText');
+                demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+                demoText.find('.demo-reload').on('click', function () {
+                    uploadInst.upload();
+                });
             }
 
         }
@@ -255,6 +258,7 @@ layui.use('upload', function() {
     var uploadInst3= upload.render({
         elem: '#uploadImgS'
         ,multiple: true
+        ,field:'file'
         // , data: {file2:JSON.stringify(changeImgPojo)}
         , url: rootPath + '/FileController/fileUploadS'
         , before: function (obj) {

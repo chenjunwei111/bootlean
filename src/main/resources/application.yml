@@ -5,10 +5,12 @@ fuce:
   #版本
   version: 1.0
   #版权年份
-  copyrightYear: 2018
+  copyrightYear: 2019
   #头像上传路径
-  profile: D:/profile/
-#tomcat config
+#  profile: D:/profile/
+  profile: /data1/file/
+
+  #tomcat config
 #server :
 #  servlet:
 #  context-path: /bootCjw

@@ -4,15 +4,18 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * 启动类文件
+ */
 @SpringBootApplication
 @MapperScan(value = "com.cjw.boot.mapper")
-public class BootApplication {
+public class BootApplication  {
 
     public static void main(String[] args) {
-        SpringApplication.run(BootApplication.class, args);
-        System.out.println("=================================");
-        System.out.println("=============启动成功===============");
-        System.out.println("=================================");
+            SpringApplication.run(BootApplication.class, args);
+            System.out.println("=================================");
+            System.out.println("=============启动成功===============");
+            System.out.println("=================================");
     }
 
 }

@@ -1,0 +1,47 @@
+Manifest-Version: 1.0
+Class-Path: thymeleaf-3.0.9.RELEASE.jar commons-io-2.5.jar tomcat-embe
+ d-el-8.5.28.jar shiro-config-core-1.4.0.jar validation-api-2.0.1.Fina
+ l.jar spring-boot-autoconfigure-2.0.0.RELEASE.jar gson-2.8.2.jar spri
+ ng-boot-starter-json-2.0.0.RELEASE.jar mybatis-spring-boot-starter-1.
+ 3.2.jar thymeleaf-extras-java8time-3.0.1.RELEASE.jar log4j-to-slf4j-2
+ .10.0.jar commons-lang-2.4.jar jsqlparser-0.9.5.jar springfox-core-2.
+ 7.0.jar spring-beans-5.0.4.RELEASE.jar commons-lang3-3.7.jar reflecti
+ ons-0.9.11.jar spring-boot-configuration-processor-2.0.0.RELEASE.jar 
+ spring-webmvc-5.0.4.RELEASE.jar kaptcha-2.3.2.jar unbescape-1.1.5.REL
+ EASE.jar shiro-event-1.4.0.jar attoparser-2.0.4.RELEASE.jar commons-b
+ eanutils-1.9.3.jar mapstruct-1.1.0.Final.jar javassist-3.21.0-GA.jar 
+ velocity-1.7.jar javax.annotation-api-1.3.2.jar springfox-swagger-com
+ mon-2.7.0.jar spring-boot-starter-aop-2.0.0.RELEASE.jar spring-plugin
+ -metadata-1.2.0.RELEASE.jar spring-boot-starter-tomcat-2.1.4.RELEASE.
+ jar springfox-spring-web-2.7.0.jar jackson-module-parameter-names-2.9
+ .4.jar commons-logging-1.1.1.jar ojdbc6-11.2.0.4.0.jar druid-1.1.10.j
+ ar shiro-core-1.4.0.jar snakeyaml-1.19.jar commons-collections-3.2.1.
+ jar spring-tx-5.0.4.RELEASE.jar tomcat-embed-jasper-8.5.28.jar spring
+ -boot-starter-2.0.0.RELEASE.jar swagger-annotations-1.5.13.jar swagge
+ r-models-1.5.13.jar guava-18.0.jar jackson-datatype-jdk8-2.9.4.jar sp
+ ring-plugin-core-1.2.0.RELEASE.jar filters-2.0.235-1.jar commons-conf
+ iguration-1.10.jar HikariCP-2.7.8.jar logback-classic-1.2.3.jar aspec
+ tjweaver-1.8.13.jar slf4j-api-1.7.25.jar druid-spring-boot-starter-1.
+ 1.10.jar javax.servlet-api-3.1.0.jar logback-core-1.2.3.jar jackson-d
+ atabind-2.9.4.jar jul-to-slf4j-1.7.25.jar thymeleaf-extras-shiro-2.0.
+ 0.jar spring-web-5.0.4.RELEASE.jar shiro-crypto-cipher-1.4.0.jar shir
+ o-config-ogdl-1.4.0.jar spring-expression-5.0.4.RELEASE.jar pagehelpe
+ r-4.1.4.jar tomcat-embed-websocket-8.5.28.jar mybatis-3.4.6.jar fastj
+ son-1.2.28.jar jackson-annotations-2.9.0.jar shiro-cache-1.4.0.jar ja
+ ckson-datatype-jsr310-2.9.4.jar hibernate-validator-6.0.7.Final.jar j
+ ackson-core-2.9.4.jar ecj-3.12.3.jar spring-context-5.0.4.RELEASE.jar
+  byte-buddy-1.7.10.jar shiro-crypto-core-1.4.0.jar mybatis-spring-boo
+ t-autoconfigure-1.3.2.jar springfox-schema-2.7.0.jar spring-boot-devt
+ ools-2.0.0.RELEASE.jar spring-jcl-5.0.4.RELEASE.jar ojdbc6-11.2.0.4.0
+ .jar springfox-swagger-ui-2.7.0.jar tomcat-embed-core-8.5.28.jar jbos
+ s-logging-3.3.2.Final.jar log4j-api-2.10.0.jar hutool-all-4.1.10.jar 
+ mybatis-spring-1.3.2.jar spring-jdbc-5.0.4.RELEASE.jar springfox-spi-
+ 2.7.0.jar shiro-crypto-hash-1.4.0.jar spring-boot-2.0.0.RELEASE.jar s
+ pringfox-swagger2-2.7.0.jar spring-boot-starter-thymeleaf-2.1.4.RELEA
+ SE.jar spring-aop-5.0.4.RELEASE.jar spring-boot-starter-logging-2.0.0
+ .RELEASE.jar thymeleaf-spring5-3.0.9.RELEASE.jar shiro-spring-1.4.0.j
+ ar shiro-web-1.4.0.jar commons-fileupload-1.3.3.jar shiro-lang-1.4.0.
+ jar spring-boot-starter-web-2.1.6.RELEASE.jar spring-core-5.0.4.RELEA
+ SE.jar spring-boot-starter-jdbc-2.0.0.RELEASE.jar classmate-1.3.4.jar
+Main-Class: com.cjw.boot.BootApplication
+

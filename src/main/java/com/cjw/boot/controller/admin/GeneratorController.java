@@ -8,8 +8,9 @@ import com.cjw.boot.pojo.custom.TitleVo;
 import com.cjw.boot.pojo.custom.TsysTables;
 import com.cjw.boot.service.auto.GeneratorService;
 import com.github.pagehelper.PageInfo;
-import org.apache.commons.io.IOUtils;
+//import org.apache.commons.io.IOUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -70,6 +71,6 @@ public class GeneratorController extends BaseController {
         response.addHeader("Content-Length", "" + data.length);  
         response.setContentType("application/octet-stream; charset=UTF-8");  
         
-        IOUtils.write(data, response.getOutputStream());  
+//        IOUtils.write(data, response.getOutputStream());
 	}
 }

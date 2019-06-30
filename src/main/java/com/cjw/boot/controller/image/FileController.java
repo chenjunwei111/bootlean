@@ -88,11 +88,11 @@ public class FileController extends BaseController {
     /**
      * 上传图片
      */
-    @Log(title = "图片上传", action = "图片管理")
+//    @Log(title = "图片上传", action = "图片管理")
     @PostMapping("/fileUpload")
     @ResponseBody
-    @RequiresPermissions("system:file:upload")
-    public  Map<String ,Object> upload(@RequestParam("file") MultipartFile file, HttpServletRequest request) {
+//    @RequiresPermissions("system:file:upload")
+    public  Map<String ,Object> upload(@RequestParam("file") MultipartFile file,HttpServletRequest request) {
           Map<String ,Object> map=new HashMap<>();
         try {
             if (!file.isEmpty()) {
@@ -111,6 +111,7 @@ public class FileController extends BaseController {
             }
             return map;
         } catch (Exception e) {
+            e.printStackTrace();
             map.put("msg","上传成功");
             map.put("error",e.getMessage());
             return map;

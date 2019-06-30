@@ -20,7 +20,7 @@ public class DruidAspectConfig {
     @Scope("prototype")
     public JdkRegexpMethodPointcut druidStatPointcut() {
         JdkRegexpMethodPointcut pointcut = new JdkRegexpMethodPointcut();
-        pointcut.setPatterns("com.cjw.boot.controller.*","com.cjw.boot.service.*");
+        pointcut.setPatterns("com.cjw.boot.controller.*");
         return pointcut;
     }
     @Bean

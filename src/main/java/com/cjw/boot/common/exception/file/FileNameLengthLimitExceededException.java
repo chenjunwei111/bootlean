@@ -1,13 +1,15 @@
 package com.cjw.boot.common.exception.file;
 
-import org.apache.commons.fileupload.FileUploadException;
+//import org.apache.commons.fileupload.FileUploadException;
+
+import javax.annotation.processing.FilerException;
 
 /**
  * 文件名超长 误异常类
  * 
  * @author ruoyi
  */
-public class FileNameLengthLimitExceededException extends FileUploadException
+public class FileNameLengthLimitExceededException extends FilerException
 {
 
     private static final long serialVersionUID = 1L;

@@ -1,17 +1,17 @@
 package com.cjw.boot.controller.common;
 
+import com.cjw.boot.common.base.BaseController;
 import io.swagger.annotations.Api;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+@Controller
 @RequestMapping("CommonController")
 @Api("公共控制器")
-@Controller
+public class CommonController  extends BaseController {
 
-public class CommonController {
-
-    public String prefix="/common/";
+    public String prefix="common/";
 
 
     @GetMapping("usuallyDemo")
