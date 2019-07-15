@@ -11,7 +11,7 @@ public interface MenuMapper {
 	 * 所有查询功能
 	 * @return
 	 */
-	public List<MenuPojo> queryMenuList();
+//	public List<MenuPojo> queryMenuList();
 	
 	/**
 	 * 查询制定用户拥有的功能

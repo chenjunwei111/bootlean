@@ -42,7 +42,10 @@
 	
 	<select id="queryMenuListCode" resultMap="ResultMapMenu">
         <![CDATA[
-		select * from T_SYS_PREMISSION_2 order by SEQUENCE
+		select * from T_SYS_PREMISSION_2 where PERMS_TYPE='view' and FUNCTION_CODE in (
+		select PERMISSION_CODE from T_SYS_PERMISSION_ROLE_2 where  ROLE_CODE in(
+		select SYS_ROLE_ID from T_SYS_ROLE_USER_2 where SYS_USER_ID=
+		(select id from T_SYS_USER_2 where id=#{userCode})))
          ]]>
 	</select>
 	

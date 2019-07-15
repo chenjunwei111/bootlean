@@ -207,16 +207,16 @@ layui.use('upload', function() {
             return layer.msg(res.msg);
         }
         , error: function (res) {
-            if(res.msg==undefined){
-                return layer.msg('无该权限');
-            }else{
+            // if(res.msg==undefined){
+            //     return layer.msg('无该权限');
+            // }else{
                 //演示失败状态，并实现重传
                 var demoText = $('#demoText');
                 demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
                 demoText.find('.demo-reload').on('click', function () {
                     uploadInst.upload();
                 });
-            }
+            // }
 
         }
     });

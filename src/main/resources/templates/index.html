@@ -337,6 +337,7 @@
             success: function (result) {
                 $("#userName").text(result.USER_NAME);
                 $("#phone").text(result.ROLE_NAME);
+                $(".userCode").val(result.ID);
 
 
                 // //判断用户是否只是添加用户，无权限
@@ -349,7 +350,6 @@
                 // $(".cityCode").val(result[0].AREA_CODE);
                 // $(".userName").val(result[0].USER_NAME);
                 // $("#userName").text(result[0].USER_NAME);
-                // $(".userCode").val(result[0].USER_CODE);
                 // $(".userPwd").val(result[0].PASSWORD);
                 // $(".deptName").val(result[0].DEPT_NAME);
                 // $(".phone").text(result[0].PHONE);
