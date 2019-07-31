@@ -4,7 +4,7 @@ package com.cjw.boot.controller;
 import com.cjw.boot.common.base.BaseController;
 import com.cjw.boot.pojo.admin.MenuPojo;
 import com.cjw.boot.pojo.admin.UserPojo;
-import com.cjw.boot.service.admin.Menuservice;
+import com.cjw.boot.service.admin.MenuService;
 import com.cjw.boot.service.diy.DiySqlService;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang.StringUtils;
@@ -48,7 +48,7 @@ public class HomeController extends BaseController {
 	DiySqlService diySqlService;
 
 	@Autowired
-	Menuservice menuservice;
+	MenuService menuservice;
 
 	/**
 	 * 请求到登陆界面
@@ -211,7 +211,7 @@ public class HomeController extends BaseController {
 //
 			rootMenu = menuservice.queryMenuListCode(userCode);
 
-			List<MenuPojo> menuList = new ArrayList<MenuPojo>();
+			List<MenuPojo> menuList = new ArrayList<>();
 			// 先找到所有的一级菜单
 			for (int i = 0; i < rootMenu.size(); i++) {
 				// 一级菜单没有parentId

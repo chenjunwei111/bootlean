@@ -22,9 +22,14 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
+/**
+* Description 角色管理
+* @Author junwei
+* @Date 9:46 2019/7/31
+**/
 @Controller
 @RequestMapping("RoleController")
-@Api(value = "角色数据")
+@Api(value = "角色管理")
 public class RoleController extends BaseController {
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -72,22 +77,13 @@ public class RoleController extends BaseController {
 	@RequiresPermissions("system:role:list")
     @ResponseBody
     public Map<String, Object> list(String pojo,Integer page, Integer limit) {
-        Map<String, Object> maps = new HashMap<>();
         try {
             RolePojo pojo2= JSON.parseObject(pojo,RolePojo.class);
-            PageInfo<RolePojo> perList = roleService.pageRole(pojo2, page, limit);
-            maps.put("code", 0);// 0成功/200失败
-            maps.put("msg", "");// 返回信息
-            maps.put("count", perList.getTotal());// 数据总量
-            maps.put("data", perList.getList());// 返回数据的list集合
-            return maps;
+            PageInfo<RolePojo> pageInfo = roleService.pageRole(pojo2, page, limit);
+            return resSuccessMap(pageInfo.getTotal(),pageInfo.getList());
         } catch (Exception e) {
             logger.error("错误信息：", e);
-            maps.put("code", 0);// 0成功/200失败
-            maps.put("msg", "");// 返回信息
-            maps.put("count", 0);// 数据总量
-            maps.put("data", null);// 返回数据的list集合
-            return maps;
+            return resFailMap(e.getCause().toString());
         }
     }
 

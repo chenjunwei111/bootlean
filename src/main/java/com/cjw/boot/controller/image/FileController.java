@@ -65,30 +65,24 @@ public class FileController extends BaseController {
     @RequiresPermissions("system:file:list")
     @ResponseBody
     public Map<String, Object> list(Integer page, Integer limit) {
-        Map<String, Object> maps = new HashMap<>();
         try {
             FilePojo pojo = new FilePojo();
-            PageInfo<FilePojo> listLog = fileService.pageFile(pojo, page, limit);
-            maps.put("code", 0);// 0成功/200失败
-            maps.put("msg", "");// 返回信息
-            maps.put("count", listLog.getTotal());// 数据总量
-            maps.put("data", listLog.getList());// 返回数据的list集合
-            return maps;
+            PageInfo<FilePojo> pageInfo = fileService.pageFile(pojo, page, limit);
+            return resSuccessMap(pageInfo.getTotal(),pageInfo.getList());
         } catch (Exception e) {
             logger.error("错误信息：", e);
-            maps.put("code", 0);// 0成功/200失败
-            maps.put("msg", "");// 返回信息
-            maps.put("count", 0);// 数据总量
-            maps.put("data", null);// 返回数据的list集合
-            return maps;
+            return resFailMap(e.getCause().toString());
         }
     }
 
 
+
     /**
-     * 上传图片
-     */
-//    @Log(title = "图片上传", action = "图片管理")
+    * Description 单图片上传
+    * @param file
+    * @Author junwei
+    * @Date 10:38 2019/7/31
+    **/
     @PostMapping("/fileUpload")
     @ResponseBody
 //    @RequiresPermissions("system:file:upload")
@@ -119,8 +113,11 @@ public class FileController extends BaseController {
     }
 
     /**
-     * 更换图片
-     */
+     * Description 更换图片
+     * @param file
+     * @Author junwei
+     * @Date 10:38 2019/7/31
+     **/
     @Log(title = "更换图片", action = "图片管理")
     @PostMapping("/changeImage")
     @ResponseBody
@@ -153,8 +150,11 @@ public class FileController extends BaseController {
     }
 
     /**
-     * 多图片上传
-     */
+     * Description 多图片上传
+     * @param file
+     * @Author junwei
+     * @Date 10:38 2019/7/31
+     **/
     @Log(title = "多图片上传", action = "图片管理")
     @PostMapping("/fileUploadS")
     @ResponseBody
@@ -187,7 +187,6 @@ public class FileController extends BaseController {
 
     /**
      * Description 删除图片
-     *
      * @param pojo
      * @Author junwei
      * @Date 17:55 2019/6/11

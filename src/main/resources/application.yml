@@ -6,9 +6,9 @@ fuce:
   version: 1.0
   #版权年份
   copyrightYear: 2019
-  #头像上传路径
-#  profile: D:/profile/
-  profile: /data1/file/
+  #文件上传路径
+  profile: D:/profile/
+#  profile: /data1/file/
 
   #tomcat config
 #server :
@@ -46,6 +46,7 @@ spring :
 
 
 server:
+  port : 8081
   servlet:
     context-path: /boot
 

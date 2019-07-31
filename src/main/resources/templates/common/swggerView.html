@@ -8,6 +8,8 @@
 
 
 </head>
+<div th:include="admin/common/html/js :: onload_js"></div>
+
 <body onload="goSwgger()" style="height: 100%;">
 
 <div id="body" style="background-color: white">
@@ -16,14 +18,13 @@
 
 </body>
 
-<script th:src="@{/static/js/common/jquery-3.1.1.js}"></script>
 
 
 <script>
 
 
     function goSwgger() {
-        var url='http://localhost:8080/boot/swagger-ui.html';
+        var url='http://localhost:'+rootPort+rootPath+'/swagger-ui.html';
         var  frame="<iframe src="+url+" width=' 100%'  height='1000px'  scrolling=' no'  frameborder=' 0' ></iframe>";
         $("#body").append(frame);
 

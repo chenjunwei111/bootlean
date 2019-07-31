@@ -1,5 +1,6 @@
 package com.cjw.boot.controller.gis;
 
+import com.cjw.boot.common.base.BaseController;
 import com.cjw.boot.service.gis.GisService;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
@@ -11,15 +12,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+* Description 地图管理
+* @Author junwei
+* @Date 10:35 2019/7/31
+**/
 @Controller
 @Api("地图管理")
 @RequestMapping("GisController")
-public class GisController {
+public class GisController extends BaseController {
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -74,21 +79,12 @@ public class GisController {
     @GetMapping("/sectorList")
     @ResponseBody
     public Map<String, Object> sectorList(Integer page, Integer limit) {
-        Map<String, Object> maps = new HashMap<>();
         try {
-            PageInfo<LinkedHashMap<String, Object>> setctorList = gisService.getListSector(page, limit);
-            maps.put("code", 0);// 0成功/200失败
-            maps.put("msg", "");// 返回信息
-            maps.put("count", setctorList.getTotal());// 数据总量
-            maps.put("data", setctorList.getList());// 返回数据的list集合
-            return maps;
+            PageInfo<LinkedHashMap<String, Object>> pageInfo = gisService.getListSector(page, limit);
+            return resSuccessMap(pageInfo.getTotal(),pageInfo.getList());
         } catch (Exception e) {
             logger.error("错误信息：", e);
-            maps.put("code", 200);// 0成功/200失败
-            maps.put("msg", e.getCause());// 返回信息
-            maps.put("count", 0);// 数据总量
-            maps.put("data", null);// 返回数据的list集合
-            return maps;
+            return resFailMap(e.getCause().toString());
         }
 
 
@@ -101,7 +97,7 @@ public class GisController {
     @RequestMapping("/gisGridNo")
     @ResponseBody
     public List<LinkedHashMap<String, Object>> gisGridNo(
-            String CityCode, String Date) throws Exception {
+            String CityCode, String Date)  {
         return gisService.getListGridNo(CityCode, Date);
     }
 
@@ -114,7 +110,7 @@ public class GisController {
     @RequestMapping("/gisArea")
     @ResponseBody
     public List<Map<String, Object>> gisArea(
-    ) throws Exception {
+    ) {
         try {
             return gisService.getGisArea();
         } catch (Exception e) {

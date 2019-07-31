@@ -3,7 +3,7 @@ package com.cjw.boot.controller.admin;
 
 import com.cjw.boot.common.base.BaseController;
 import com.cjw.boot.common.log.Log;
-import com.cjw.boot.service.admin.Logservice;
+import com.cjw.boot.service.admin.LogService;
 import com.cjw.boot.service.diy.DiySqlService;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
@@ -17,13 +17,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+* Description 日志管理
+* @Author junwei
+* @Date 9:37 2019/7/31
+**/
 @Controller
 @RequestMapping("LogController")
-@Api(value = "日志记录")
+@Api(value = "日志管理")
 public class LogController extends BaseController {
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -37,7 +41,7 @@ public class LogController extends BaseController {
     DiySqlService diySqlService;
 
     @Autowired
-    Logservice logservice;
+    LogService logservice;
 
     @GetMapping("view")
     @RequiresPermissions("system:log:view")
@@ -58,21 +62,12 @@ public class LogController extends BaseController {
 	@RequiresPermissions("system:log:list")
     @ResponseBody
     public Map<String, Object> list(Integer page, Integer limit) {
-        Map<String, Object> maps = new HashMap<>();
         try {
             PageInfo<LinkedHashMap<String, Object>> pageInfo=logservice.getLogList(page,limit);
-            maps.put("code", 0);// 0成功/200失败
-            maps.put("msg", "");// 返回信息
-            maps.put("count", pageInfo.getTotal());// 数据总量
-            maps.put("data", pageInfo.getList());// 返回数据的list集合
-            return maps;
+            return resSuccessMap(pageInfo.getTotal(),pageInfo.getList());
         } catch (Exception e) {
             logger.error("错误信息：", e);
-            maps.put("code", 0);// 0成功/200失败
-            maps.put("msg", "");// 返回信息
-            maps.put("count", 0);// 数据总量
-            maps.put("data", null);// 返回数据的list集合
-            return maps;
+            return resFailMap(e.getCause().toString());
         }
     }
 
@@ -84,26 +79,15 @@ public class LogController extends BaseController {
      * @Author junwei
      * @Date 17:29 2019/6/11
      **/
-//    @Log(title = "日志集合查询", action = "日志管理")
     @GetMapping("listLog2")
-//    @RequiresPermissions("system:log:list")
     @ResponseBody
     public Map<String, Object> list2(Integer page, Integer limit) {
-        Map<String, Object> maps = new HashMap<>();
         try {
             PageInfo<LinkedHashMap<String, Object>> pageInfo=logservice.getUserCount(page,limit);
-            maps.put("code", 0);// 0成功/200失败
-            maps.put("msg", "");// 返回信息
-            maps.put("count", pageInfo.getTotal());// 数据总量
-            maps.put("data", pageInfo.getList());// 返回数据的list集合
-            return maps;
+            return resSuccessMap(pageInfo.getTotal(),pageInfo.getList());
         } catch (Exception e) {
             logger.error("错误信息：", e);
-            maps.put("code", 0);// 0成功/200失败
-            maps.put("msg", "");// 返回信息
-            maps.put("count", 0);// 数据总量
-            maps.put("data", null);// 返回数据的list集合
-            return maps;
+            return resFailMap(e.getCause().toString());
         }
     }
 
@@ -116,26 +100,15 @@ public class LogController extends BaseController {
      * @Author junwei
      * @Date 17:29 2019/6/11
      **/
-//    @Log(title = "日志集合查询", action = "日志管理")
     @GetMapping("listLog3")
-//    @RequiresPermissions("system:log:list")
     @ResponseBody
     public Map<String, Object> list3(Integer page, Integer limit) {
-        Map<String, Object> maps = new HashMap<>();
         try {
             PageInfo<LinkedHashMap<String, Object>> pageInfo=logservice.getFunCount(page,limit);
-            maps.put("code", 0);// 0成功/200失败
-            maps.put("msg", "");// 返回信息
-            maps.put("count", pageInfo.getTotal());// 数据总量
-            maps.put("data", pageInfo.getList());// 返回数据的list集合
-            return maps;
+            return resSuccessMap(pageInfo.getTotal(),pageInfo.getList());
         } catch (Exception e) {
             logger.error("错误信息：", e);
-            maps.put("code", 0);// 0成功/200失败
-            maps.put("msg", "");// 返回信息
-            maps.put("count", 0);// 数据总量
-            maps.put("data", null);// 返回数据的list集合
-            return maps;
+            return resFailMap(e.getCause().toString());
         }
     }
 }

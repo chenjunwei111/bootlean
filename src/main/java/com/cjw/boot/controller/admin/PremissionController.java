@@ -3,7 +3,7 @@ package com.cjw.boot.controller.admin;
 import com.cjw.boot.common.base.BaseController;
 import com.cjw.boot.common.log.Log;
 import com.cjw.boot.pojo.admin.MenuPojo;
-import com.cjw.boot.service.admin.Menuservice;
+import com.cjw.boot.service.admin.MenuService;
 import com.cjw.boot.service.diy.DiySqlService;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
@@ -21,12 +21,11 @@ import java.util.Map;
 
 
 /**
- * Description  权限分配控制
- *
+ * Description  权限管理
  * @Author junwei
  * @Date 10:51 2019/6/4
  **/
-@Api("权限")
+@Api("权限管理")
 @Controller
 @RequestMapping("PremissionController")
 public class PremissionController extends BaseController {
@@ -41,7 +40,7 @@ public class PremissionController extends BaseController {
     DiySqlService diySqlService;
 
     @Autowired
-    Menuservice premisionService;
+    MenuService premisionService;
 
     @GetMapping("view")
     @RequiresPermissions("system:premission:view")
@@ -55,31 +54,16 @@ public class PremissionController extends BaseController {
     @ResponseBody
     public Map<String, Object> list(String pojo, Integer page, Integer limit) {
 
-        Map<String, Object> maps=new HashMap<>();
         try{
-            PageInfo<LinkedHashMap<String, Object>> perList =premisionService.getPremissionList(pojo,page,limit);
-            maps.put("code", 0);// 0成功/200失败
-            maps.put("msg", "");// 返回信息
-            maps.put("count", perList.getTotal());// 数据总量
-            maps.put("data", perList.getList());// 返回数据的list集合
-            return maps;
+            PageInfo<LinkedHashMap<String, Object>> pageInfo =premisionService.getPremissionList(pojo,page,limit);
+            return resSuccessMap(pageInfo.getTotal(),pageInfo.getList());
         } catch (Exception e) {
             logger.error("错误信息：", e);
-            maps.put("code", 0);// 0成功/200失败
-            maps.put("msg", "");// 返回信息
-            maps.put("count", 0);// 数据总量
-            maps.put("data", null);// 返回数据的list集合
-            return maps;
+            return resFailMap(e.getCause().toString());
         }
 
     }
 
-
-//    @GetMapping("viewChild")
-//    @RequiresPermissions("system:premission:viewChild")
-//    public String view2(Model model) {
-//        return prefix + "premissionViewChild";
-//    }
 
     @Log(title = "权限修改", action = "权限管理")
     @PostMapping("editPreInfo")
@@ -90,7 +74,6 @@ public class PremissionController extends BaseController {
         try {
             MenuPojo pre = new MenuPojo(map);
             int res=premisionService.updatePremission(pre);
-
             if(res==0){
                 maps.put("msg","权限修改失败");
             }else{
@@ -112,7 +95,6 @@ public class PremissionController extends BaseController {
     * @Author junwei
     * @Date 16:29 2019/6/10
     **/
-
     @Log(title = "权限添加", action = "权限管理")
     @PostMapping("addPremission")
     @ResponseBody

@@ -28,9 +28,9 @@ public class MyInterceptor  implements HandlerInterceptor {
 		//String url2=request.getScheme()+"://"+ request.getServerName();
 		//设置前端的全局 地址，如果前端网页错乱请修改这儿
 		request.setAttribute("rootPath", request.getContextPath());
+		request.setAttribute("rootPort", request.getServerPort());
 		//System.out.println("xxxxxxxxx==="+"http://localhost:8081/");
-		//System.out.println(">>>MyInterceptor1>>>>>>>在请求处理之前进行调用（Controller方法调用之前）");
-	
+
 		return true;// 只有返回true才会继续向下执行，返回false取消当前请求
 	}
 		

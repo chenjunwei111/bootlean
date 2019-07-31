@@ -17,9 +17,13 @@ import javax.annotation.Resource;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+/**
+* Description 权限管理
+* @Author junwei
+* @Date 9:45 2019/7/31
+**/
 @Service
-@Transactional
-public class Menuservice {
+public class MenuService {
 
     @Resource
     MenuMapper mapper;
@@ -31,7 +35,6 @@ public class Menuservice {
 
     /**
      * Description 根据用户获取菜单LIST
-     *
      * @param userCode 用户编码
      * @Author junwei
      * @Date 14:15 2019/6/10

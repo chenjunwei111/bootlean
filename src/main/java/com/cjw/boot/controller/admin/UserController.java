@@ -22,9 +22,14 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+* Description 用户管理
+* @Author junwei
+* @Date 10:33 2019/7/31
+**/
 @Controller
 @RequestMapping("UserController")
-@Api(value = "用户数据")
+@Api(value = "用户管理")
 public class UserController extends BaseController {
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -61,12 +66,8 @@ public class UserController extends BaseController {
         Map<String, Object> maps = new HashMap<>();
         try {
             UserPojo pojo2= JSON.parseObject(pojo,UserPojo.class);
-            PageInfo<UserPojo> perList = userService.pageUser(pojo2, page, limit);
-            maps.put("code", 0);// 0成功/200失败
-            maps.put("msg", "");// 返回信息
-            maps.put("count", perList.getTotal());// 数据总量
-            maps.put("data", perList.getList());// 返回数据的list集合
-            return maps;
+            PageInfo<UserPojo> pageInfo = userService.pageUser(pojo2, page, limit);
+            return resSuccessMap(pageInfo.getTotal(),pageInfo.getList());
         } catch (Exception e) {
             logger.error("错误信息：", e);
             maps.put("code", 200);// 0成功/200失败

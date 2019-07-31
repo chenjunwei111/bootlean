@@ -3,7 +3,7 @@ package com.cjw.boot.common.base;
 
 import com.cjw.boot.common.pojo.AjaxResult;
 import com.cjw.boot.pojo.custom.TitleVo;
-import com.cjw.boot.service.auto.*;
+import com.cjw.boot.service.auto.SysOperLogService;
 import com.cjw.boot.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.InitBinder;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * web层通用数据处理
@@ -154,5 +157,39 @@ public class BaseController
 		model.addAttribute("isribbon", titleVo.isIsribbon());
     }
 
-   
+
+    /**
+     * Description 分页错误信息返回，带参
+     * @Author junwei
+     * @Date 11:01 2019/7/10
+     **/
+    public Map<String,Object> resFailMap(String error){
+        Map<String,Object> map=new HashMap<>(4);
+        map.put("code", 0);
+        map.put("msg", error);
+        map.put("count", 0);
+        map.put("data", null);
+        return map;
+    }
+
+    /**
+     * Description 分页控件数据返回
+     * @Author junwei
+     * @Date 11:01 2019/7/10
+     **/
+    public <T> Map<String,Object> resSuccessMap(long resTotal, List<T> resList){
+        Map<String,Object> map=new HashMap<>(4);
+        map.put("code", 0);
+        map.put("msg", "success");
+        map.put("count", resTotal);
+        map.put("data", resList);
+        return map;
+    }
+
+
+
+
+
+
+
 }

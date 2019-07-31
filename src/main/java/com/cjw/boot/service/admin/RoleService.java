@@ -171,7 +171,6 @@ public class RoleService {
 
     /**
      * Description 添加角色用户表
-     *
      * @param pojo
      * @Author junwei
      * @Date 18:10 2019/6/12
@@ -197,9 +196,7 @@ public class RoleService {
 
     /**
      * Description 根据角色ID查用户列表
-     *
-     * @param
-     * @param
+     * @param roleId
      * @Author junwei
      * @Date 17:54 2019/6/25
      **/
