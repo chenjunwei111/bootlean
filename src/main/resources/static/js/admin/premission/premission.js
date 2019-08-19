@@ -105,7 +105,7 @@ function btnClickAddPre(){
     layer.open({
         type: 1,
         title: ["新增权限", "font-size:18px"],
-        area: ["600px", "370px"],
+        area: ["600px", "500px"],
         anim: 2,
         skin: 'layui-layer-lan',
         maxmin: true,
@@ -207,7 +207,7 @@ function getPremissionData(){
                 ,{field: 'FUNCTION_CODE', title: '权限编码',sort:true,width:150}
                 ,{field: 'FUNCTION_NAME', title: '权限名称', edit: 'text',width:180}
                 ,{field: 'FUNCTION_PARENT_CODE', title: '父级权限编码' , edit: 'text',width:180}
-                ,{field: 'FUNCTION_HREF', title: '权限指向',width:250, edit: 'text'}
+                ,{field: 'FUNCTION_HREF', title: '请求URI',width:250, edit: 'text'}
                 ,{field: 'PERMS_TYPE', title: '权限类型', edit: 'text',width:100}
                 ,{field: 'SEQUENCE', title: '排序', edit: 'text',sort:true,width:120}
                 ,{field: 'FUNCTION_ICON', title: '权限图标', edit: 'text',width:250}
