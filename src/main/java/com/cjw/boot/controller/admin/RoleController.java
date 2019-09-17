@@ -43,11 +43,13 @@ public class RoleController extends BaseController {
     @Autowired
     DiySqlService diySqlService;
 
+/*
     @GetMapping("view")
     @RequiresPermissions("system:role:view")
     public String view1(Model model) {
         return prefix + "/roleView";
     }
+*/
 
 
     /**

@@ -33,7 +33,7 @@ public class GisController extends BaseController {
 
     public String prefix = "gis/";
 
-    @GetMapping("gisView1")
+/*    @GetMapping("gisView1")
 //    @RequiresPermissions("system:gis:view")
     public String view() {
         return prefix + "gisView1";
@@ -43,7 +43,7 @@ public class GisController extends BaseController {
 //    @RequiresPermissions("system:gis:view")
     public String view2() {
         return prefix + "gisView2";
-    }
+    }*/
 
 
     /**

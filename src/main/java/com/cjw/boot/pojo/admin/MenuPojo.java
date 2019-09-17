@@ -25,6 +25,80 @@ public class MenuPojo {
 		super();
 	}
 
+	/**
+	 * Description 一级 菜单添加
+	 * @param functionCode 权限编码
+	 * @param title 权限名称
+	 * @param icon 权限图标
+	 * @param description 注释
+	 * @param isvalid 禁用
+	 * @param sequence 排序
+	 * @param permsType shiro权限类型
+	 * @Author junwei
+	 * @Date 11:18 2019/9/17
+	 **/
+	public MenuPojo(String functionCode, String title, String icon, String description, int isvalid, int sequence,  String permsType) {
+		this.functionCode = functionCode;
+		this.title = title;
+		this.icon = icon;
+		this.description = description;
+		this.isvalid = isvalid;
+		this.sequence = sequence;
+		this.permsType = permsType;
+	}
+
+	/**
+	* Description (二级/三级） 菜单添加
+	* @param functionCode 权限编码
+	* @param title 权限名称
+	 * @param functionParentCode 父级权限编码
+	 * @param icon 权限图标
+	 * @param href 权限URI指向
+	 * @param description 注释
+	 * @param isvalid 禁用
+	 * @param sequence 排序
+	 * @param perms shiro权限
+	 * @param permsType shiro权限类型
+	* @Author junwei
+	* @Date 11:18 2019/9/17
+	**/
+	public MenuPojo(String functionCode, String title, String functionParentCode, String icon, String href, String description, int isvalid, int sequence, String perms, String permsType) {
+		this.functionCode = functionCode;
+		this.title = title;
+		this.functionParentCode = functionParentCode;
+		this.icon = icon;
+		this.href = href;
+		this.description = description;
+		this.isvalid = isvalid;
+		this.sequence = sequence;
+		this.perms = perms;
+		this.permsType = permsType;
+	}
+
+	/**
+	 * Description 其它功能点 权限
+	 * @param functionCode 权限编码
+	 * @param title 权限名称
+	 * @param functionParentCode 父级权限编码
+	 * @param description 注释
+	 * @param isvalid 禁用
+	 * @param sequence 排序
+	 * @param perms shiro权限
+	 * @param permsType shiro权限类型
+	 * @Author junwei
+	 * @Date 11:18 2019/9/17
+	 **/
+	public MenuPojo(String functionCode, String title, String functionParentCode,  String description, int isvalid, int sequence, String perms, String permsType) {
+		this.functionCode = functionCode;
+		this.title = title;
+		this.functionParentCode = functionParentCode;
+		this.description = description;
+		this.isvalid = isvalid;
+		this.sequence = sequence;
+		this.perms = perms;
+		this.permsType = permsType;
+	}
+
 	public MenuPojo(String functionCode, String title, String functionParentCode,
 					String icon, String href, String description, int isvalid,
 					int sequence, List<MenuPojo> children) {

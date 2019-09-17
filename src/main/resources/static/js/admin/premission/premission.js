@@ -1,29 +1,73 @@
+//region =================全局变量=================
 
+//endregion =================全局变量=================
+
+//region =================初始化=================
 $(function () {
     // alert(123);
     getPremissionData();
 
 })
+//endregion =================初始化=================
 
-
+//region =================Dome操作=================
 $("html").keypress(function (event) {
     if (event.keyCode == 13) {//判断是否enter键
         $("#search").click();
     }
 });
+//搜索按钮点击
+$("#search").click(function () {
+    var val=$("#preType option:selected").val();
+    var valChild=null;
+    if(!$("#preTypeChild").hasClass("hide")){
+        valChild=$("#preTypeChild option:selected").val();
+    }
+    var pojo={"preType":val,"preTypeChild":valChild};
+    reloadTable(pojo);
+})
+
+//权限类型变化事件
+$("#preType").change(function () {
+    var val=$("#preType option:selected").val();
+    var valChild=null;
+    if(val==='view'){
+        $("#preTypeChild").removeClass("hide");
+    }else{
+        $("#preTypeChild").addClass("hide");
+
+    }
+
+})
 
 //点击事件
 function btnClickAddPre(){
+
     var table='<div class="form-flex" style="padding: 10px;text-align: center">' +
+
+        // '<div class="layui-form-item" style="margin-bottom: 0px;">\n' +
+        // '            <div class="layui-inline clearfix">\n' +
+        // '                <label class="layui-form-label" >权限编码：</label>\n' +
+        // '                <div class="layui-input-inline" style="margin-top: 9px;">\n' +
+        // '<input  class="layui-input" field="FUNCTION_CODE" type="text" placeholder="权限编码(一级页面:A,二级页面:A-B,3级按钮:A1-B1-list)">' +
+        // '                </div>\n' +
+        // '            </div>\n' +
+        // '            </div>\n' +
 
         '<div class="layui-form-item" style="margin-bottom: 0px;">\n' +
         '            <div class="layui-inline clearfix">\n' +
-        '                <label class="layui-form-label" >权限编码：</label>\n' +
+        '                <label class="layui-form-label" >权限类型：</label>\n' +
         '                <div class="layui-input-inline" style="margin-top: 9px;">\n' +
-        '<input  class="layui-input" field="FUNCTION_CODE" type="text" placeholder="权限编码(一级页面:A,二级页面:A-B,3级按钮:A1-B1-list)">' +
+        '<select id="menuSelect" class="form-control" > ' +
+        '<option value="oneMenu">一级菜单</option>' +
+        '<option value="twoMenu">二级菜单</option>' +
+        '<option value="threeMenu">三级菜单</option>' +
+        '<option value="other">其他权限</option>' +
+        '</select>' +
         '                </div>\n' +
         '            </div>\n' +
         '            </div>\n' +
+
 
         '<div class="layui-form-item" style="margin-bottom: 0px;">\n' +
         '            <div class="layui-inline clearfix">\n' +
@@ -34,25 +78,47 @@ function btnClickAddPre(){
         '            </div>\n' +
         '        </div>'+
 
-        '<div class="layui-form-item" style="margin-bottom: 0px;">\n' +
-        '            <div class="layui-inline clearfix">\n' +
-        '                <label class="layui-form-label" >父级编码：</label>\n' +
+        // '<div class="layui-form-item oneM hide" id="" style="margin-bottom: 0px;" >\n' +
+        // '            <div class="layui-inline clearfix">\n' +
+        // '                <label class="layui-form-label" >父级编码：</label>\n' +
+        // '                <div class="layui-input-inline" style="margin-top: 9px;">\n' +
+        //
+        // // '<input  class="layui-input" field="FUNCTION_PARENT_CODE" type="text"  placeholder="父级编码(页面的上一级页面编码,一级菜单不写)" >' +
+        //
+        // '                </div>\n' +
+        // '            </div>\n' +
+        // '        </div>'+
+
+        '<div class="layui-form-item oneM hide" style="margin-bottom: 0px;">\n' +
+        '            <div class="layui-inline layui-inline-2">\n' +
+        '                <label class="layui-form-label" >父级权限：</label>\n' +
         '                <div class="layui-input-inline" style="margin-top: 9px;">\n' +
-        '<input  class="layui-input" field="FUNCTION_PARENT_CODE" type="text"  placeholder="父级编码(页面的上一级页面编码,一级菜单不写)" >' +
+        '<select id="fatherCode1" class="form-control" > ' +
+
+        '</select>' +
+        '                </div>\n' +
+        '            </div>\n' +
+        '            <div class="layui-inline layui-inline-2 hide"  >\n' +
+        // '                <label class="layui-form-label" ></label>\n' +
+        '                <div class="layui-input-inline" style="margin-top: 9px;">\n' +
+        '<select id="fatherCode2" class="form-control " > ' +
+
+        '</select>' +
         '                </div>\n' +
         '            </div>\n' +
         '        </div>'+
 
-        '<div class="layui-form-item" style="margin-bottom: 0px;">\n' +
+
+        '<div class="layui-form-item oneM hide" id="premissionHref" style="margin-bottom: 0px;">\n' +
         '            <div class="layui-inline clearfix">\n' +
-        '                <label class="layui-form-label" >权限指向：</label>\n' +
+        '                <label class="layui-form-label" >请求URI：</label>\n' +
         '                <div class="layui-input-inline" style="margin-top: 9px;">\n' +
         '<input  class="layui-input" field="FUNCTION_HREF" type="text" placeholder="URI指向(view权限需要写，其余不需要写)" >' +
         '                </div>\n' +
         '            </div>\n' +
         '        </div>'+
 
-        '<div class="layui-form-item" style="margin-bottom: 0px;">\n' +
+        '<div class="layui-form-item " style="margin-bottom: 0px;">\n' +
         '            <div class="layui-inline clearfix">\n' +
         '                <label class="layui-form-label" >权限图标：</label>\n' +
         '                <div class="layui-input-inline" style="margin-top: 9px;">\n' +
@@ -85,7 +151,7 @@ function btnClickAddPre(){
         '            </div>\n' +
         '        </div>'+
 
-        '<div class="layui-form-item" style="margin-bottom: 0px;">\n' +
+        '<div class="layui-form-item oneM hide" style="margin-bottom: 0px;">\n' +
         '            <div class="layui-inline layui-inline-2">\n' +
         '                <label class="layui-form-label" >权限Shiro</label>\n' +
         '                <div class="layui-input-inline" style="margin-top: 9px;">\n' +
@@ -132,68 +198,69 @@ function btnClickAddPre(){
             }
         })
 
-         $.ajax({
-                 type:'post',
-                 url:rootPath+'/PremissionController/addPremission',
-                 data:JSON.stringify(premission),
-                 dataType:"json",
-                 contentType:"application/json",
-                 success:function (res) {
-                     if(res.msg=="新增权限失败"){
-                         layer.msg(res.msg);
-                     }else{
-                         layer.msg(res.msg);
-                         setTimeout(function () {
-                             layer.closeAll();
-                             reloadTable();
-                         },1500);
-                     }
-                 },
-                 error:function (res) {
-                     layer.msg("无该权限");
-                 }
-             });
+        $.ajax({
+            type:'post',
+            url:rootPath+'/PremissionController/addPremission',
+            data:JSON.stringify(premission),
+            dataType:"json",
+            contentType:"application/json",
+            success:function (res) {
+                if(res.msg=="新增权限失败"){
+                    layer.msg(res.msg);
+                }else{
+                    layer.msg(res.msg);
+                    setTimeout(function () {
+                        layer.closeAll();
+                        reloadTable();
+                    },1500);
+                }
+            },
+            error:function (res) {
+                layer.msg("无该权限");
+            }
+        });
 
+    });
+
+    //权限类型选择变更
+    $("#menuSelect").change(function () {
+        var val=$("#menuSelect option:selected").val();
+        $("#fatherCode2").parent().parent().addClass("hide");
+
+        if(val=="oneMenu"){
+            $(".oneM").addClass("hide");
+        }else if(val=="twoMenu" || val=="threeMenu"){
+            $(".oneM").removeClass("hide");
+            getFatherCode("twoMenu","fatherCode1");
+            if(val=="threeMenu"){
+                $("#fatherCode2").parent().parent().removeClass("hide");
+                getFatherCode(val,"fatherCode2");
+            }
+        } else if(val=="other"){
+            $(".oneM").removeClass("hide");
+        }
+
+    });
+
+    //2级权限类型变更
+    $("#fatherCode1").change(function () {
+        // var val=$("#fatherCode2 option:selected").val();
+        getFatherCode("threeMenu","fatherCode2");
     })
 
+
 }
+//endregion =================Dome操作=================
 
-//搜索按钮点击
-$("#search").click(function () {
-    var val=$("#preType option:selected").val();
-    var valChild=null;
-    if(!$("#preTypeChild").hasClass("hide")){
-        valChild=$("#preTypeChild option:selected").val();
-    }
-    var pojo={"preType":val,"preTypeChild":valChild};
-    reloadTable(pojo);
-})
-
-
-//权限类型变化事件
-$("#preType").change(function () {
-    var val=$("#preType option:selected").val();
-    var valChild=null;
-    if(val==='view'){
-        $("#preTypeChild").removeClass("hide");
-    }else{
-        $("#preTypeChild").addClass("hide");
-
-    }
-
-
-})
-
-
-
+//region =================表格方法=================
 //获取权限列表数据
 function getPremissionData(){
     layui.use('table', function(){
         var table = layui.table;
         //第一个实例
         table.render({
-             // id:'idTest',
-             elem: '#dataTable'
+            // id:'idTest',
+            elem: '#dataTable'
             ,defaultToolbar: ['filter', 'exports']
             ,height: 600
             ,limit:20
@@ -201,7 +268,7 @@ function getPremissionData(){
             ,url: rootPath+'/PremissionController/listPremission' //数据接口
             ,page: true //开启分页
             ,cols: [[ //表头
-                 {type:'numbers'}
+                {type:'numbers'}
                 // ,{type: 'checkbox'}
                 // ,{type:'radio'}
                 ,{field: 'FUNCTION_CODE', title: '权限编码',sort:true,width:150}
@@ -251,27 +318,27 @@ function getPremissionData(){
                 layer.confirm('真的删除行么', function(index){
                     // obj.del();
                     // layer.close(index);
-                     $.ajax({
-                             type:'post',
-                             url:rootPath+'/PremissionController/delPremission',
-                             data:JSON.stringify(data),
-                             dataType:"json",
-                             contentType:"application/json",
-                             success:function (res) {
-                                 if(res.msg=="删除权限失败"){
-                                     layer.msg(res.msg);
-                                 }else{
-                                     layer.msg(res.msg);
-                                     setTimeout(function () {
-                                         layer.close(index);
-                                         reloadTable();
-                                     },1500);
-                                 }
-                             },
-                             error:function (res) {
-                                 layer.msg("无该权限");
-                             }
-                         });
+                    $.ajax({
+                        type:'post',
+                        url:rootPath+'/PremissionController/delPremission',
+                        data:JSON.stringify(data),
+                        dataType:"json",
+                        contentType:"application/json",
+                        success:function (res) {
+                            if(res.msg=="删除权限失败"){
+                                layer.msg(res.msg);
+                            }else{
+                                layer.msg(res.msg);
+                                setTimeout(function () {
+                                    layer.close(index);
+                                    reloadTable();
+                                },1500);
+                            }
+                        },
+                        error:function (res) {
+                            layer.msg("无该权限");
+                        }
+                    });
                     reloadTable();
                 });
             }
@@ -304,7 +371,21 @@ function getPremissionData(){
     });
 }
 
+//表格重载
+function reloadTable(pojo) {
+    layui.use('table', function() {
+        var table1 = layui.table;
+        table1.reload('dataTable', {
+            url: rootPath+'/PremissionController/listPremission'
+            ,where: {pojo:JSON.stringify(pojo)} //设定异步数据接口的额外参数
+            //,height: 300
+        });
+    });
+}
 
+//endregion =================表格方法=================
+
+//region =================其余方法=================
 //修改权限信息
 function editPreInfo(preInfo) {
     $.ajax({
@@ -323,19 +404,50 @@ function editPreInfo(preInfo) {
 
 }
 
-//表格重载
-function reloadTable(pojo) {
-    layui.use('table', function() {
-        var table1 = layui.table;
-        table1.reload('dataTable', {
-            url: rootPath+'/PremissionController/listPremission'
-            ,where: {pojo:JSON.stringify(pojo)} //设定异步数据接口的额外参数
-            //,height: 300
-        });
-    });
+//获取父级编码
+function getFatherCode(type,id) {
+    var obj={type:type};
+     if(type=="threeMenu"){
+         var oneMenuCode=$("#fatherCode1 option:selected").val();
+         obj.oneMenuCode=oneMenuCode;
+     }
+
+     var option;
+     $.ajax({
+             type:'post',
+             async:false,
+             url:rootPath+'/PremissionController/getFatherCode',
+             data:JSON.stringify(obj),
+             dataType:"json",
+             contentType:"application/json",
+             success:function (res) {
+                 if(res!=null){
+                      option="";
+                     for(var i=0;i<res.length;i++ ){
+                         resData=res[i];
+                         option+="<option value='"+resData.FUNCTION_CODE+"'>"+resData.FUNCTION_NAME+"</option>"
+                     }
+                     $("#"+id).empty();
+                     $("#"+id).append(option);
+                     // return true;
+                 }
+
+             },
+             error:function (res) {
+
+             }
+         });
+    // return true;
+
 }
 
+//endregion =================其余方法=================
 
-// function load() {
-//     window.location.href='preview2';
-// }
+//region =================图表方法=================
+
+//endregion =================图表方法=================
+
+//region =================弃用方法====================
+
+//endregion =================弃用方法=================
+

@@ -13,7 +13,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -46,11 +45,11 @@ public class FileController extends BaseController {
      * @Author junwei
      * @Date 9:35 2019/6/15
      **/
-    @GetMapping("view")
+/*    @GetMapping("view")
     @RequiresPermissions("system:file:view")
     public String view(Model model) {
         return prefix + "/fileView";
-    }
+    }*/
 
     /**
      * Description 图片集合查询

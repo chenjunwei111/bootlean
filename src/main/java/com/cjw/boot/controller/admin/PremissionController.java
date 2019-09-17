@@ -12,11 +12,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -42,11 +42,11 @@ public class PremissionController extends BaseController {
     @Autowired
     MenuService premisionService;
 
-    @GetMapping("view")
+  /*  @GetMapping("view")
     @RequiresPermissions("system:premission:view")
     public String view1(Model model) {
         return prefix + "premissionView";
-    }
+    }*/
 
     @Log(title = "权限集合查询", action = "权限管理")
     @GetMapping("listPremission")
@@ -152,5 +152,25 @@ public class PremissionController extends BaseController {
 
     }
 
+
+
+    /**
+     * Description 获取父级权限编码
+     * @param map
+     * @Author junwei
+     * @Date 16:29 2019/6/10
+     *
+     * @return*/
+    @PostMapping("getFatherCode")
+    @ResponseBody
+    public List<LinkedHashMap<String, Object>> getFatherCode(@RequestBody HashMap<String, Object> map) {
+        try {
+             return premisionService.getFatherCode(map);
+        } catch (Exception e) {
+            logger.error("错误信息：", e);
+            return null;
+        }
+
+    }
 
 }
