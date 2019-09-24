@@ -362,6 +362,11 @@ textarea:-ms-input-placeholder { /* Internet Explorer 10+ */
     background-color: rgba(0,99,120,0.6) !important
 }
 
+/*表格修改后颜色*/
+.layui-table-edit-2 {
+    background-color: #6EB92B!important;;
+}
+
 .layui-table-view .layui-table td {
     padding: 5px 2px;
 }

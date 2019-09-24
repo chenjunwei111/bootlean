@@ -209,90 +209,90 @@ public class ViewController implements ServletContextAware {
                 logger.info("权限表插入权限：\n "+pre.toString() );
             }
 
-            if(longCode.indexOf("A3-B1-add")<0){
+            if(longCode.indexOf("A1-B3-add")<0){
                 MenuPojo pre = new MenuPojo("A1-B3-add","角色添加","A1-B3",null,null,null,1,1302,"system:role:add","add");
                 premisionService.insertPremission(pre);
                 logger.info("权限表插入权限：\n "+pre.toString() );
             }
 
-            if(longCode.indexOf("A3-B1-del")<0){
+            if(longCode.indexOf("A1-B3-del")<0){
                 MenuPojo pre = new MenuPojo("A1-B3-del","角色删除","A1-B3",null,null,null,1,1303,"system:role:del","del");
                 premisionService.insertPremission(pre);
                 logger.info("权限表插入权限：\n "+pre.toString() );
             }
 
-            if(longCode.indexOf("A3-B1-edit")<0){
+            if(longCode.indexOf("A1-B3-edit")<0){
                 MenuPojo pre = new MenuPojo("A1-B3-edit","角色更新","A1-B3",null,null,null,1,1304,"system:role:edit","edit");
                 premisionService.insertPremission(pre);
                 logger.info("权限表插入权限：\n "+pre.toString() );
             }
-            if(longCode.indexOf("A3-B1-editPre")<0){
+            if(longCode.indexOf("A1-B3-editPre")<0){
                 MenuPojo pre = new MenuPojo("A1-B3-editPre","角色权限修改","A1-B3",null,null,null,1,1305,"system:role:editPre","edit");
                 premisionService.insertPremission(pre);
                 logger.info("权限表插入权限：\n "+pre.toString() );
             }
-            if(longCode.indexOf("A3-B1-editUser")<0){
+            if(longCode.indexOf("A1-B3-editUser")<0){
                 MenuPojo pre = new MenuPojo("A1-B3-editUser","角色用户修改","A1-B3",null,null,null,1,1306,"system:role:editUser","edit");
                 premisionService.insertPremission(pre);
                 logger.info("权限表插入权限：\n "+pre.toString() );
             }
 
-            if(longCode.indexOf("A3-B1-edit")<0){
+            if(longCode.indexOf("A1-B1-edit")<0){
                 MenuPojo pre = new MenuPojo("A1-B1-edit","权限修改","A1-B1",null,null,"权限修改1",1,1101,"system:premission:edit","edit");
                 premisionService.insertPremission(pre);
                 logger.info("权限表插入权限：\n "+pre.toString() );
             }
 
 
-            if(longCode.indexOf("A3-B1-del")<0){
+            if(longCode.indexOf("A1-B1-del")<0){
                 MenuPojo pre = new MenuPojo("A1-B1-del","权限删除","A1-B1",null,null,"删除权限",1,1102,"system:premission:del","del");
                 premisionService.insertPremission(pre);
                 logger.info("权限表插入权限：\n "+pre.toString() );
             }
 
-            if(longCode.indexOf("A3-B1-add")<0){
+            if(longCode.indexOf("A1-B1-add")<0){
                 MenuPojo pre = new MenuPojo("A1-B1-add","权限增加","A1-B1",null,null,"增加新的权限",1,1104,"system:premission:add","add");
                 premisionService.insertPremission(pre);
                 logger.info("权限表插入权限：\n "+pre.toString() );
             }
 
-            if(longCode.indexOf("A3-B1-list")<0){
+            if(longCode.indexOf("A1-B1-list")<0){
                 MenuPojo pre = new MenuPojo("A1-B1-list","权限列表","A1-B1",null,null,"权限功能表格",1,1103,"system:premission:list","list");
                 premisionService.insertPremission(pre);
                 logger.info("权限表插入权限：\n "+pre.toString() );
             }
 
-            if(longCode.indexOf("A3-B2-list")<0){
+            if(longCode.indexOf("A1-B2-list")<0){
                 MenuPojo pre = new MenuPojo("A1-B2-list","用户列表","A1-B2",null,null,"用户列表",1,1201,"system:user:list","list");
                 premisionService.insertPremission(pre);
                 logger.info("权限表插入权限：\n "+pre.toString() );
             }
 
-            if(longCode.indexOf("A3-B2-add")<0){
+            if(longCode.indexOf("A1-B2-add")<0){
                 MenuPojo pre = new MenuPojo("A1-B2-add","用户添加","A1-B2",null,null,null,1,1202,"system:user:add","add");
                 premisionService.insertPremission(pre);
                 logger.info("权限表插入权限：\n "+pre.toString() );
             }
 
-            if(longCode.indexOf("A3-B2-edit")<0){
+            if(longCode.indexOf("A1-B2-edit")<0){
                 MenuPojo pre = new MenuPojo("A1-B2-edit","用户修改","A1-B2",null,null,null,1,1203,"system:user:edit","edit");
                 premisionService.insertPremission(pre);
                 logger.info("权限表插入权限：\n "+pre.toString() );
             }
 
-            if(longCode.indexOf("A3-B2-del")<0){
+            if(longCode.indexOf("A1-B2-del")<0){
                 MenuPojo pre = new MenuPojo("A1-B2-del","用户删除","A1-B2",null,null,null,1,1204,"system:user:del","del");
                 premisionService.insertPremission(pre);
                 logger.info("权限表插入权限：\n "+pre.toString() );
             }
 
-            if(longCode.indexOf("A3-B2-editUR")<0){
+            if(longCode.indexOf("A1-B2-editUR")<0){
                 MenuPojo pre = new MenuPojo("A1-B2-editUR","用户修改权限分配","A1-B2",null,null,null,1,1205,"system:user:editUR","edit");
                 premisionService.insertPremission(pre);
                 logger.info("权限表插入权限：\n "+pre.toString() );
             }
 
-            if(longCode.indexOf("A3-B4-list")<0){
+            if(longCode.indexOf("A1-B4-list")<0){
                 MenuPojo pre = new MenuPojo("A1-B4-list","日志列表","A1-B4",null,null,"日志列表",1,1401,"system:log:list","list");
                 premisionService.insertPremission(pre);
                 logger.info("权限表插入权限：\n "+pre.toString() );

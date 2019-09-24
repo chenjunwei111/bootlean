@@ -1,11 +1,24 @@
 //region =================全局变量=================
-
+var ddiv;
 //endregion =================全局变量=================
 
 //region =================初始化=================
 $(function () {
-    // alert(123);
     getPremissionData();
+
+    var r1=document.styleSheets[0].cssRules;
+    ddiv="<div>";
+    for(var i=0;i<r1.length;i++){
+        if(i<=1){
+            continue;
+        }
+        var icon=r1[i].selectorText.replace("::before","").replace(".","")
+        ddiv+='<i class="iconfont '+icon+' clickIcon"  title="'+icon+'" ></i> ';
+        if(i%13==0){
+            ddiv+="<br>";
+        }
+    }
+    ddiv+="</div>";
 
 })
 //endregion =================初始化=================
@@ -273,13 +286,13 @@ function getPremissionData(){
                 // ,{type:'radio'}
                 ,{field: 'FUNCTION_CODE', title: '权限编码',sort:true,width:150}
                 ,{field: 'FUNCTION_NAME', title: '权限名称', edit: 'text',width:180}
-                ,{field: 'FUNCTION_PARENT_CODE', title: '父级权限编码' , edit: 'text',width:180}
-                ,{field: 'FUNCTION_HREF', title: '请求URI',width:250, edit: 'text'}
-                ,{field: 'PERMS_TYPE', title: '权限类型', edit: 'text',width:100}
+                // ,{field: 'FUNCTION_PARENT_CODE', title: '父级权限编码' ,width:180}
+                // ,{field: 'FUNCTION_HREF', title: '请求URI',width:250, edit: 'text'}
+                // ,{field: 'PERMS_TYPE', title: '权限类型', edit: 'text',width:100}
                 ,{field: 'SEQUENCE', title: '排序', edit: 'text',sort:true,width:120}
-                ,{field: 'FUNCTION_ICON', title: '权限图标', edit: 'text',width:250}
-                ,{field: 'PERMS', title: '权限shiro',width:220, edit: 'text'}
-                ,{field: 'ISVALID', title: '禁用', edit: 'text'}
+                ,{field: 'FUNCTION_ICON', title: '权限图标', width:90,event:'changeIcon',toolbar:'#barIcon',style:"cursor: pointer;"}
+                // ,{field: 'PERMS', title: '权限shiro',width:220, edit: 'text'}
+                // ,{field: 'ISVALID', title: '禁用',width:60, edit: 'text'}
                 ,{field: 'DESCRIPTION', title: '备注', edit: 'text',width:150}
                 ,{fixed: 'right',  title:'操作', toolbar: '#barDemo', width:170}
             ]],
@@ -313,7 +326,6 @@ function getPremissionData(){
         //监听行工具事件
         table.on('tool(dataTable)', function(obj){
             var data = obj.data;
-            // console.log(obj)
             if(obj.event === 'del'){
                 layer.confirm('真的删除行么', function(index){
                     // obj.del();
@@ -344,6 +356,34 @@ function getPremissionData(){
             }
             else if(obj.event === 'edit'){
                 editPreInfo(data);
+                obj.tr.removeClass('layui-table-edit-2')
+            }else if(obj.event==='changeIcon'){
+                layer.open({
+                    type: 1,
+                    title: ["修改图标", "font-size:18px"],
+                    area: ["400px", "200px"],
+                    anim: 2,
+                    skin: 'layui-layer-lan',
+                    maxmin: true,
+                    id: 'editIcon',
+                    resize: false,
+                    moveType: 1,
+                    // shade: 0.65,
+                    shade: 0,
+                    scrollbar: false,
+                    content: ddiv,
+                    end: function () {
+
+                    }
+                });
+                //点击
+                $(".clickIcon").click(function () {
+                    var val=$(this).attr("title");
+                    data.FUNCTION_ICON=val;
+                    editPreInfo(data);
+                    layer.closeAll();
+                    reloadTable();
+                })
             }
         });
 
@@ -361,12 +401,14 @@ function getPremissionData(){
 
 
         //监听单元格编辑
-        // table.on('edit(dataTable)', function(obj){
-        //     var value = obj.value //得到修改后的值
-        //         ,data = obj.data //得到所在行所有键值
-        //         ,field = obj.field; //得到字段
-        //     layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
-        // });
+        table.on('edit(dataTable)', function(obj){
+            // var value = obj.value //得到修改后的值
+            //     ,data = obj.data //得到所在行所有键值
+            //     ,field = obj.field; //得到字段
+            // layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
+            obj.tr.addClass('layui-table-edit-2')
+                // .siblings().removeClass('layui-table-edit-2');
+        });
 
     });
 }
