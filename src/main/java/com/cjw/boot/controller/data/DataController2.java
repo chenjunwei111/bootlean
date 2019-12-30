@@ -1,28 +1,15 @@
 package com.cjw.boot.controller.data;
 
-import cn.hutool.json.JSONArray;
 import io.swagger.annotations.Api;
-import org.apache.axis2.AxisFault;
-import org.apache.axis2.addressing.EndpointReference;
-import org.apache.axis2.client.Options;
-import org.apache.axis2.rpc.client.RPCServiceClient;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.xml.namespace.QName;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedList;
 
 @Controller
 @Api("数据处理2")
 @RequestMapping("DataController2")
 public class DataController2 {
 
-    @GetMapping("testAxis3")
+/*    @GetMapping("testAxis3")
     @ResponseBody
     public String testAxis3() {
         try {
@@ -104,14 +91,14 @@ public class DataController2 {
 
             //外网
             System.out.println("axis2->axis1.4 外网环境。。。。。。");
-            String res = connectAxis2("http://183.238.63.208:62113/axis/services/StudentService","getStudentList", xmlStr);
+//            String res = connectAxis2("http://183.238.63.208:62113/axis/services/StudentService","getStudentList", xmlStr);
 
 
             Long time2 = System.currentTimeMillis();
             Float timeFloat=(float)(time2-time1)/1000;
             System.out.println("xis2->axis1.4  耗时:"+String.valueOf(timeFloat)+"秒");
             System.out.println("xis2->axis1.4  发送速率:"+sizes/timeFloat+"M/S");
-            return res;
+//            return res;
 
         } catch (Exception e) {
 //            logger.error("错误信息：", e);
@@ -119,9 +106,9 @@ public class DataController2 {
             return null;
         }
 
-    }
+    }*/
 
-    public String connectAxis2(String url,String methor, String parm) {
+/*    public String connectAxis2(String url,String methor, String parm) {
         try {
             //本机tomcat端口为18080,参数是wsdl网址的一部分
             EndpointReference targetEPR = new EndpointReference(url);
@@ -130,26 +117,26 @@ public class DataController2 {
             //超时时间20s
             options.setTimeOutInMilliSeconds(2 * 20000L);
             options.setTo(targetEPR);
-            /**
+            *//**
              * 参数:
              * 1：在网页上执行 wsdl后xs:schema标签的targetNamespace路径
              * <xs:schema  targetNamespace="http://axis2.com">
              * 2：<xs:element name="test"> ======这个标签中name的值
-             */
+             *//*
             QName qname = new QName("http://axis2.com", methor);
             //方法的入参
             String str = parm;
             Object[] param = new Object[]{str};
             //这是针对返值类型的
             Class<?>[] types = new Class[]{String.class};
-            /**
+            *//**
              * RPCServiceClient类的invokeBlocking方法调用了WebService中的方法。
              * invokeBlocking方法有三个参数
              * 第一个参数的类型是QName对象，表示要调用的方法名；
              * 第二个参数表示要调用的WebService方法的参数值，参数类型为Object[]；
              * 第三个参数表示WebService方法的返回值类型的Class对象，参数类型为Class[]。
              * 当方法没有参数时，invokeBlocking方法的第二个参数值不能是null，而要使用new Object[]{}。
-             */
+             *//*
             Object[] response = sender.invokeBlocking(qname, param, types);
             return response[0].toString();
         } catch (AxisFault e) {
@@ -157,7 +144,7 @@ public class DataController2 {
             return "";
         }
 
-    }
+    }*/
 
 
     public static int getRealLength(String str) {

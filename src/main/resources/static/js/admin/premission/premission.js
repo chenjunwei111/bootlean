@@ -6,6 +6,7 @@ var ddiv;
 $(function () {
     getPremissionData();
 
+    //初始化。。。图标
     var r1=document.styleSheets[0].cssRules;
     ddiv="<div>";
     for(var i=0;i<r1.length;i++){
@@ -135,7 +136,9 @@ function btnClickAddPre(){
         '            <div class="layui-inline clearfix">\n' +
         '                <label class="layui-form-label" >权限图标：</label>\n' +
         '                <div class="layui-input-inline" style="margin-top: 9px;">\n' +
-        '<input  class="layui-input" field="FUNCTION_ICON"  type="text" placeholder="icon图标(view权限需要写，其余不需要写)" >'+
+        // '<input  class="layui-input" field="FUNCTION_ICON"  type="text" placeholder="icon图标(view权限需要写，其余不需要写)" >'+
+        '<input  class="layui-input hide" field="FUNCTION_ICON"  id="functionCode" type="text" >'+
+        '<span id="showIcon" style="cursor: pointer">无</span>'+
         '                </div>\n' +
         '            </div>\n' +
         '        </div>'+
@@ -262,6 +265,18 @@ function btnClickAddPre(){
     })
 
 
+    //点击
+    $("#showIcon").click(function () {
+        layerOpenIconSelect();
+
+        $(".clickIcon").click(function () {
+            var val=$(this).attr("title");
+            var icons='<i class="iconfont '+val+' "  title="'+val+'" ></i>';
+            $("#showIcon").html(icons);
+            $('#functionCode').val(val);
+        })
+    })
+
 }
 //endregion =================Dome操作=================
 
@@ -358,24 +373,7 @@ function getPremissionData(){
                 editPreInfo(data);
                 obj.tr.removeClass('layui-table-edit-2')
             }else if(obj.event==='changeIcon'){
-                layer.open({
-                    type: 1,
-                    title: ["修改图标", "font-size:18px"],
-                    area: ["400px", "200px"],
-                    anim: 2,
-                    skin: 'layui-layer-lan',
-                    maxmin: true,
-                    id: 'editIcon',
-                    resize: false,
-                    moveType: 1,
-                    // shade: 0.65,
-                    shade: 0,
-                    scrollbar: false,
-                    content: ddiv,
-                    end: function () {
-
-                    }
-                });
+                layerOpenIconSelect();
                 //点击
                 $(".clickIcon").click(function () {
                     var val=$(this).attr("title");
@@ -481,6 +479,29 @@ function getFatherCode(type,id) {
          });
     // return true;
 
+}
+
+
+
+function layerOpenIconSelect() {
+    layer.open({
+        type: 1,
+        title: ["修改图标", "font-size:18px"],
+        area: ["400px", "200px"],
+        anim: 2,
+        skin: 'layui-layer-lan',
+        maxmin: true,
+        id: 'editIcon',
+        resize: false,
+        moveType: 1,
+        // shade: 0.65,
+        shade: 0,
+        scrollbar: false,
+        content: ddiv,
+        end: function () {
+
+        }
+    });
 }
 
 //endregion =================其余方法=================
